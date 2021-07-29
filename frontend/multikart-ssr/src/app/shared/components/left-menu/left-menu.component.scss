@@ -1,0 +1,14 @@
+.navbar{
+    padding: 0rem 0rem;
+}
+.toggle-nav{
+    display: block;
+}
+ 
+@media (min-width: 1200px) {
+    header .sidenav .sidebar-menu li .mega-menu {
+        position: relative;
+        left: 0;
+        width: 280px !important;
+    }
+}

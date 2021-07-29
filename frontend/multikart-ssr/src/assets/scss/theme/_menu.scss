@@ -250,7 +250,8 @@ header {
         position: fixed;
         z-index: 9999;
         top: 0;
-        left: -300px;
+        // left: -300px;
+        right: -300px;
         background-color: $white;
         transition: all 0.5s ease;
         .sidebar-back {
@@ -272,7 +273,8 @@ header {
             // overflow-y: auto;
         }
         &.openSide {
-            left: 0;
+            // left: 0;
+            right: 0;
             transition: all 0.5s ease;
             .sidebar-overlay {
                 opacity: 0.8;
@@ -317,7 +319,7 @@ header {
                 text-align: left;
                 float: none;
                 a {
-                    padding: 10px 50px 20px 40px;
+                    padding: 10px 50px 20px 20px;
                     position: relative;
                     color: #222222;
                     font-size: 14px;
@@ -331,7 +333,7 @@ header {
                 ul {
                     position: absolute;
                     width: 200px;
-                    left: 100%;
+                    right: 100%;
                     top: 0;
                     padding: 15px 0px;
                     display: none;
@@ -349,7 +351,7 @@ header {
                 }
                 .mega-menu {
                     position: absolute;
-                    left: 100%;
+                    right: 100%;
                     width: 815px !important;
                     padding: 15px 30px 25px !important;
                     background-color: #ffffff;
@@ -601,8 +603,8 @@ header {
                             position: absolute;
                             top: 50%;
                             margin-top: -22px;
-                            left: auto;
-                            right: 7px;
+                            left: -14px;
+                            right: auto;
                             width: 34px;
                             height: 34px;
                             overflow: hidden;
@@ -611,7 +613,7 @@ header {
                             text-shadow: none;
                             border-radius: 4px;
                             &:before {
-                                content: "\f105";
+                                content: "\f104";
                                 font-family: FontAwesome;
                                 position: absolute;
                             }
@@ -654,7 +656,7 @@ header {
                     }
                     .mega-menu {
                         position: absolute;
-                        left: 100%;
+                        right: 100%;
                         width: 815px !important;
                         padding: 15px 30px 25px !important;
                         background-color: #ffffff;
