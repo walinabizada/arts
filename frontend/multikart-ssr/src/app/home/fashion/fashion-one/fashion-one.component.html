@@ -6,13 +6,13 @@
     [sliders]="sliders" 
     [textClass]="'text-center'"
     [category]="'fashion'"
-    [buttonText]="'shop now'"> 
+    [buttonText]="'Explore Art'"> 
   </app-slider>
 </section>
 <!-- Home slider End -->
 
 <!-- collection banner start-->
-<section class="pb-0">
+<!-- <section class="pb-0">
   <div class="container">
     <div class="row partition2">
       <div class="col-md-6" *ngFor="let collection of collections">
@@ -30,13 +30,13 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- collection banner End -->
 
 <!-- Product slider start-->
 <div class="title1 section-t-space">
-  <h4>special offer</h4>
-  <h2 class="title-inner1">top collection</h2>
+  <h4>Available For Sale</h4>
+  <h2 class="title-inner1">Latest Items</h2>
 </div>
 <div class="container">
   <div class="row">
@@ -44,13 +44,24 @@
       <div class="product-para">
         <p class="text-center">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry, 
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+          Lorem Ipsum has been the industry's standard.
         </p>
       </div>
     </div>
   </div>
 </div>
-<section class="section-b-space p-t-0">
+<!-- category -->
+<section class="section-b-space section-m-top-space">
+  <div class="container">
+      <div class="row">
+          <div class="col app-collection-sect">
+              <app-collection [categories]="categories" [category]="'watch'"></app-collection>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- category end -->
+<!-- <section class="section-b-space p-t-0">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -71,27 +82,39 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- Product slider End -->
+<!-- Explore -->
+<div class="title1 section-t-space">
+  <h4>Schools</h4>
+  <h2 class="title-inner1">Explore</h2>
+</div>
+<!-- collection category -->
 
-<!-- Parallax banner start-->
 <section class="p-0">
   <div class="full-banner parallax-banner1 parallax text-center p-left"
     [ngStyle]="{'background-image': 'url(assets/images/parallax/1.jpg)'}">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="banner-contain">
-            <h2>2018</h2>
-            <h3>fashion trends</h3>
-            <h4>special offer</h4>
+    <div class="container-fluid">
+      <div class="row partition3">
+          <div class="col-md-3" *ngFor="let collection of collectionsCategory">
+              <a [routerLink]="['/shop/collection/left/sidebar']" 
+                 [queryParams]="{ category: 'furniture'}">
+                  <div class="collection-banner p-right text-right">
+                      <img [src]="collection.image" alt="collection" class="img-fluid">
+                      <div class="contain-banner banner-3">
+                          <div>
+                              <h4>{{collection.save}}</h4>
+                              <h2>{{collection.title}}</h2>
+                          </div>
+                      </div>
+                  </div>
+              </a>
           </div>
-        </div>
       </div>
     </div>
   </div>
 </section>
-<!-- Parallax banner End -->
+<!-- collection Category end -->
 
 <!-- Tab product start-->
 <div class="title1 section-t-space">
@@ -126,6 +149,9 @@
   </div>
 </section>
 <!-- Tab product End -->
+
+
+
 
 <!-- services start-->
 <div class="container">

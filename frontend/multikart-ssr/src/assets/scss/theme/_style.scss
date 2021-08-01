@@ -614,6 +614,7 @@ button {
             left: 0;
             right: 0;
             opacity: 1;
+            border-radius: 25px;
         }
     }
     &.btn-sm {
@@ -1505,6 +1506,8 @@ header {
             margin-bottom: 0;
             margin-top: 10px;
             color: $dark-font;
+            font-size: 45px;
+            text-transform: none;
         }
         h4 {
             font-weight: 700;
@@ -1512,10 +1515,13 @@ header {
             color: $grey;
             margin-bottom: 0;
             margin-top: -3px;
+            font-size: 15px;
+            text-transform: uppercase;
         }
         .btn-solid,
         .btn-outline {
             margin-top: 20px;
+            border-radius: 25px;
         }
     }
     .p-left {
@@ -2243,6 +2249,7 @@ header {
         }
         .btn {
             margin-top: 20px;
+            border-radius: 25px;
         }
         .category-link {
             li {

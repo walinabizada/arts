@@ -1,0 +1,16 @@
+.login-btn{
+    padding-top: 27px;
+    padding-bottom: 27px;
+}
+.login-btn .btn-outline{
+    padding: 7px 20px;
+}
+.login-btn .btn-outline, .login-btn .btn-outline:hover:before, .login-btn .btn-outline:focus:before{
+    border-radius: 25px;
+    background-color: #fff;
+}
+.login-btn .btn-outline:hover, .login-btn .btn-outline:focus{
+    color: #ffffff !important;
+    background-color: #ff4c3b;
+    background-color: var(--theme-deafult);
+}

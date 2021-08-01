@@ -1,6 +1,6 @@
 <header class="sticky" [ngClass]="class" [class.fixed]="stick && sticky">
   <div class="mobile-fix-option"></div>
-  <div class="top-header" *ngIf="topbar">
+  <div class="top-header" *ngIf="topbar" [hidden]='true'>
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
@@ -44,7 +44,7 @@
       <div class="col-sm-12">
         <div class="main-menu">
           <div class="menu-left">
-            <app-left-menu></app-left-menu>
+           
             <div class="brand-logo">
               <a routerLink="/home/fashion" id="headerlogo">
                 <img [src]="themeLogo" class="img-fluid" alt="logo">
@@ -52,12 +52,13 @@
             </div>
           </div>
           <div class="menu-right pull-right">
-            <div>
+            <div [hidden]='true'>
               <app-menu></app-menu>
             </div>
             <div>
               <app-settings></app-settings>
             </div>
+             
           </div>
         </div>
       </div>

@@ -1,7 +1,10 @@
 <div class="navbar">
-  <a href="javascript:void(0)" (click)="leftMenuToggle()">
+  <!-- <a href="javascript:void(0)" (click)="leftMenuToggle()">
     <div class="bar-style"><i class="fa fa-bars sidebar-bar" aria-hidden="true"></i></div>
-  </a>
+  </a> -->
+  <div class="toggle-nav" (click)="leftMenuToggle()">
+      <i class="fa fa-bars sidebar-bar"></i>
+    </div>
   <div id="mySidenav" class="sidenav" [class.openSide]="navServices?.leftMenuToggle">
     <a href="javascript:void(0)" class="sidebar-overlay" (click)="leftMenuToggle()" 
                                                          (mouseover)="onHover(false)"></a>

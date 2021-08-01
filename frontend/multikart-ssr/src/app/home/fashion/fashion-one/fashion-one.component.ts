@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ProductSlider } from '../../../shared/data/slider';
 import { Product } from '../../../shared/classes/product';
 import { ProductService } from '../../../shared/services/product.service';
@@ -13,7 +14,7 @@ export class FashionOneComponent implements OnInit {
   public products: Product[] = [];
   public productCollections: any[] = [];
   
-  constructor(public productService: ProductService) {
+  constructor(private _sanitizer:DomSanitizer, public productService: ProductService) {
     this.productService.getProducts.subscribe(response => {
       this.products = response.filter(item => item.type == 'fashion');
       // Get Product Collection
@@ -29,15 +30,98 @@ export class FashionOneComponent implements OnInit {
   public ProductSliderConfig: any = ProductSlider;
 
   public sliders = [{
-    title: 'welcome to fashion',
-    subTitle: 'Men fashion',
-    image: 'assets/images/slider/1.jpg'
+    title: 'Christina Quarles',
+    subTitle: 'The Dreaming Girl',
+    image: 'assets/images/slider/2back.jpg',
+    image1: 'assets/images/slider/featured/featured (1).png'
   }, {
-    title: 'welcome to fashion',
-    subTitle: 'Women fashion',
-    image: 'assets/images/slider/2.jpg'
-  }]
+    title: 'Gerhard Richter',
+    subTitle: 'The Colorful Soul of an Artist',
+    image: 'assets/images/slider/2back.jpg',
+    image1: 'assets/images/slider/featured/featured (2).jpg'
+  }, {
+    title: 'Donald Judd',
+    subTitle: 'Where is The Moon?',
+    image: 'assets/images/slider/2back.jpg',
+    image1: 'assets/images/slider/featured/featured (1).jpg'
+  }, {
+    title: 'Sania Arts',
+    subTitle: 'The Old Times of the Kabul City',
+    image: 'assets/images/slider/2back.jpg',
+    image1: 'assets/images/slider/featured/featured (3).jpg'
+  }, {
+    title: 'Huguette Caland',
+    subTitle: 'The Pursuit of Happiness',
+    image: 'assets/images/slider/2back.jpg',
+    image1: 'assets/images/slider/featured/featured (4).jpg'
+  }
+  ]
 
+  // Collection
+  public categories = [{
+    image: 'assets/images/slider/featured/featured (1).png',
+    artist: 'Christina Quarles',
+    title: 'The Dreaming Girl',
+    text:  this._sanitizer.bypassSecurityTrustHtml('<li><a href="#">d1 milano</a></li><li><a href="#">damaskeening</a></li><li><a href="#">diving watch</a></li>'),
+  }, {
+    image: 'assets/images/slider/featured/featured (2).jpg',
+    artist: 'Gerhard Richter',
+    title: 'The Colorful Soul of an Artist',
+    text:  this._sanitizer.bypassSecurityTrustHtml('<li><a href="#">Shock-resistant watch</a></li><li><a href="#">Skeleton watch</a></li><li><a href="#">Slow watch</a></li>'),
+  }, {
+    image: 'assets/images/slider/featured/featured (1).jpg',
+    artist: 'Donald Judd',
+    title: 'Where is The Moon?',
+    text:  this._sanitizer.bypassSecurityTrustHtml('<li><a href="#">Watchmaking conglomerates</a></li><li><a href="#">Breitling SA</a></li><li><a href="#">Casio watches</a></li>'),
+  }, {
+    image: 'assets/images/slider/featured/featured (3).jpg',
+    artist: 'Sania Arts',
+    title: 'The Old Times of the Kabul City',
+    text:  this._sanitizer.bypassSecurityTrustHtml('<li><a href="#">Manufacture dhorlogerie</a></li><li><a href="#">Mechanical watch</a></li><li><a href="#">Microbrand watches</a></li>'),
+  }, {
+    image: 'assets/images/slider/featured/featured (4).jpg',
+    artist: 'Huguette Caland',
+    title: 'The Pursuit of Happiness',
+    text:  this._sanitizer.bypassSecurityTrustHtml('<li><a href="#">d1 milano</a></li><li><a href="#">damaskeening</a></li><li><a href="#">diving watch</a></li>'),
+  }]
+  // Collection category
+  public collectionsCategory = [{
+    image: 'assets/images/collection/furniture/1.jpg',
+    save: '+100 Items',
+    title: 'Pastel',
+    link: '/home/left-sidebar/collection/furniture'
+  }, {
+    image: 'assets/images/collection/furniture/1.jpg',
+    save: '+30 Items',
+    title: 'Charcoal',
+    link: '/home/left-sidebar/collection/furniture'
+  },{
+    image: 'assets/images/collection/furniture/1.jpg',
+    save: '+20 Items',
+    title: 'Conté',
+    link: '/home/left-sidebar/collection/furniture'
+  },{
+    image: 'assets/images/collection/furniture/1.jpg',
+    save: '+100 Items',
+    title: 'Crayon',
+    link: '/home/left-sidebar/collection/furniture'
+  }, {
+    image: 'assets/images/collection/furniture/1.jpg',
+    save: '+31 Items',
+    title: 'Graphite',
+    link: '/home/left-sidebar/collection/furniture'
+  },{
+    image: 'assets/images/collection/furniture/1.jpg',
+    save: '+60 Items',
+    title: 'Marker',
+    link: '/home/left-sidebar/collection/furniture'
+  }, {
+    image: 'assets/images/collection/furniture/1.jpg',
+    save: '+10 Items',
+    title: 'Pen and Ink',
+    link: '/home/left-sidebar/collection/furniture'
+  }
+]
   // Collection banner
   public collections = [{
     image: 'assets/images/collection/fashion/1.jpg',
