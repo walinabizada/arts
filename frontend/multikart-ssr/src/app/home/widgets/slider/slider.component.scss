@@ -1,6 +1,23 @@
 .home-slider .home, .center-slider .home{
-    height: 80vh;
+    height: 100vh;
 }
 .home-slider .slider-contain, .center-slider .slider-contain{
-    height: 80vh;
+    height: 100vh;
+}
+.slider-main-img{
+    width: 60%;
+    height: 74vh;
+    display: flex;
+    overflow: inherit;
+}
+.slider-main-img img{
+    box-shadow: 3px 4px 12px #717171;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    max-height: 100%;
+}
+.home-slider .slider-contain, .center-slider .slider-contain{
+    padding-top: 7%;
 }

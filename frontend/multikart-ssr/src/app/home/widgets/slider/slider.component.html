@@ -6,15 +6,18 @@
 	        <div class="row">
 	          <div class="col">
 	            <div class="slider-contain">
-	              <div>
-	                <h4>{{slider.title}}</h4>
-	                <h1>{{slider.subTitle}}</h1>
-	                <a [routerLink]="['/shop/collection/left/sidebar']" 
-	                   [queryParams]="{ category: category}" 
-	                   class="btn btn-solid" [ngClass]="buttonClass">
-	                   {{buttonText}}
-	                </a>
-	              </div>
+					<div class="slider-main-img collection-banner col col-md-6">
+						<img [src]="slider.image1" alt="product-image" class="img-fluid">
+					</div>
+					<div class="col col-md-6">
+						<h4>{{slider.title}}</h4>
+						<h1>{{slider.subTitle}}</h1>
+						<a [routerLink]="['/shop/collection/left/sidebar']" 
+						[queryParams]="{ category: category}" 
+						class="btn btn-solid" [ngClass]="buttonClass">
+						{{buttonText}}
+						</a>
+					</div>
 	            </div>
 	          </div>
 	        </div>

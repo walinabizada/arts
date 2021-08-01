@@ -360,7 +360,7 @@ header {
                         ul {
                             position: relative;
                             width: 100%;
-                            left: inherit;
+                            right: inherit;
                         }
                     }
                 }
@@ -672,7 +672,7 @@ header {
                                 ul {
                                     position: relative;
                                     width: 100%;
-                                    left: inherit;
+                                    right: inherit;
                                     display: block;
                                     padding: 0;
                                     li {
@@ -1506,7 +1506,8 @@ header {
     }
     .brand-logo {
         position: absolute;
-        left: 50%;
+        // left: 50%;
+        left: 20%;
         margin-right: -50%;
         transform: translateX(-50%);
         padding-top: 30px !important;

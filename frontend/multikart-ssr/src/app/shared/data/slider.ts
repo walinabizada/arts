@@ -3,10 +3,14 @@ export let HomeSlider: any = {
     loop: true,
     nav: false,
     dots: false,
-    navSpeed: 300,
-    // navContainerClass: 'owl-nav',
-    // navClass: [ 'owl-prev', 'owl-next' ],
-    // navText: [ '<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>' ],
+    navSpeed: 800,
+    autoplaySpeed: 700,
+    autoplay: true,
+    lazyLoad: true,
+    lazyLoadEager: 5,
+    navContainerClass: 'owl-nav',
+    navClass: [ 'owl-prev', 'owl-next' ],
+    navText: [ '<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>' ],
     responsive: {
         0: {
             items: 1
@@ -89,14 +93,18 @@ export let LogoSlider: any = {
 // Collection Slider
 export let CollectionSlider: any = {
     loop: true,
-    dots: false,
+    dots: true,
+    nav: true,
     navSpeed: 300,
+    navContainerClass: 'owl-nav',
+    navClass: [ 'owl-prev', 'owl-next' ],
+    navText: [ '<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>' ],
     responsive: {
         991: {
-            items: 4 
+            items: 2.5 
         },
         767: {
-            items: 3    
+            items: 2    
         },
         586: {
             items: 2
