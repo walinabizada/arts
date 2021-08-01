@@ -96,7 +96,7 @@
     [ngStyle]="{'background-image': 'url(assets/images/parallax/1.jpg)'}">
     <div class="container-fluid">
       <div class="row partition3">
-          <div class="col-md-3" *ngFor="let collection of collectionsCategory">
+          <div class="col-md-3 m-b-3" *ngFor="let collection of collectionsCategory">
               <a [routerLink]="['/shop/collection/left/sidebar']" 
                  [queryParams]="{ category: 'furniture'}">
                   <div class="collection-banner p-right text-right">
