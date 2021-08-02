@@ -12,6 +12,25 @@
       <div (click)="leftMenuToggle()">
         <div class="sidebar-back text-left"><i class="fa fa-angle-left pr-2" aria-hidden="true"></i> Back
         </div>
+        <div class="onhover-div mobile-setting" [hidden]='true'>
+          <div><img src="assets/images/icon/setting.png" class="img-fluid" alt="settong">
+            <i class="ti-settings"></i>
+          </div>
+          <div class="show-div setting">
+            <h6>language</h6>
+            <ul>
+              <li *ngFor="let language of languages">
+                <a href="javascript:void(0)" (click)="changeLanguage(language.code)">{{ language.name }}</a>
+              </li>
+            </ul>
+            <h6>currency</h6>
+            <ul class="list-inline">
+              <li *ngFor="let currency of currencies">
+                <a href="javascript:void(0)" (click)="changeCurrency(currency)">{{ currency.name }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <ul id="sub-menu" class="sidebar-menu">
         <li *ngFor="let menuItem of menuItems" (mouseover)="onHover(menuItem.children ? true : false)">

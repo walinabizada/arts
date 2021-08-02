@@ -120,8 +120,15 @@ export class FashionOneComponent implements OnInit {
     save: '+10 Items',
     title: 'Pen and Ink',
     link: '/home/left-sidebar/collection/furniture'
+  }, {
+    image: 'assets/images/collection/furniture/1.jpg',
+    save: '+15 Items',
+    title: 'Pen and Ink',
+    link: '/home/left-sidebar/collection/furniture'
   }
 ]
+// Categories name
+public categoriesName = ['airbag', 'burn bag', 'briefcase', 'carpet', 'turkey'];
   // Collection banner
   public collections = [{
     image: 'assets/images/collection/fashion/1.jpg',

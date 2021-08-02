@@ -85,7 +85,7 @@
 </section> -->
 <!-- Product slider End -->
 <!-- Explore -->
-<div class="title1 section-t-space">
+<div class="title1">
   <h4>Schools</h4>
   <h2 class="title-inner1">Explore</h2>
 </div>
@@ -93,14 +93,14 @@
 
 <section class="p-0">
   <div class="full-banner parallax-banner1 parallax text-center p-left"
-    [ngStyle]="{'background-image': 'url(assets/images/parallax/1.jpg)'}">
+    [ngStyle]="{'background-image': 'url(assets/images/parallax/11.jpg)'}">
     <div class="container-fluid">
       <div class="row partition3">
-          <div class="col-md-3 m-b-3" *ngFor="let collection of collectionsCategory">
+          <div class="col-lg-3 col-md-6 col-sm-12 m-b-3" *ngFor="let collection of collectionsCategory">
               <a [routerLink]="['/shop/collection/left/sidebar']" 
                  [queryParams]="{ category: 'furniture'}">
                   <div class="collection-banner p-right text-right">
-                      <img [src]="collection.image" alt="collection" class="img-fluid">
+                      <img [src]="collection.image" alt="collection" class="img-fluid lazyload">
                       <div class="contain-banner banner-3">
                           <div>
                               <h4>{{collection.save}}</h4>
@@ -111,7 +111,23 @@
               </a>
           </div>
       </div>
+      <section class="section-m-t-space">
+        <div class="row partition1">
+          <div class="col-lg-9 col-md-12" >
+            <div class="row">
+              <div class="col-lg-2 col-md-3 col-sm-6 m-btn-div" *ngFor="let category of categoriesName">
+                <a [routerLink]="['/shop/collection/left/sidebar']" 
+                  [queryParams]="{ category: 'bags'}"
+                  class="btn btn-outline btn-block">
+                  {{category}}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+   
   </div>
 </section>
 <!-- collection Category end -->
@@ -119,7 +135,7 @@
 <!-- Tab product start-->
 <div class="title1 section-t-space">
   <h4>exclusive products</h4>
-  <h2 class="title-inner1">special products</h2>
+  <h2 class="title-inner1">Popular Items</h2>
 </div>
 <section class="section-b-space p-t-0">
   <div class="container">
@@ -162,13 +178,13 @@
 <!-- services End -->
 
 <!-- blog section start-->
-<section class="blog p-t-0">
+<section class="blog p-t-0 section-b-space">
   <div class="container">
     <div class="row">
       <div class="col">
         <div class="title1 section-t-space">
-          <h4>Recent Story</h4>
-          <h2 class="title-inner1">from the blog</h2>
+          <h4>Recent Event</h4>
+          <h2 class="title-inner1">from the Arts</h2>
         </div>
       </div>
     </div>
@@ -182,7 +198,7 @@
 <!-- blog section End -->
 
 <!--  logo section start-->
-<section class="section-b-space">
+<!-- <section class="section-b-space">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -190,7 +206,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!--  logo section End-->
 
 <app-newsletter></app-newsletter>
