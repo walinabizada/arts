@@ -2,19 +2,57 @@
   <ng-container *ngFor="let blog of blogs">
     <ng-template carouselSlide>
       <div class="col-md-12">
-        <a [routerLink]="'/pages/blog/details'">
-          <div class="classic-effect">
-            <img [src]="blog.image" class="img-fluid" alt="blog">
-            <span></span>
+        <div class="row">
+          <div class="col-lg-5 m-a">
+            <div class="classic-effect" style="max-height: 270px;">
+              <img [lazyLoad]="blog.image" [src]="blog.image" class="img-fluid" alt="blog">
+              <span></span>
+            </div>
           </div>
-        </a>
-        <div class="blog-details">
-          <h4>{{blog.date}}</h4>
-          <a [routerLink]="'/pages/blog/details'">
-            <p>{{blog.title}}</p>
-          </a>
-          <hr class="style1">
-          <h6> {{ 'by:' +blog.by}} , {{ '2 Comment' }}</h6>
+          <div class="col-lg-7">
+            <div class="blog-details">
+              <table>
+                <tr>
+                  <td>
+                    <h4><i class="fa fa-map-marker"></i></h4>
+                  </td>
+                  <td>
+                    <h4 style="padding-left: 5px;">{{' ' + blog.location}}</h4>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h4><i class="fa fa-calendar"></i></h4>
+                  </td>
+                  <td>
+                    <h4 style="padding-left: 5px;">{{' ' + blog.date}}</h4>
+                  </td>
+                </tr>
+              </table>
+
+              <p class="title">
+                <a [routerLink]="'/pages/blog/details'">{{blog.title}}
+                </a>
+              </p>
+              <hr class="style1">
+              <div class="border-product">
+                <p class="p-desc">{{ blog.description.substring(0, 200)+'...' }}</p>
+              </div>
+              <div class="border-product">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <h6>{{'Organized by: '+blog.by}}</h6>
+                    <h6><i class="fa fa-info-circle"></i> {{blog.category}}</h6>
+                  </div>
+                  <div class="col-lg-4 blog-btn">
+                    <div class="product-buttons">
+                      <a href="javascrip:void(0)" class="btn btn-solid">Sign Up</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </ng-template>

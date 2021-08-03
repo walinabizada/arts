@@ -30,23 +30,27 @@ export let HomeSlider: any = {
 // Blog Slider
 export let BlogSlider: any = {
     loop: true,
-    dots: false,
+    dots: true,
+    nav: true,
     navSpeed: 300,
+    autoplaySpeed: 1000,
+    autoplay: true,
+    navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
     responsive: {
         0: {
             items: 1
         },
         400: {
-            items: 2
+            items: 1
         },
         740: {
-            items: 2
+            items: 1
         },
         940: {
-            items: 3
+            items: 1
         },
         1200: {
-            items: 3
+            items: 1
         }
     }
 };

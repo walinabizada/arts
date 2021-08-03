@@ -100,7 +100,9 @@ body {
     font-size: 14px;
     overflow-x: hidden;
 }
-
+.m-a{
+    margin: auto;
+}
 h1 {
     font-size: 60px;
     color: $dark-font;
@@ -2649,6 +2651,7 @@ header {
         }
         .color-variant {
             padding-top: 12px;
+            display: none;
             li {
                 display: inline-block;
                 height: 20px;
@@ -7206,6 +7209,7 @@ footer {
     }
     .color-variant {
         margin-bottom: 10px;
+        display: none;
         li {
             height: 30px;
             width: 30px;

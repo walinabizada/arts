@@ -10,7 +10,7 @@ import { ProductService } from '../../../shared/services/product.service';
   styleUrls: ['./fashion-one.component.scss']
 })
 export class FashionOneComponent implements OnInit {
-
+  public themeLogo: string = 'assets/images/icon/logo-12.png'; // Change Logo
   public products: Product[] = [];
   public productCollections: any[] = [];
   
@@ -142,25 +142,21 @@ public categoriesName = ['airbag', 'burn bag', 'briefcase', 'carpet', 'turkey'];
 
   // Blog
   public blog = [{
-    image: 'assets/images/blog/1.jpg',
-    date: '25 January 2018',
-    title: 'Lorem ipsum dolor sit consectetur adipiscing elit,',
-    by: 'John Dio'
+    image: 'assets/images/blog/50.jpg',
+    date: 'September 24, 2021',
+    title: 'ZEIT CONTEMPORARY ART',
+    by: 'Marvel Arts Museum',
+    description: 'ONLINE VIEWING ROOM | FROM PARIS TO NEW YORK: TRANSFORMATIONS IN PRINTMAKING',
+    location: 'New York, NY',
+    category: 'Exhibition'
   }, {
-    image: 'assets/images/blog/2.jpg',
-    date: '26 January 2018',
-    title: 'Lorem ipsum dolor sit consectetur adipiscing elit,',
-    by: 'John Dio'
-  }, {
-    image: 'assets/images/blog/3.jpg',
-    date: '27 January 2018',
-    title: 'Lorem ipsum dolor sit consectetur adipiscing elit,',
-    by: 'John Dio'
-  }, {
-    image: 'assets/images/blog/4.jpg',
-    date: '28 January 2018',
-    title: 'Lorem ipsum dolor sit consectetur adipiscing elit,',
-    by: 'John Dio'
+    image: 'assets/images/blog/51.jpg',
+    date: 'Oct 21, 2021 - Dec 30, 2021',
+    title: 'THE WORLD WITHIN: PHOTOGRAPHY AND INTERIORITY',
+    by: 'Zeit Contemporary Art',
+    description: 'Zeit Contemporary Art is pleased to announce The World Within: Photography and Interiority, on view through December 30, 2021.',
+    location: 'Washinton, D.C.',
+    category: 'Digital Conference'
   }];
 
   // Logo
