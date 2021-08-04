@@ -35,7 +35,9 @@ export let BlogSlider: any = {
     navSpeed: 300,
     autoplaySpeed: 1000,
     autoplay: true,
-    navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+    navContainerClass: 'owl-nav',
+    navClass: [ 'owl-prev', 'owl-next' ],
+    navText: [ '<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>' ],
     responsive: {
         0: {
             items: 1

@@ -103,6 +103,17 @@ body {
 .m-a{
     margin: auto;
 }
+.owl-theme .owl-nav [class*=owl-]:hover, .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: var(--theme-deafult);
+}
+.home-slider.blog-slider:hover .owl-prev, .category-m.home-slider:hover .owl-prev{
+    display: none !important;
+} 
+@media (min-width: 578px){
+    .icon-nav li.onhover-div.mobile-setting{
+        display: none;
+    }
+}
 h1 {
     font-size: 60px;
     color: $dark-font;

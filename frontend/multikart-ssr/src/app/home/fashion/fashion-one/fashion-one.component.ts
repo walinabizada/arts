@@ -128,7 +128,7 @@ export class FashionOneComponent implements OnInit {
   }
 ]
 // Categories name
-public categoriesName = ['airbag', 'burn bag', 'briefcase', 'carpet', 'turkey'];
+public categoriesName = ['Pop Art', 'Cubism', 'painting', 'Fantasy', 'Surrealism'];
   // Collection banner
   public collections = [{
     image: 'assets/images/collection/fashion/1.jpg',

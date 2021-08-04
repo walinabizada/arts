@@ -22,11 +22,10 @@
                 <div class="col-xl-12 category-search-sect">
                   <!-- collection category -->
                   <section class="p-0">
-                    <div class="full-banner parallax-banner1 parallax text-center p-left"
-                      [ngStyle]="{'background-image': 'url(assets/images/parallax/11.jpg)'}">
+                    <div class="full-banner parallax-banner1 parallax text-center p-left">
                       <div class="container-fluid">
                         <div class="row partition3">
-                          <div class="col-lg-4 col-md-4 col-sm-12 m-b-3" *ngFor="let collection of collectionsCategory">
+                          <div class="col-lg-3 col-md-6 col-sm-12 m-b-3" *ngFor="let collection of collectionsCategory">
                             <a [routerLink]="['/shop/collection/left/sidebar']"
                               [queryParams]="{ category: 'furniture'}">
                               <div class="collection-banner p-right text-right">

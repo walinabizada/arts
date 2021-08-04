@@ -92,28 +92,8 @@ public collectionsCategory = [{
   save: '+100 Items',
   title: 'Crayon',
   link: '/home/left-sidebar/collection/furniture'
-}, {
-  image: 'assets/images/collection/furniture/1.jpg',
-  save: '+31 Items',
-  title: 'Graphite',
-  link: '/home/left-sidebar/collection/furniture'
-},{
-  image: 'assets/images/collection/furniture/1.jpg',
-  save: '+60 Items',
-  title: 'Marker',
-  link: '/home/left-sidebar/collection/furniture'
-}, {
-  image: 'assets/images/collection/furniture/1.jpg',
-  save: '+10 Items',
-  title: 'Pen and Ink',
-  link: '/home/left-sidebar/collection/furniture'
-}, {
-  image: 'assets/images/collection/furniture/1.jpg',
-  save: '+15 Items',
-  title: 'Pen and Ink',
-  link: '/home/left-sidebar/collection/furniture'
 }
 ]
 // Categories name
-public categoriesName = ['airbag', 'burn bag', 'briefcase', 'carpet', 'turkey'];
+public categoriesName = ['Pop Art', 'Cubism', 'painting', 'Fantasy', 'Surrealism'];
 }

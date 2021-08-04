@@ -1,4 +1,4 @@
-<owl-carousel-o [options]="BlogSliderConfig" class="no-arrow">
+<owl-carousel-o [options]="BlogSliderConfig" class="home-slider blog-slider">
   <ng-container *ngFor="let blog of blogs">
     <ng-template carouselSlide>
       <div class="col-md-12">
@@ -42,7 +42,7 @@
                 <div class="row">
                   <div class="col-lg-8">
                     <h6>{{'Organized by: '+blog.by}}</h6>
-                    <h6><i class="fa fa-info-circle"></i> {{blog.category}}</h6>
+                    <h6 style="color: var(--theme-deafult);"><i class="fa fa-info-circle"></i> {{blog.category}}</h6>
                   </div>
                   <div class="col-lg-4 blog-btn">
                     <div class="product-buttons">
