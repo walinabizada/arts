@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { HomeRoutingModule } from './home-routing.module';
 
-import { FashionOneComponent } from './fashion/fashion-one/fashion-one.component';
+import { HomePage } from './home-page.component';
 import { FashionTwoComponent } from './fashion/fashion-two/fashion-two.component';
 import { FashionThreeComponent } from './fashion/fashion-three/fashion-three.component';
 import { VegetableComponent } from './vegetable/vegetable.component';
@@ -28,7 +28,7 @@ import { CollectionComponent } from './widgets/collection/collection.component';
 
 @NgModule({
   declarations: [
-    FashionOneComponent,
+    HomePage,
     FashionTwoComponent,
     FashionThreeComponent,
     VegetableComponent,

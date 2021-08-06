@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ProductSlider } from '../../../shared/data/slider';
-import { Product } from '../../../shared/classes/product';
-import { ProductService } from '../../../shared/services/product.service';
+import { ProductSlider } from '../shared/data/slider';
+import { Product } from '../shared/classes/product';
+import { ProductService } from '../shared/services/product.service';
 
 @Component({
-  selector: 'app-fashion-one',
-  templateUrl: './fashion-one.component.html',
-  styleUrls: ['./fashion-one.component.scss']
+  selector: 'app-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.scss']
 })
-export class FashionOneComponent implements OnInit {
+export class HomePage implements OnInit {
   public themeLogo: string = 'assets/images/icon/logo-12.png'; // Change Logo
   public products: Product[] = [];
   public productCollections: any[] = [];

@@ -33,15 +33,17 @@ export class NavService {
 	}
 
 	MENUITEMS: Menu[] = [
+		{ path: '/home', title: 'home-page', type: 'link' },
 		{
 			title: 'home', type: 'sub', active: false, children: [
 				{
 					title: 'clothing', type: 'sub', active: false, children: [
-						{ path: '/home/fashion', title: 'fashion-01', type: 'link' },
+						// { path: '/', title: 'fashion-01', type: 'link' },
 						{ path: '/home/fashion-2', title: 'fashion-02', type: 'link' },
 						{ path: '/home/fashion-3', title: 'fashion-03', type: 'link' }
 					]
 				},
+				{ path: '/home', title: 'home-page', type: 'link' },
 				{ path: '/home/vegetable', title: 'vegetable', type: 'link' },
 				{ path: '/home/watch', title: 'watch', type: 'link' },
 				{ path: '/home/furniture', title: 'furniture', type: 'link' },

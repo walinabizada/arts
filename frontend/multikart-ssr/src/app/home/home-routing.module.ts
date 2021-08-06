@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { FashionOneComponent } from './fashion/fashion-one/fashion-one.component';
+import { HomePage } from './home-page.component';
 import { FashionTwoComponent } from './fashion/fashion-two/fashion-two.component';
 import { FashionThreeComponent } from './fashion/fashion-three/fashion-three.component';
 import { VegetableComponent } from './vegetable/vegetable.component';
@@ -19,8 +19,8 @@ import { MarijuanaComponent } from './marijuana/marijuana.component';
 
 const routes: Routes = [
   {
-    path: 'fashion',
-    component: FashionOneComponent
+    path: '',
+    component: HomePage
   },
   {
     path: 'fashion-2',
