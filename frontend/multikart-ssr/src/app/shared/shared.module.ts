@@ -25,6 +25,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { ProductBoxLatestComponent } from './components/product/product-box-latest/product-box-latest.component';
 import { ProductBoxOneComponent } from './components/product/product-box-one/product-box-one.component';
 import { ProductBoxTwoComponent } from './components/product/product-box-two/product-box-two.component';
 import { ProductBoxThreeComponent } from './components/product/product-box-three/product-box-three.component';
@@ -70,6 +71,7 @@ import { DiscountPipe } from './pipes/discount.pipe';
     BreadcrumbComponent,
     CategoriesComponent,
     ProductBoxOneComponent,
+    ProductBoxLatestComponent,
     ProductBoxTwoComponent,
     ProductBoxThreeComponent,
     ProductBoxFourComponent,
@@ -123,6 +125,7 @@ import { DiscountPipe } from './pipes/discount.pipe';
     BreadcrumbComponent,
     CategoriesComponent,
     ProductBoxOneComponent,
+    ProductBoxLatestComponent,
     ProductBoxTwoComponent,
     ProductBoxThreeComponent,
     ProductBoxFourComponent,

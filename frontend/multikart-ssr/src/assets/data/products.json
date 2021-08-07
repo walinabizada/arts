@@ -1,9 +1,9 @@
 [{
         "id": 1,
-        "title": "trim dress",
+        "title": "The Dreaming Girl",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-        "type": "fashion",
-        "brand": "nike",
+        "type": "arts",
+        "brand": "Christina Quarles",
         "collection": ["new products"],
         "category": "Women",
         "price": 145,
@@ -81,7 +81,7 @@
                 "image_id": 111,
                 "id": 1,
                 "alt": "yellow",
-                "src": "assets/images/product/fashion/39.jpg",
+                "src": "assets/images/slider/featured/featured (1).png",
                 "variant_id": [
                     101,
                     104
@@ -110,10 +110,10 @@
         ]
     }, {
         "id": 2,
-        "title": "belted dress",
+        "title": "The Colorful Soul of an Artist",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-        "type": "fashion",
-        "brand": "zara",
+        "type": "arts",
+        "brand": "Gerhard Richter",
         "collection": ["best sellers"],
         "category": "Women",
         "price": 185,
@@ -207,7 +207,7 @@
                 "image_id": 211,
                 "id": 2,
                 "alt": "olive",
-                "src": "assets/images/product/fashion/3.jpg",
+                "src": "assets/images/slider/featured/featured (2).jpg",
                 "variant_id": [
                     201,
                     204,
@@ -249,10 +249,10 @@
         ]
     }, {
         "id": 3,
-        "title": "fitted dress",
+        "title": "Where is The Moon?",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-        "type": "fashion",
-        "brand": "denim",
+        "type": "arts",
+        "brand": "Donald Judd",
         "collection": ["featured products"],
         "category": "Women",
         "price": 174,
@@ -304,7 +304,7 @@
                 "image_id": 311,
                 "id": 3,
                 "alt": "white",
-                "src": "assets/images/product/fashion/1.jpg",
+                "src": "assets/images/slider/featured/featured (1).jpg",
                 "variant_id": [
                     301,
                     303
@@ -323,10 +323,10 @@
         ]
     }, {
         "id": 4,
-        "title": "belted top",
+        "title": "The Old Times of the Kabul City",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-        "type": "fashion",
-        "brand": "madame",
+        "type": "arts",
+        "brand": "Sania Arts",
         "collection": ["new products", "on sale"],
         "category": "Women",
         "price": 98,
@@ -378,7 +378,7 @@
                 "image_id": 411,
                 "id": 4,
                 "alt": "white",
-                "src": "assets/images/product/fashion/8.jpg",
+                "src": "assets/images/slider/featured/featured (3).jpg",
                 "variant_id": [
                     401,
                     402
@@ -397,10 +397,10 @@
         ]
     }, {
         "id": 5,
-        "title": "waist dress",
+        "title": "The Pursuit of Happiness",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-        "type": "fashion",
-        "brand": "biba",
+        "type": "arts",
+        "brand": "Huguette Caland",
         "collection": ["featured products"],
         "category": "Women",
         "price": 230,
@@ -452,7 +452,7 @@
                 "image_id": 511,
                 "id": 5,
                 "alt": "green",
-                "src": "assets/images/product/fashion/9.jpg",
+                "src": "assets/images/slider/featured/featured (4).jpg",
                 "variant_id": [
                     501,
                     503

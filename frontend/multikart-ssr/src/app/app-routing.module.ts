@@ -4,14 +4,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { ShopComponent } from './shop/shop.component';
 import { PagesComponent } from './pages/pages.component';
 import { ElementsComponent } from './elements/elements.component';
+import { HomePage } from './home/home-page.component';
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   redirectTo: '/',
+  //   pathMatch: 'full'
+  // },
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
+    component: HomePage,
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {

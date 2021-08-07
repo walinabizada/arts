@@ -12,11 +12,13 @@ import { ProductService } from '../shared/services/product.service';
 export class HomePage implements OnInit {
   public themeLogo: string = 'assets/images/icon/logo-12.png'; // Change Logo
   public products: Product[] = [];
+  public productsCategory: Product[] = [];
   public productCollections: any[] = [];
   
   constructor(private _sanitizer:DomSanitizer, public productService: ProductService) {
     this.productService.getProducts.subscribe(response => {
       this.products = response.filter(item => item.type == 'fashion');
+      this.productsCategory = response.filter(item => item.type == 'arts');
       // Get Product Collection
       this.products.filter((item) => {
         item.collection.filter((collection) => {
