@@ -5,11 +5,26 @@
 }
 .category-wrapper-1 h5{
     margin-bottom: 0px;
+    // margin-top: 13px;
 }
 .category-wrapper-1{
     padding-top: 10px;
+    padding-bottom: 0px;
 }
 .category-wrapper-1 .cart-info {
-    top: 100px;
-    bottom: auto;
+    // top: 20px;
+    // bottom: auto;
+    // bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.cart-info.cart-wrap i{
+    display: inherit;
+    font-size: 22px;
+    padding: 0px 20px;
+}
+.cart-info.cart-wrap{
+    position: inherit;
+    margin: 20px 0px;
 }

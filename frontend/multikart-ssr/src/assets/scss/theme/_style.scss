@@ -109,6 +109,14 @@ body {
 .home-slider.blog-slider:hover .owl-prev, .category-m.home-slider:hover .owl-prev{
     display: none !important;
 } 
+.pz-zoom-button.pz-zoom-control-position-bottom.ng-star-inserted {
+    display: none;
+}
+.quick-view-img pinch-zoom{
+    width: 345px !important;
+    cursor: all-scroll;
+}
+
 @media (min-width: 578px){
     .icon-nav li.onhover-div.mobile-setting{
         display: none;

@@ -25,6 +25,9 @@ import { BlogComponent } from './widgets/blog/blog.component';
 import { LogoComponent } from './widgets/logo/logo.component';
 import { ServicesComponent } from './widgets/services/services.component';
 import { CollectionComponent } from './widgets/collection/collection.component';
+// Import the library
+import { NgxImageZoomModule } from 'ngx-image-zoom';
+import {PinchZoomModule} from 'ngx-pinch-zoom';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,9 @@ import { CollectionComponent } from './widgets/collection/collection.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
+    NgxImageZoomModule, // <-- Add this line
+    PinchZoomModule
   ]
 })
 export class HomeModule { }

@@ -42,6 +42,9 @@ import { CompareComponent } from './compare/compare.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { SuccessComponent } from './checkout/success/success.component';
 
+// Import the library
+import {PinchZoomModule} from 'ngx-pinch-zoom';
+
 
 @NgModule({
   declarations: [
@@ -79,7 +82,8 @@ import { SuccessComponent } from './checkout/success/success.component';
     Ng5SliderModule,
     InfiniteScrollModule,
     SharedModule,
-    ShopRoutingModule
+    ShopRoutingModule,
+    PinchZoomModule
   ]
 })
 export class ShopModule { }

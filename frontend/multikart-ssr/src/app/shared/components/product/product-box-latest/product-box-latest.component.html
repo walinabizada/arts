@@ -10,6 +10,16 @@
                   alt="{{ product.images[0].alt }}" />
           </div>
            
+          
+          <h5>{{ product?.brand }}</h5>
+          <h4>{{ product?.title | titlecase}}</h4>
+          <ul class="category-link">
+            <li><a href="#">d1 milano</a></li><li><a href="#">damaskeening</a></li><li><a href="#">diving watch</a></li>
+          </ul>
+          <!-- <a [routerLink]="['/shop/product/left/sidebar/', product?.title.replace(' ', '-')]"
+              class="btn btn-outline">
+              view more
+          </a> -->
           <div class="cart-info cart-wrap">
             <a href="javascript:void(0)" title="Add to cart" (click)="CartModal.openModal(product)"
               *ngIf="cartModal">
@@ -29,15 +39,6 @@
               <i class="ti-reload" aria-hidden="true"></i>
             </a>
           </div>
-          <h5>{{ product?.brand }}</h5>
-          <h4>{{ product?.title | titlecase}}</h4>
-          <ul class="category-link">
-            <li><a href="#">d1 milano</a></li><li><a href="#">damaskeening</a></li><li><a href="#">diving watch</a></li>
-          </ul>
-          <a [routerLink]="['/shop/product/left/sidebar/', product?.title.replace(' ', '-')]"
-              class="btn btn-outline">
-              view more
-          </a>
       </div>
     </div>
   </div>

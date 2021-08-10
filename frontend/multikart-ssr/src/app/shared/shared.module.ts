@@ -55,6 +55,9 @@ import { TapToTopComponent } from './components/tap-to-top/tap-to-top.component'
 // Pipes
 import { DiscountPipe } from './pipes/discount.pipe';
 
+// Import the library
+import {PinchZoomModule} from 'ngx-pinch-zoom';
+
 @NgModule({
   declarations: [
     HeaderOneComponent,
@@ -102,7 +105,8 @@ import { DiscountPipe } from './pipes/discount.pipe';
       // preset: scrollPreset // <-- tell LazyLoadImage that you want to use scrollPreset
     }),
     NgxSkeletonLoaderModule,
-    TranslateModule
+    TranslateModule,
+    PinchZoomModule
   ],
   exports: [
     CommonModule,

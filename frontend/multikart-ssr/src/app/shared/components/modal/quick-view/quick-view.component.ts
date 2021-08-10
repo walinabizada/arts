@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChild, TemplateRef, Input,
   Injectable, PLATFORM_ID, Inject } from '@angular/core';
+  import { ProductDetailsQueckView } from '../../../../shared/data/slider';
 import { isPlatformBrowser } from '@angular/common';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
@@ -16,11 +17,14 @@ export class QuickViewComponent implements OnInit, OnDestroy  {
   @Input() product: Product;
   @Input() currency: any;  
   @ViewChild("quickView", { static: false }) QuickView: TemplateRef<any>;
+  
+  public hiddenDiv = false;
 
   public closeResult: string;
   public ImageSrc: string;
   public counter: number = 1;
   public modalOpen: boolean = false;
+  public ProductDetailsMainSliderConfig: any = ProductDetailsQueckView;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
     private router: Router, private modalService: NgbModal,
@@ -43,6 +47,12 @@ export class QuickViewComponent implements OnInit, OnDestroy  {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
       });
     }
+    this.hiddenDiv = true;
+   //wait 3 Seconds and hide
+   setTimeout(function() {
+       this.hiddenDiv = false;
+       console.log(this.hiddenDiv);
+   }.bind(this), 3000);
   }
 
   private getDismissReason(reason: any): string {

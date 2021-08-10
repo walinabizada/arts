@@ -255,6 +255,15 @@ export let ProductDetailsMainSlider: any = {
     slideSpeed: 300,
     loop: true
 }
+export let ProductDetailsQueckView: any = {
+    items: 1,
+    nav: false,
+    dots: true,
+    autoplay: false,
+    slideSpeed: 300,
+    loop: true,
+    mouseDrag: false
+}
 
 // Product Details Thumb Slider
 export let ProductDetailsThumbSlider: any = {

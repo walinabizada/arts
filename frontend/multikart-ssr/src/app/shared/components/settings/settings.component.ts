@@ -73,22 +73,22 @@ export class SettingsComponent implements OnInit {
   }
 // Collection category
 public collectionsCategory = [{
-  image: 'assets/images/collection/furniture/1.jpg',
+  image: 'assets/images/collection/furniture/new/a1.jpg',
   save: '+100 Items',
   title: 'Pastel',
   link: '/home/left-sidebar/collection/furniture'
 }, {
-  image: 'assets/images/collection/furniture/1.jpg',
+  image: 'assets/images/collection/furniture/new/a2.jpg',
   save: '+30 Items',
   title: 'Charcoal',
   link: '/home/left-sidebar/collection/furniture'
 },{
-  image: 'assets/images/collection/furniture/1.jpg',
+  image: 'assets/images/collection/furniture/new/a3.jpg',
   save: '+20 Items',
   title: 'Conté',
   link: '/home/left-sidebar/collection/furniture'
 },{
-  image: 'assets/images/collection/furniture/1.jpg',
+  image: 'assets/images/collection/furniture/new/a4.jpg',
   save: '+100 Items',
   title: 'Crayon',
   link: '/home/left-sidebar/collection/furniture'

@@ -9,7 +9,12 @@
         <img 
           [defaultImage]="ImageSrc ? ImageSrc : 'assets/images/product/placeholder.jpg'" 
           [lazyLoad]="ImageSrc ? ImageSrc : product.images[0].src" 
-          class="img-fluid lazy-loading" 
+          class="img-fluid lazy-loading blured-img" 
+          alt="{{ product.images[0].alt }}" />
+        <img 
+          [defaultImage]="ImageSrc ? ImageSrc : 'assets/images/product/placeholder.jpg'" 
+          [lazyLoad]="ImageSrc ? ImageSrc : product.images[0].src" 
+          class="img-fluid lazy-loading main-img" 
           alt="{{ product.images[0].alt }}" />
       </a>
     </div>

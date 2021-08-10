@@ -544,7 +544,7 @@
                 "image_id": 611,
                 "id": 6,
                 "alt": "olive",
-                "src": "assets/images/product/fashion/11.jpg",
+                "src": "assets/images/product/arts/52.jpg",
                 "variant_id": [
                     601,
                     604
@@ -554,7 +554,7 @@
                 "image_id": 612,
                 "id": 6,
                 "alt": "gray",
-                "src": "assets/images/product/fashion/12.jpg",
+                "src": "assets/images/product/arts/53.jpg",
                 "variant_id": [
                     602,
                     605
@@ -564,7 +564,7 @@
                 "image_id": 613,
                 "id": 6,
                 "alt": "red",
-                "src": "assets/images/product/fashion/22.jpg",
+                "src": "assets/images/product/arts/54.jpg",
                 "variant_id": [
                     603,
                     606
@@ -645,7 +645,7 @@
                 "image_id": 711,
                 "id": 7,
                 "alt": "pink",
-                "src": "assets/images/product/fashion/13.jpg",
+                "src": "assets/images/product/arts/53.jpg",
                 "variant_id": [
                     701,
                     704
@@ -655,7 +655,7 @@
                 "image_id": 712,
                 "id": 7,
                 "alt": "white",
-                "src": "assets/images/product/fashion/8.jpg",
+                "src": "assets/images/product/arts/54.jpg",
                 "variant_id": [
                     702,
                     705
@@ -665,7 +665,7 @@
                 "image_id": 713,
                 "id": 7,
                 "alt": "black",
-                "src": "assets/images/product/fashion/15.jpg",
+                "src": "assets/images/product/arts/55.jpg",
                 "variant_id": [
                     703,
                     706
@@ -729,7 +729,7 @@
                 "image_id": 811,
                 "id": 8,
                 "alt": "yellow",
-                "src": "assets/images/product/fashion/14.jpg",
+                "src": "assets/images/product/arts/54.jpg",
                 "variant_id": [
                     801,
                     804
@@ -739,7 +739,7 @@
                 "image_id": 812,
                 "id": 8,
                 "alt": "black",
-                "src": "assets/images/product/fashion/16.jpg",
+                "src": "assets/images/product/arts/55.jpg",
                 "variant_id": [
                     802,
                     805
@@ -804,7 +804,7 @@
                 "image_id": 911,
                 "id": 9,
                 "alt": "black",
-                "src": "assets/images/product/fashion/15.jpg",
+                "src": "assets/images/product/arts/55.jpg",
                 "variant_id": [
                     901,
                     902
@@ -814,7 +814,7 @@
                 "image_id": 912,
                 "id": 9,
                 "alt": "maroon",
-                "src": "assets/images/product/fashion/17.jpg",
+                "src": "assets/images/product/arts/52.jpg",
                 "variant_id": [
                     903,
                     904
@@ -878,7 +878,7 @@
                 "image_id": 1011,
                 "id": 10,
                 "alt": "black",
-                "src": "assets/images/product/fashion/18.jpg",
+                "src": "assets/images/product/arts/56.jpg",
                 "variant_id": [
                     1001,
                     1002
@@ -888,7 +888,7 @@
                 "image_id": 1012,
                 "id": 10,
                 "alt": "pink",
-                "src": "assets/images/product/fashion/20.jpg",
+                "src": "assets/images/product/arts/57.jpg",
                 "variant_id": [
                     1003,
                     1004
@@ -953,7 +953,7 @@
                 "image_id": 1111,
                 "id": 11,
                 "alt": "red",
-                "src": "assets/images/product/fashion/5.jpg",
+                "src": "assets/images/product/arts/57.jpg",
                 "variant_id": [
                     1101,
                     1102
@@ -963,7 +963,7 @@
                 "image_id": 1112,
                 "id": 11,
                 "alt": "black",
-                "src": "assets/images/product/fashion/33.jpg",
+                "src": "assets/images/product/arts/58.jpg",
                 "variant_id": [
                     1103,
                     1104
@@ -1069,7 +1069,7 @@
                 "image_id": 1211,
                 "id": 12,
                 "alt": "red",
-                "src": "assets/images/product/fashion/22.jpg",
+                "src": "assets/images/product/arts/59.jpg",
                 "variant_id": [
                     1201,
                     1204,
@@ -1080,7 +1080,7 @@
                 "image_id": 1212,
                 "id": 12,
                 "alt": "pink",
-                "src": "assets/images/product/fashion/27.jpg",
+                "src": "assets/images/product/arts/60.jpg",
                 "variant_id": [
                     1202,
                     1205,
@@ -1091,7 +1091,7 @@
                 "image_id": 1213,
                 "id": 12,
                 "alt": "black",
-                "src": "assets/images/product/fashion/38.jpg",
+                "src": "assets/images/product/arts/61.jpg",
                 "variant_id": [
                     1203,
                     1206,
@@ -1198,7 +1198,7 @@
                 "image_id": 1311,
                 "id": 13,
                 "alt": "gray",
-                "src": "assets/images/product/fashion/26.jpg",
+                "src": "assets/images/product/arts/58.jpg",
                 "variant_id": [
                     1301,
                     1304,
@@ -1209,7 +1209,7 @@
                 "image_id": 1312,
                 "id": 13,
                 "alt": "black",
-                "src": "assets/images/product/fashion/34.jpg",
+                "src": "assets/images/product/arts/59.jpg",
                 "variant_id": [
                     1302,
                     1305,
@@ -1220,7 +1220,7 @@
                 "image_id": 1313,
                 "id": 13,
                 "alt": "yellow",
-                "src": "assets/images/product/fashion/39.jpg",
+                "src": "assets/images/product/arts/60.jpg",
                 "variant_id": [
                     1303,
                     1306,
@@ -1302,7 +1302,7 @@
                 "image_id": 1411,
                 "id": 14,
                 "alt": "pink",
-                "src": "assets/images/product/fashion/36.jpg",
+                "src": "assets/images/product/arts/59.jpg",
                 "variant_id": [
                     1401,
                     1404
@@ -1312,7 +1312,7 @@
                 "image_id": 1412,
                 "id": 14,
                 "alt": "gray",
-                "src": "assets/images/product/fashion/28.jpg",
+                "src": "assets/images/product/arts/60.jpg",
                 "variant_id": [
                     1402,
                     1405
@@ -1322,7 +1322,7 @@
                 "image_id": 1413,
                 "id": 14,
                 "alt": "yellow",
-                "src": "assets/images/product/fashion/14.jpg",
+                "src": "assets/images/product/arts/51.jpg",
                 "variant_id": [
                     1403,
                     1406

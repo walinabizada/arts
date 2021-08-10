@@ -5,9 +5,27 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             <div class="row">
-                <div class="col-lg-6  col-xs-12">
+                <div class="col-lg-6  col-xs-12 m-a">
                     <div class="quick-view-img">
-                        <img [src]="ImageSrc ? ImageSrc : product.images[0].src" [alt]="product.images[0].alt" class="img-fluid">
+                        <div class="lable-block fade-in myHiddenDiv" *ngIf="hiddenDiv">
+                            <span class="lable4">You Can Zoom It</span>
+                        </div>
+                        <owl-carousel-o [options]="ProductDetailsMainSliderConfig" class="product-slick1">
+                            <ng-container *ngFor="let image of product?.images">
+                                <ng-template carouselSlide>
+                                    <div>
+                                      <pinch-zoom>
+                                        <img [defaultImage]="'assets/images/product/placeholder.jpg'" 
+                                        [lazyLoad]="image.src" 
+                                        [alt]="image.alt" class="img-fluid">
+                                      </pinch-zoom>
+                                    </div>
+                                </ng-template>
+                            </ng-container>
+                        </owl-carousel-o>
+                        <!-- <pinch-zoom>
+                            <img [src]="ImageSrc ? ImageSrc : product.images[0].src" [alt]="product.images[0].alt" class="img-fluid">
+                        </pinch-zoom> -->
                     </div>
                 </div>
                 <div class="col-lg-6 rtl-text">
