@@ -116,6 +116,21 @@ body {
     width: 345px !important;
     cursor: all-scroll;
 }
+.search-modal{
+    .modal-xl{
+        max-width: 100%;
+        margin: 0;
+    }
+    .modal-content{
+        border: none;
+        border-radius: 0;
+        height: 100%;
+    }
+    .modal-body{
+        min-height: 100vh;
+    }
+    
+}
 
 @media (min-width: 578px){
     .icon-nav li.onhover-div.mobile-setting{
@@ -5043,7 +5058,7 @@ footer {
     padding: 7px;
     cursor: pointer;
     &.top-cls {
-        bottom: 130px;
+        bottom: 50px;
     }
 }
 

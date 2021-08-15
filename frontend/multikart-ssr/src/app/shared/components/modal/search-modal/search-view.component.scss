@@ -1,0 +1,41 @@
+.full-banner{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.m-b-3{
+    margin-bottom: 30px;
+}
+.collection-banner .contain-banner.banner-3 h2 {
+    color: #222;
+    font-size: 18px;
+}
+.collection-banner .contain-banner.banner-3 h4{
+    font-size: 15px;
+    color: #d4b196;
+}
+.search-btn {
+    position: absolute;
+}
+.search-input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #777777;
+    border-radius: 0;
+    padding: 20px 0;
+}
+
+@media (min-width: 1200px){
+    .partition1{
+        width: 74%;
+    }
+}
+@media (max-width: 1199px){
+    .partition1{
+        width: 90%;
+    }
+}
+@media (max-width: 991px){
+    .partition1{
+        width: 100%;
+    }
+}

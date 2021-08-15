@@ -1,8 +1,8 @@
-<app-header-one [sticky]="true"></app-header-one>
+<app-header-one [sticky]="true" [themeLogo]="themeLogo"></app-header-one>
 
 <!-- Home slider start-->
 <section class="p-0">
-  <app-slider [sliders]="sliders" [textClass]="'text-center'" [category]="'fashion'" [buttonText]="'Explore Art'">
+  <app-slider [sliders]="sliders" [sliderBack]="sliderBack" [textClass]="'text-center'" [category]="'fashion'" [buttonText]="'Explore Art'">
   </app-slider>
 </section>
 <!-- Home slider End -->
@@ -86,11 +86,12 @@
 
 <section class="p-0">
   <div class="full-banner parallax-banner1 parallax text-center p-left"
-    [ngStyle]="{'background-image': 'url(assets/images/parallax/11.jpg)'}">
+    [ngStyle]="{'background-image': 'url('+catBackgroundImg+')'}">
     <div class="container-fluid">
       <div class="row partition3">
         <div class="col-lg-3 col-md-6 col-sm-12 m-b-3" *ngFor="let collection of collectionsCategory">
-          <a [routerLink]="['/shop/collection/left/sidebar']" [queryParams]="{ category: 'furniture'}">
+          <a href="#">
+            <!-- [routerLink]="['/shop/collection/left/sidebar']" [queryParams]="{ category: 'furniture'}" -->
             <div class="collection-banner p-right text-right">
               <img [src]="collection.image" alt="collection" class="img-fluid lazyload">
               <div class="contain-banner banner-3">
@@ -103,18 +104,13 @@
           </a>
         </div>
       </div>
-      <section class="section-m-t-space">
+      <section class="p-0">
         <div class="row partition1">
-          <div class="col-lg-9 col-md-12">
-            <div class="row">
-              <div class="col-lg-2 col-md-3 col-sm-6 m-btn-div" *ngFor="let category of categoriesName">
-                <a [routerLink]="['/shop/collection/left/sidebar']" [queryParams]="{ category: 'bags'}"
-                  class="btn btn-outline btn-block">
-                  {{category}}
+            <div class="col" *ngFor="let category of categoriesName">
+                <a [routerLink]="['#']" class="btn btn-outline btn-block">
+                {{category}}
                 </a>
-              </div>
             </div>
-          </div>
         </div>
       </section>
     </div>

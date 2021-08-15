@@ -31,6 +31,11 @@ const routes: Routes = [
     component: ElementsComponent,
     loadChildren: () => import('./elements/elements.module').then(m => m.ElementsModule) },
   {
+    path: 'admin',
+    redirectTo: '../../admin',
+    // pathMatch: 'full'
+  },
+  {
     path: '**', // Navigate to Home Page if not found any page
     redirectTo: '/',
   },

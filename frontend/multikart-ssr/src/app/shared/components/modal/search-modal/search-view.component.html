@@ -1,0 +1,63 @@
+<ng-template class="theme-modal" #searchView let-modal>
+    <div class="modal-content quick-view-modal">
+        <div class="modal-body">
+            <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="container">
+                <section class="search-block">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6 offset-lg-3">
+                        <form class="form-header">
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search a Product">
+                          </div>
+                          <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <div class="row">
+                    <div class="col-xl-12 category-search-sect p-0">
+                        <!-- collection category -->
+                        <section class="p-0">
+                        <div class="full-banner parallax-banner1 parallax text-center p-left pt-0">
+                            <div class="container-fluid">
+                            <div class="row partition3">
+                                <div class="col-lg-3 col-md-6 col-sm-12 m-b-3" *ngFor="let collection of collectionsCategory">
+                                <a [routerLink]="['#']">
+                                    <div class="collection-banner p-right text-right">
+                                    <img [src]="collection.image" alt="collection" class="img-fluid lazyload" id='category-img'>
+                                    <div class="contain-banner banner-3">
+                                        <div>
+                                        <h4>{{collection.save}}</h4>
+                                        <h2>{{collection.title}}</h2>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <section class="p-0">
+                                <div class="row partition1">
+                                    <div class="col" *ngFor="let category of categoriesName">
+                                        <a [routerLink]="['#']" class="btn btn-outline btn-block">
+                                        {{category}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+                            </div>
+    
+                        </div>
+                        </section>
+                        <!-- collection Category end -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</ng-template>

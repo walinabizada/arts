@@ -37,6 +37,7 @@ import { ProductBoxVerticalSliderComponent } from './components/product/product-
 // Modals Components
 import { NewsletterComponent } from './components/modal/newsletter/newsletter.component';
 import { QuickViewComponent } from './components/modal/quick-view/quick-view.component';
+import { SearchViewComponent } from './components/modal/search-modal/search-view.component';
 import { CartModalComponent } from './components/modal/cart-modal/cart-modal.component';
 import { CartVariationComponent } from './components/modal/cart-variation/cart-variation.component';
 import { VideoModalComponent } from './components/modal/video-modal/video-modal.component';
@@ -57,6 +58,7 @@ import { DiscountPipe } from './pipes/discount.pipe';
 
 // Import the library
 import {PinchZoomModule} from 'ngx-pinch-zoom';
+import { NgToggleModule } from 'ng-toggle-button';
 
 @NgModule({
   declarations: [
@@ -83,6 +85,7 @@ import {PinchZoomModule} from 'ngx-pinch-zoom';
     ProductBoxVerticalSliderComponent,
     NewsletterComponent,
     QuickViewComponent,
+    SearchViewComponent,
     CartModalComponent,
     CartVariationComponent,
     VideoModalComponent,
@@ -106,7 +109,8 @@ import {PinchZoomModule} from 'ngx-pinch-zoom';
     }),
     NgxSkeletonLoaderModule,
     TranslateModule,
-    PinchZoomModule
+    PinchZoomModule,
+    NgToggleModule
   ],
   exports: [
     CommonModule,
@@ -138,6 +142,7 @@ import {PinchZoomModule} from 'ngx-pinch-zoom';
     ProductBoxVerticalSliderComponent,
     NewsletterComponent,
     QuickViewComponent,
+    SearchViewComponent,
     CartModalComponent,
     CartVariationComponent,
     VideoModalComponent,

@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ProductSlider } from '../shared/data/slider';
 import { Product } from '../shared/classes/product';
 import { ProductService } from '../shared/services/product.service';
+import { MyDataService } from "../shared/services/mydata.service";
 
 @Component({
   selector: 'app-home-page',
@@ -10,12 +11,16 @@ import { ProductService } from '../shared/services/product.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePage implements OnInit {
-  public themeLogo: string = 'assets/images/icon/logo-12.png'; // Change Logo
+
+  themeLogo:string; // Change Logo
+  catBackgroundImg:string; // Change Logo
+  sliderBack:string; // Change Logo
+ 
   public products: Product[] = [];
   public productsCategory: Product[] = [];
   public productCollections: any[] = [];
   
-  constructor(private _sanitizer:DomSanitizer, public productService: ProductService) {
+  constructor(private _sanitizer:DomSanitizer, public productService: ProductService, private data: MyDataService) {
     this.productService.getProducts.subscribe(response => {
       this.products = response.filter(item => item.type == 'fashion');
       this.productsCategory = response.filter(item => item.type == 'arts');
@@ -28,33 +33,28 @@ export class HomePage implements OnInit {
       })
     });
   }
-
+   
   public ProductSliderConfig: any = ProductSlider;
 
   public sliders = [{
     title: 'Christina Quarles',
     subTitle: 'The Dreaming Girl',
-    image: 'assets/images/slider/2back.jpg',
     image1: 'assets/images/slider/featured/featured (1).png'
   }, {
     title: 'Gerhard Richter',
     subTitle: 'The Colorful Soul of an Artist',
-    image: 'assets/images/slider/2back.jpg',
     image1: 'assets/images/slider/featured/featured (2).jpg'
   }, {
     title: 'Donald Judd',
     subTitle: 'Where is The Moon?',
-    image: 'assets/images/slider/2back.jpg',
     image1: 'assets/images/slider/featured/featured (1).jpg'
   }, {
     title: 'Sania Arts',
     subTitle: 'The Old Times of the Kabul City',
-    image: 'assets/images/slider/2back.jpg',
     image1: 'assets/images/slider/featured/featured (3).jpg'
   }, {
     title: 'Huguette Caland',
     subTitle: 'The Pursuit of Happiness',
-    image: 'assets/images/slider/2back.jpg',
     image1: 'assets/images/slider/featured/featured (4).jpg'
   }
   ]
@@ -181,6 +181,9 @@ public categoriesName = ['Pop Art', 'Cubism', 'painting', 'Fantasy', 'Surrealism
   }];
 
   ngOnInit(): void {
+    this.data.currentThemeLogo.subscribe(themelogo => this.themeLogo = themelogo);
+    this.data.currentCatBackground.subscribe(catBack => this.catBackgroundImg = catBack);
+    this.data.currentSliderBackground.subscribe(sliderBack => this.sliderBack = sliderBack);
   }
 
   // Product Tab collection

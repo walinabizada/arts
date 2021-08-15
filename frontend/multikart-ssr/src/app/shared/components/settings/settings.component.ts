@@ -1,4 +1,5 @@
-import { Component, OnInit, Injectable, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, OnInit, Injectable, PLATFORM_ID, Inject, ViewChild } from '@angular/core';
+import { SearchViewComponent } from "../modal/search-modal/search-view.component";
 import { isPlatformBrowser } from '@angular/common';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,6 +12,8 @@ import { Product } from "../../classes/product";
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
+
+  @ViewChild("searchView") SearchView: SearchViewComponent;
 
   public products: Product[] = [];
   public search: boolean = false;
@@ -71,29 +74,5 @@ export class SettingsComponent implements OnInit {
   changeCurrency(currency: any) {
     this.productService.Currency = currency
   }
-// Collection category
-public collectionsCategory = [{
-  image: 'assets/images/collection/furniture/new/a1.jpg',
-  save: '+100 Items',
-  title: 'Pastel',
-  link: '/home/left-sidebar/collection/furniture'
-}, {
-  image: 'assets/images/collection/furniture/new/a2.jpg',
-  save: '+30 Items',
-  title: 'Charcoal',
-  link: '/home/left-sidebar/collection/furniture'
-},{
-  image: 'assets/images/collection/furniture/new/a3.jpg',
-  save: '+20 Items',
-  title: 'Conté',
-  link: '/home/left-sidebar/collection/furniture'
-},{
-  image: 'assets/images/collection/furniture/new/a4.jpg',
-  save: '+100 Items',
-  title: 'Crayon',
-  link: '/home/left-sidebar/collection/furniture'
-}
-]
-// Categories name
-public categoriesName = ['Pop Art', 'Cubism', 'painting', 'Fantasy', 'Surrealism'];
+
 }

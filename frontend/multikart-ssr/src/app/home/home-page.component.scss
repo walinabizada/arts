@@ -37,3 +37,18 @@ app-header-one{
 .p-t-6{
     padding: 2rem 0;
 }
+@media (min-width: 1200px){
+    .partition1{
+        width: 70%;
+    }
+}
+@media (max-width: 1199px){
+    .partition1{
+        width: 85%;
+    }
+}
+@media (max-width: 991px){
+    .partition1{
+        width: 100%;
+    }
+}
