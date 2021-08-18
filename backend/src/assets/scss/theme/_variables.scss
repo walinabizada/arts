@@ -80,14 +80,16 @@ $white-5:#cfd4da;
 
 
 // Theme colors variables
-$primary-color: #ff8084;
-//$primary-color: #544efa ;
+$primary-color: #d4b196;
+// $primary-color: #ff8084;
+// $primary-color: #544efa ;
 $secondary-color: #13c9ca ;
 $success-color: #81ba00  ;
 $info-color   : #00a8ff  ;
 $warning-color: #ffbc58;
 $danger-color: #a5a5a5 ;
 $light-color   : #f8f8f9 ;
+$light-header-color   : #b8b9bd ;
 $semi-dark  :#aaaaaa;
 $light-semi-gray   :#eff0f1;
 $light-gray   :#e8ebf2;
@@ -214,7 +216,7 @@ $footer_dark__txt_color : $white;
 $card-padding        :30px;
 $card-margin-bottom  :30px;
 $card-border-width   :0px;
-$card-border-color   :$light-color;
+$card-border-color   :$light-header-color;
 $card-border-radious :8px;
 $card-box-shadow     :1px 5px 24px 0 rgba(68, 102, 242, 0.05);
 $card-header-font-weight : 600;

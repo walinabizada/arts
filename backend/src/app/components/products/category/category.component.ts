@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { categoryDB } from '../../../../shared/tables/category';
+import { categoryDB } from '../../../shared/tables/category';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({

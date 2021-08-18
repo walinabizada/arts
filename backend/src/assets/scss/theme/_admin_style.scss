@@ -2761,10 +2761,17 @@ ul.notification-dropdown.onhover-show-div{
         z-index: $main-header-z-index;
         box-shadow: -3px 1px 3px 1px rgba(68, 102, 242, 0.1);
         .logo-wrapper{
-          padding-left: 10px;
+          // padding-left: 10px;
           height: 100%;
           display: flex;
           align-items: center;
+          width: inherit;
+          a{
+            width: inherit;
+            img{
+              width: inherit;
+            }
+          }
         }
       }
       .sidebar-user{

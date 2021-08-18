@@ -59,9 +59,9 @@ export var doughnutChartcolorScheme = {
 export var chart5: Chart = {
   type: 'Line',
   data: {
-    labels: [1, 2, 3, 4, 5, 6, 7, 8],
+    labels: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     series: [
-      [5, 9, 7, 8, 5, 3, 5, 4]
+      [5, 9, 7, 8, 5, 9, 12, 15, 19, 22]
     ]
   },
   options: {

@@ -20,6 +20,13 @@ export const content: Routes = [
     }
   },
   {
+    path: 'finance',
+    loadChildren: () => import('../../components/finance/finance.module').then(m => m.FinanceModule),
+    data: {
+      breadcrumb: "Finance"
+    }
+  },
+  {
     path: 'coupons',
     loadChildren: () => import('../../components/coupons/coupons.module').then(m => m.CouponsModule),
     data: {
@@ -52,10 +59,31 @@ export const content: Routes = [
     }
   },
   {
+    path: 'moderator',
+    loadChildren: () => import('../../components/moderator/moderator.module').then(m => m.ModeratorModule),
+    data: {
+      breadcrumb: "Moderator"
+    }
+  },
+  {
     path: 'vendors',
     loadChildren: () => import('../../components/vendors/vendors.module').then(m => m.VendorsModule),
     data: {
       breadcrumb: "Vendors"
+    }
+  },
+  {
+    path: 'events',
+    loadChildren: () => import('../../components/events/event.module').then(m => m.EventModule),
+    data: {
+      breadcrumb: "Events"
+    }
+  },
+  {
+    path: 'faqs',
+    loadChildren: () => import('../../components/faqs/faqs.module').then(m => m.FAQSModule),
+    data: {
+      breadcrumb: "FAQs"
     }
   },
   {

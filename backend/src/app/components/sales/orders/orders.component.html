@@ -24,5 +24,172 @@
                 </div>
             </div>
         </div>
+        <div class="col-xl-6 xl-100">
+            <div class="card height-equal">
+                <div class="card-header">
+                    <h5>Products Cart</h5>
+                </div>
+                <div class="card-body">
+                    <div class="user-status table-responsive products-table">
+                        <table class="table table-bordernone mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Details</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Simply dummy text of the printing</td>
+                                    <td class="digits">1</td>
+                                    <td class="font-primary">Pending</td>
+                                    <td class="digits">$6523</td>
+                                </tr>
+                                <tr>
+                                    <td>Long established</td>
+                                    <td class="digits">5</td>
+                                    <td class="font-secondary">Cancle</td>
+                                    <td class="digits">$6523</td>
+                                </tr>
+                                <tr>
+                                    <td>sometimes by accident</td>
+                                    <td class="digits">10</td>
+                                    <td class="font-secondary">Cancle</td>
+                                    <td class="digits">$6523</td>
+                                </tr>
+                                <tr>
+                                    <td>Classical Latin literature</td>
+                                    <td class="digits">9</td>
+                                    <td class="font-primary">Return</td>
+                                    <td class="digits">$6523</td>
+                                </tr>
+                                <tr>
+                                    <td>keep the site on the Internet</td>
+                                    <td class="digits">8</td>
+                                    <td class="font-primary">Pending</td>
+                                    <td class="digits">$6523</td>
+                                </tr>
+                                <tr>
+                                    <td>Molestiae consequatur</td>
+                                    <td class="digits">3</td>
+                                    <td class="font-secondary">Cancle</td>
+                                    <td class="digits">$6523</td>
+                                </tr>
+                                <tr>
+                                    <td>Pain can procure</td>
+                                    <td class="digits">8</td>
+                                    <td class="font-primary">Return</td>
+                                    <td class="digits">$6523</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Sales Status</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xl-3 col-sm-6 xl-50">
+                            <div class="order-graph">
+                                <h6>Orders By Location</h6>
+                                <div class="chart-block chart-vertical-center">
+                                    <ngx-charts-pie-chart class="pie-colours-1" [view]="view"
+                                        [scheme]="doughnutChartColorScheme" [results]="pieData" [explodeSlices]="false"
+                                        [labels]="doughnutChartShowLabels" [arcWidth]=0.50 [doughnut]="true"
+                                        [animations]="false" [tooltipDisabled]="doughnutChartTooltip"
+                                        [gradient]="doughnutChartGradient">
+                                    </ngx-charts-pie-chart>
+                                </div>
+                                <div class="order-graph-bottom">
+                                    <div class="media">
+                                        <div class="order-color-primary"></div>
+                                        <div class="media-body">
+                                            <h6 class="mb-0">Saint Lucia <span class="pull-right">$157</span></h6>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="order-color-secondary"></div>
+                                        <div class="media-body">
+                                            <h6 class="mb-0">Kenya <span class="pull-right">$347</span></h6>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="order-color-danger"></div>
+                                        <div class="media-body">
+                                            <h6 class="mb-0">Liberia<span class="pull-right">$468</span></h6>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="order-color-warning"></div>
+                                        <div class="media-body">
+                                            <h6 class="mb-0">Christmas Island<span class="pull-right">$742</span></h6>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="order-color-success"></div>
+                                        <div class="media-body">
+                                            <h6 class="mb-0">Saint Helena <span class="pull-right">$647</span></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 xl-50">
+                            <div class="order-graph sm-order-space">
+                                <h6>Sales By Location</h6>
+                                <div class="peity-chart-dashboard text-center chart-vertical-center">
+                                    <ngx-charts-pie-chart class="pie-colours-1" [view]="view"
+                                        [scheme]="doughnutChartColorScheme" [results]="doughnutData"
+                                        [explodeSlices]="false" [labels]="doughnutChartShowLabels" [arcWidth]=0.99
+                                        [doughnut]="true" [animations]="false" [tooltipDisabled]="doughnutChartTooltip"
+                                        [gradient]="doughnutChartGradient">
+                                    </ngx-charts-pie-chart>
+                                </div>
+                                <div class="order-graph-bottom sales-location">
+                                    <div class="media">
+                                        <div class="order-shape-primary"></div>
+                                        <div class="media-body">
+                                            <h6 class="mb-0 mr-0">Germany <span class="pull-right">25%</span></h6>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="order-shape-secondary"></div>
+                                        <div class="media-body">
+                                            <h6 class="mb-0 mr-0">Brasil <span class="pull-right">10%</span></h6>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="order-shape-danger"></div>
+                                        <div class="media-body">
+                                            <h6 class="mb-0 mr-0">United Kingdom<span class="pull-right">34%</span></h6>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="order-shape-warning"></div>
+                                        <div class="media-body">
+                                            <h6 class="mb-0 mr-0">Australia<span class="pull-right">5%</span></h6>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="order-shape-success"></div>
+                                        <div class="media-body">
+                                            <h6 class="mb-0 mr-0">Canada <span class="pull-right">25%</span></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <!-- Container-fluid Ends-->

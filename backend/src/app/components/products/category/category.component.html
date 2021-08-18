@@ -4,10 +4,8 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h5>Products Category</h5>
-                </div>
-                <div class="card-body">
-                    <div class="btn-popup pull-right">
+                    <h5 style="display: inline;">Products Category</h5>
+                    <div class="btn-popup pull-right m-0">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-original-title="test"
                             data-target="#exampleModal" (click)="open(content)">Add Category</button>
                         <ng-template #content let-modal>
@@ -39,6 +37,9 @@
                             </div>
                         </ng-template>
                     </div>
+                </div>
+                <div class="card-body">
+                    
                     <div id="batchDelete" class="category-table custom-datatable">
                         <div class="table-responsive">
                             <ng2-smart-table [settings]="settings" [source]="categories"></ng2-smart-table>

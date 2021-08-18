@@ -9,6 +9,8 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
 import { SharedModule } from './shared/shared.module';
 import { ProductsModule } from './components/products/products.module';
 import { SalesModule } from './components/sales/sales.module';
+import { FinanceModule } from './components/finance/finance.module';
+import { EventModule } from './components/events/event.module';
 import { CouponsModule } from './components/coupons/coupons.module';
 import { PagesModule } from './components/pages/pages.module';
 import { MediaModule } from './components/media/media.module';
@@ -38,6 +40,8 @@ import { AuthModule } from './components/auth/auth.module';
     LocalizationModule,
     ProductsModule,
     SalesModule,
+    FinanceModule,
+    EventModule,
     VendorsModule,
     CouponsModule,
     PagesModule,
