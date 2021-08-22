@@ -1261,8 +1261,13 @@ header {
     }
     .brand-logo {
         display: inline-block;
-        padding-top: 35px;
-        padding-bottom: 35px;
+        // padding-top: 35px;
+        // padding-bottom: 35px;
+        a{
+            img{
+                max-width: 250px;
+            }
+        }
     }
     .menu-left {
         display: flex;
@@ -4644,6 +4649,9 @@ footer {
     }
     .footer-logo {
         margin-bottom: 18px;
+        img{
+            max-width: 250px;
+        }
     }
     p {
         line-height: 32px;

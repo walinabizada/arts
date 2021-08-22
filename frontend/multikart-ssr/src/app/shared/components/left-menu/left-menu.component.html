@@ -166,7 +166,7 @@
           <a (click)="customizeLayoutDark()">Dark Mode</a>
         </li> -->
         <li>
-          <div class="dark-mode-div">
+          <a class="dark-mode-div" >
             <!-- Default switch -->
             <ng-toggle 
             (change)="customizeLayoutDark()"
@@ -192,8 +192,8 @@
               'checked': '#425ee8',
               'unchecked': '#616161'
             }">
-            </ng-toggle> <span class="label-dark-mode">Dark Mode</span> 
-          </div>
+            </ng-toggle> <span class="label-dark-mode" (click)="customizeLayoutDark()">Dark Mode</span> 
+          </a>
           
 
         </li>

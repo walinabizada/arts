@@ -4,10 +4,7 @@
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="profile-details text-center">
-                        <h5 class="f-w-600">Comming Soon</h5>  
-                    </div>
-                     
+                    <ejs-schedule #scheduleObj height="500" width="100%" [eventSettings]="eventObject" [selectedDate]="setDate" [views]="setView" (popupOpen)='onPopupOpen($event)'></ejs-schedule>
                 </div>
             </div>
         </div>

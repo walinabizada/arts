@@ -14,5 +14,11 @@
 }
 .dark-mode-div {
     padding: 10px 50px 20px 20px;
-    display: flex;
+    // display: flex;
+    span{
+        float: right;
+        &:hover{
+            cursor: pointer;
+        }
+    }
 }
