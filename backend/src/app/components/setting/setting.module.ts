@@ -8,11 +8,12 @@ import { SettingRoutingModule } from './setting-routing.module';
 import { GeneralComponent } from './general/general.component';
 import { FinanceComponent } from './finance/finance.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ProductListComponent } from './profile/product-list/product-list.component';
 import { SharedModule } from '../../shared/shared.module';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 @NgModule({
-  declarations: [GeneralComponent, FinanceComponent, ProfileComponent],
+  declarations: [GeneralComponent, FinanceComponent, ProfileComponent, ProductListComponent],
   imports: [
     CommonModule,
     NgbModule,

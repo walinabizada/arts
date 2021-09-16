@@ -27,29 +27,8 @@ export const content: Routes = [
     }
   },
   {
-    path: 'coupons',
-    loadChildren: () => import('../../components/coupons/coupons.module').then(m => m.CouponsModule),
-    data: {
-      breadcrumb: "Coupons"
-    }
-  },
-  {
-    path: 'pages',
-    loadChildren: () => import('../../components/pages/pages.module').then(m => m.PagesModule),
-    data: {
-      breadcrumb: "Pages"
-    }
-  },
-  {
     path: 'media',
     loadChildren: () => import('../../components/media/media.module').then(m => m.MediaModule),
-  },
-  {
-    path: 'menus',
-    loadChildren: () => import('../../components/menus/menus.module').then(m => m.MenusModule),
-    data: {
-      breadcrumb: "Menus"
-    }
   },
   {
     path: 'users',
@@ -102,13 +81,6 @@ export const content: Routes = [
     loadChildren: () => import('../../components/setting/setting.module').then(m => m.SettingModule),
     data: {
       breadcrumb: "Settings"
-    }
-  },
-  {
-    path: 'invoice',
-    loadChildren: () => import('../../components/invoice/invoice.module').then(m => m.InvoiceModule),
-    data: {
-      breadcrumb: "Invoice"
     }
   }
 ];

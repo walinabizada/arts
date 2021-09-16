@@ -100,6 +100,25 @@ body {
     font-size: 14px;
     overflow-x: hidden;
 }
+.nav-material-dash{
+    ul{
+        &.nav-tabs{
+            display: none;
+        }
+    }
+    .app-profile{
+        ul{
+            &.nav-tabs{
+                display: flex;
+            }
+        }  
+    }
+}
+.pointer{
+    &:hover{
+        cursor: pointer;
+    }
+}
 .m-a{
     margin: auto;
 }
@@ -8151,11 +8170,11 @@ footer {
             }
             &:hover {
                 a {
-                    color: #ff0000;
+                    color: var(--theme-deafult);
                     transition: all 0.5s ease;
                 }
                 padding-left: 10px;
-                color: #ff0000;
+                color: var(--theme-deafult);
                 transition: all 0.5s ease;
             }
         }

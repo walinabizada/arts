@@ -1,0 +1,30 @@
+{
+  "name": "art-node-server",
+  "version": "1.0.0",
+  "description": "artistan e-commerce platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "artistan testing command",
+    "sequelize": "sequelize --options-path=app/options.js"
+  },
+  "keywords": [
+    "Artistan",
+    "artistan",
+    "arts",
+    "Arts",
+    "art",
+    "Art"
+  ],
+  "author": "Mohammad Wali Nabizada",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
+  }
+
+}

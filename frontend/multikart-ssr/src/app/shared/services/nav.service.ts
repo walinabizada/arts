@@ -184,13 +184,22 @@ export class NavService {
 			]
 		},
 		{
-			path: '/about-us', title: 'About Us', type: 'link'
+			path: '/pages/aboutus', title: 'About Us', type: 'link'
 		},
 		{
-			path: '/contact-us', title: 'Contact Us', type: 'link'
+			path: '/pages/contact', title: 'Contact Us', type: 'link'
 		},
 		{
 			path: '/shop/cart', title: 'View Cart', type: 'link'
+		},
+		{
+			path: '/shop/checkout', title: 'Checkout', type: 'link'
+		},
+		{
+			path: '/shop/collection/left/sidebar', title: 'Explore', type: 'link'
+		},
+		{
+			path: '/pages/dashboard', title: 'Dashboard', type: 'link'
 		}
 
 		// {

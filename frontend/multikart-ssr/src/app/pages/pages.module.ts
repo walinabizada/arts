@@ -39,6 +39,8 @@ import { MasonryGridTwoComponent } from './portfolio/masonry-grid-two/masonry-gr
 import { MasonryGridThreeComponent } from './portfolio/masonry-grid-three/masonry-grid-three.component';
 import { MasonryGridFourComponent } from './portfolio/masonry-grid-four/masonry-grid-four.component';
 import { MasonryFullWidthComponent } from './portfolio/masonry-full-width/masonry-full-width.component';
+import { ItemNoSidebarComponent } from './account/items/item-no-sidebar/item-no-sidebar.component';
+import { ItemListComponent } from './account/profile/item-list/item-list.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,9 @@ import { MasonryFullWidthComponent } from './portfolio/masonry-full-width/masonr
     MasonryGridTwoComponent,
     MasonryGridThreeComponent,
     MasonryGridFourComponent,
-    MasonryFullWidthComponent
+    MasonryFullWidthComponent,
+    ItemNoSidebarComponent,
+    ItemListComponent
   ],
   imports: [
     CommonModule,

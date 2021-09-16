@@ -1,0 +1,10 @@
+.myHiddenDiv{
+    position: absolute;
+    color: var(--theme-default);
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-animation: zoomIn 300ms ease-in-out;
+    animation: zoomIn 300ms ease-in-out;
+}

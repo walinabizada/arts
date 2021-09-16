@@ -42,6 +42,7 @@
     "cors": "^2.8.5",
     "domino": "^2.1.5",
     "express": "^4.15.2",
+    "feather-icons": "^4.28.0",
     "font-awesome": "^4.7.0",
     "fs": "0.0.1-security",
     "hammerjs": "^2.0.8",

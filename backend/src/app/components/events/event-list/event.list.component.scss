@@ -1,0 +1,47 @@
+.blog-details hr.style1{
+    margin-left: 0px;
+}
+.blog-details {
+    text-align: left;
+}
+.blog-details p {
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 400;
+}
+@media (max-width: 1367px){
+    .blog-details h4 {
+        margin-top: 6px;
+    }
+}
+.blog-details p.title {
+    font-size: 24px;
+    font-weight: 600;
+}
+.blog-details p.title a{
+    color: inherit;
+}
+.blog-details p.p-desc:hover{
+    color: inherit;
+}
+.border-product{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.border-product p{
+    margin-top: 0px;
+}
+.blog-details .border-product h6 {
+    margin-bottom: 10px;
+}
+.border-product .blog-btn{
+    text-align: right;
+}
+.border-product h6{
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+}
+.blog-details td h4 {
+    font-size: 16px;
+}

@@ -1,0 +1,44 @@
+
+.main-img{
+    position: absolute;
+    min-width: 100%;
+}
+.product-thumb-list{
+    display: none;
+}
+.blured-img{
+    -webkit-filter: blur(10px); /* Safari 6.0 - 9.0 */
+    filter: blur(10px);
+    opacity: 0.5;
+}
+.front a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 1200px) {
+    .blured-img{
+        height: 230.5px;
+    }
+}
+@media (max-width: 1199px) {
+    .blured-img{
+        height: 293.95px;
+    }
+}
+@media (max-width: 768px) {
+    .blured-img{
+        height: 348.36px;
+    }
+}
+@media (max-width: 560px) {
+    .blured-img{
+        height: 250px;
+    }
+}
+@media (max-width: 420px) {
+    .blured-img{
+        height: 500px;
+    }
+}
+// end product image blur style

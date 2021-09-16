@@ -1,0 +1,9 @@
+<div class="custom-datatable event-section">
+  <!-- <input type='text' class="filter-ngx form-control" placeholder='Search...'
+      (keyup)='updateFilter($event)' /> -->
+  <ngx-datatable class="bootstrap" [rows]="events" [columnMode]="'force'" [headerHeight]="50"
+      [footerHeight]="50" [rowHeight]="'auto'" [limit]="3">
+      <ngx-datatable-column prop="event image" [width]="40"></ngx-datatable-column>
+      <ngx-datatable-column prop="event info"></ngx-datatable-column>
+  </ngx-datatable>
+</div>

@@ -1,0 +1,34 @@
+<div style="width: 400px; margin: auto;">
+    <div *ngIf="currentTutorial" class="edit-form">
+        <h4>Tutorial</h4>
+        <form action="">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" [(ngModel)]="currentTutorial.title" name="title" class="form-control" id="title">
+            </div>
+            <div class="form-group">
+                <label for="description">Desciption</label>
+                <input type="text" [(ngModel)]="currentTutorial.description" name="description" class="form-control" id="description">
+            </div>
+
+            <div class="form-group">
+                <label><strong>Status:</strong></label>
+                {{ currentTutorial.published ? "Published" : "Pending"}}
+            </div>
+        </form>
+
+        <button class="btn btn-primary m-2" *ngIf="currentTutorial.published" (click)="updatePublished(false)">UnPublish</button>
+
+        <button class="btn btn-primary m-2" *ngIf="!currentTutorial.published" (click)="updatePublished(true)">Publish</button>
+        
+        <button class="btn btn-danger m-2" (click)="deleteTutorial()">Delete</button>
+
+        <button class="btn btn-success m-2" (click)="updateTutorial()">Update</button>
+        <p>{{ message }}</p>
+    </div>
+    
+    <div *ngIf="!currentTutorial">
+        <br />
+        <p>Cannot access this Tutorial...</p>
+    </div>
+</div>

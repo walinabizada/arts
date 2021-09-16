@@ -59,6 +59,7 @@ import { DiscountPipe } from './pipes/discount.pipe';
 // Import the library
 import {PinchZoomModule} from 'ngx-pinch-zoom';
 import { NgToggleModule } from 'ng-toggle-button';
+import { FeatherIconsComponent } from './components/feather-icons/feather-icons.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,8 @@ import { NgToggleModule } from 'ng-toggle-button';
     SkeletonProductBoxComponent,
     LayoutBoxComponent,
     TapToTopComponent,
-    DiscountPipe
+    DiscountPipe,
+    FeatherIconsComponent
   ],
   imports: [
     CommonModule,
@@ -151,7 +153,8 @@ import { NgToggleModule } from 'ng-toggle-button';
     SkeletonProductBoxComponent,
     LayoutBoxComponent,
     TapToTopComponent,
-    DiscountPipe
+    DiscountPipe,
+    FeatherIconsComponent
   ]
 })
 export class SharedModule { }

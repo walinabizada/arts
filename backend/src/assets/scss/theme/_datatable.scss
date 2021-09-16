@@ -1,6 +1,48 @@
 /**=====================
     30. Data-table CSS Start
 ==========================**/
+.event-section{
+  .img-mx-height{
+    max-height: 90px;
+  }
+  .date-label{
+    display: inline-block;
+  }
+  .datatable-row-group{
+    datatable-body-cell:first-child{
+      text-align: center;
+    }
+  }
+  p{
+    &.title{
+      margin-bottom: 0px;
+      a{
+        color: #383838;
+        font-size: 24px;
+        font-weight: 600;
+      }
+    }
+    
+  }
+  .blog-details {
+    p{
+      &:hover {
+        color: #d4b196;
+        transition: all 0.5s ease;
+      }      
+    }
+  }
+  
+  .date1{
+    i,h4{
+      color: #d4b196;
+    }
+    h4{
+      line-height: 1;
+      margin-bottom: 0;
+    }
+  }
+}
 .selection-datatable {
   .table-responsive {
     ng2-smart-table-pager {

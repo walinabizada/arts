@@ -4,11 +4,24 @@
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
-                    <ejs-schedule #scheduleObj height="500" width="100%" [eventSettings]="eventObject" [selectedDate]="setDate" [views]="setView" (popupOpen)='onPopupOpen($event)'></ejs-schedule>
+                    <!-- <button #addButtonObj ejs-button cssClass='e-info' (click)='add()'> Add </button>
+                    <button #editButtonObj ejs-button cssClass='e-info' (click)='edit()'> Edit </button> -->
+                    <!-- (popupOpen)='onPopupOpen($event)' -->
+                    <ejs-schedule #scheduleObj height="500" width="100%" [eventSettings]="eventObject" [selectedDate]="setDate" [views]="setView" 
+                    ></ejs-schedule>
+                </div>
+            </div>
+            <div class="col-xl-6 xl-100">
+                <div class="card height-equal">
+                    <div class="card-header">
+                        <h5>Up Comming Events</h5>
+                    </div>
+                    <div class="card-body">
+                        <app-event-list></app-event-list>
+                    </div>
                 </div>
             </div>
         </div>
-        
     </div>
 </div>
 <!-- Container-fluid Ends-->
