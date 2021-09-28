@@ -1,9 +1,9 @@
 <app-breadcrumb [title]="'Dashboard'" [breadcrumb]="'Dashboard'"></app-breadcrumb>
 <!-- section start -->
 <section class="section-b-space">
-    <div class="container">
+    <div class="container-xl">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-2">
                 <div class="account-sidebar" (click)="ToggleDashboard()">
                     <a hre="javascript:void(0)" class="popup-btn">
                         my account
@@ -17,85 +17,125 @@
                     </div>
                     <div class="block-content">
                         <ul>
-                            <li class="active"><a href="javascript:void(0)">Account Info</a></li>
-                            <li><a href="javascript:void(0)">Address Book</a></li>
-                            <li><a href="javascript:void(0)">My Orders</a></li>
-                            <li><a href="javascript:void(0)">My Wishlist</a></li>
-                            <li><a href="javascript:void(0)">Newsletter</a></li>
-                            <li><a href="javascript:void(0)">My Account</a></li>
-                            <li><a href="javascript:void(0)">Change Password</a></li>
-                            <li class="last"><a href="javascript:void(0)">Log Out</a></li>
+                            <li class="pointer" [ngClass]="{'active': selectedItem == 0}" (click)="t.select('tab-selectbyid1'); select(0)"><a href="javascript:void(0)" >Dashboard</a></li>
+                            <li class="pointer" [ngClass]="{'active': selectedItem == 1}" (click)="t.select('tab-selectbyid2'); select(1)"><a href="javascript:void(0)" >Account Info</a></li>
+                            <!-- <li class="pointer" [ngClass]="{'active': selectedItem == 3}" (click)="t.select('tab-selectbyid4'); select(3)"><a href="javascript:void(0)" >My Items</a></li> -->
+                            <li class="pointer" [ngClass]="{'active': selectedItem == 2}" (click)="t.select('tab-selectbyid3'); select(2)"><a href="javascript:void(0)" >Orders</a></li>
+                            <li class="pointer" [ngClass]="{'active': selectedItem == 6}" (click)="t.select('tab-selectbyid7'); select(6)"><a href="javascript:void(0)">Transactions</a></li>
+                            <li class="last pointer" [ngClass]="{'active': selectedItem == 7}" (click)="select(7)"><a href="javascript:void(0)">Log Out</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-10">
                 <div class="dashboard-right">
                     <div class="dashboard">
-                        <div class="page-title">
-                            <h2>My Dashboard</h2>
-                        </div>
-                        <div class="welcome-msg">
-                            <p>Hello, MARK JECNO !</p>
-                            <p>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.</p>
-                        </div>
-                        <div class="box-account box-info">
-                            <div class="box-head">
-                                <h2>Account Information</h2>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="box">
-                                        <div class="box-title">
-                                            <h3>Contact Information</h3>
-                                            <a href="javascript:void(0)">Edit</a>
+                        <ngb-tabset [type]="'tabs'" class="nav-material nav-material-dash" #t="ngbTabset" >
+                            <ngb-tab id="tab-selectbyid1">
+                                <!-- <ng-template ngbTabTitle>Description</ng-template> -->
+                                <ng-template ngbTabContent>
+                                    <div class="page-title">
+                                        <h2>My Dashboard</h2>
+                                    </div>
+                                    <div class="welcome-msg">
+                                        <p>Hello, MARK JECNO !</p>
+                                        <p>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.</p>
+                                    </div>
+                                    <div class="box-account box-info">
+                                        <div class="box-head">
+                                            <h2>Account Information</h2>
                                         </div>
-                                        <div class="box-content">
-                                            <h6>MARK JECNO</h6>
-                                            <h6>MARk-JECNO@gmail.com</h6>
-                                            <h6><a href="javascript:void(0)">Change Password</a></h6>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="box">
+                                                    <div class="box-title">
+                                                        <h3>Contact Information</h3>
+                                                        <a href="javascript:void(0)">Edit</a>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <h6>MARK JECNO</h6>
+                                                        <h6>MARk-JECNO@gmail.com</h6>
+                                                        <h6><a href="javascript:void(0)">Change Password</a></h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="box">
+                                                    <div class="box-title">
+                                                        <h3>Newsletters</h3>
+                                                        <a href="javascript:void(0)">Edit</a>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <p>
+                                                            You are currently not subscribed to any newsletter.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="box">
+                                                <div class="box-title">
+                                                    <h3>Address Book</h3>
+                                                    <a href="javascript:void(0)">Manage Addresses</a>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <h6>Default Billing Address</h6>
+                                                        <address>
+                                                            You have not set a default billing address.<br>
+                                                            <a href="javascript:void(0)">Edit Address</a>
+                                                        </address>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <h6>Default Shipping Address</h6>
+                                                        <address>
+                                                            You have not set a default shipping address.<br>
+                                                            <a href="javascript:void(0)">Edit Address</a>
+                                                        </address>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="box">
-                                        <div class="box-title">
-                                            <h3>Newsletters</h3>
-                                            <a href="javascript:void(0)">Edit</a>
-                                        </div>
-                                        <div class="box-content">
-                                            <p>
-                                                You are currently not subscribed to any newsletter.
-                                            </p>
-                                        </div>
+                                </ng-template>
+                            </ngb-tab>
+                            <ngb-tab id="tab-selectbyid2">
+                                <!-- <ng-template ngbTabTitle>Video</ng-template> -->
+                                <ng-template ngbTabContent>
+                                    <div class="page-title">
+                                        <h2>Account Information</h2>
+                                        
                                     </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="box">
-                                    <div class="box-title">
-                                        <h3>Address Book</h3>
-                                        <a href="javascript:void(0)">Manage Addresses</a>
+                                    <app-profile class='app-profile'></app-profile> 
+                                    <app-item-no-sidebar></app-item-no-sidebar>
+                                </ng-template>
+                            </ngb-tab>
+                            <!-- <ngb-tab id="tab-selectbyid4">
+                                <ng-template ngbTabContent>
+                                    <div class="page-title">
+                                        <h2>My Items</h2>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <h6>Default Billing Address</h6>
-                                            <address>
-                                                You have not set a default billing address.<br>
-                                                <a href="javascript:void(0)">Edit Address</a>
-                                            </address>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <h6>Default Shipping Address</h6>
-                                            <address>
-                                                You have not set a default shipping address.<br>
-                                                <a href="javascript:void(0)">Edit Address</a>
-                                            </address>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                    <app-item-no-sidebar></app-item-no-sidebar>
+                                </ng-template>
+                            </ngb-tab> -->
+                            <ngb-tab id="tab-selectbyid3">
+                                <ng-template ngbTabContent>
+                                    <!-- <div class="page-title">
+                                        <h2>Orders</h2>
+                                    </div> -->
+                                    <app-order></app-order>
+                                </ng-template>
+                            </ngb-tab>
+                            <ngb-tab id="tab-selectbyid7">
+                                <ng-template ngbTabContent>
+                                    <!-- <div class="page-title">
+                                        <h2>Transactions</h2>
+                                    </div> -->
+                                    <app-transaction></app-transaction>
+                                </ng-template>
+                            </ngb-tab>
+                        </ngb-tabset>
                     </div>
                 </div>
             </div>

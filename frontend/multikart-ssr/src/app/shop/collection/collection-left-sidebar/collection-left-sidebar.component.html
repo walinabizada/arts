@@ -50,21 +50,26 @@
                     <div class="page-main-content">
                         <div class="row">
                             <div class="col-sm-12">
-                                <div class="top-banner-wrapper">
-                                    <a [routerLink]="['/shop/collection/left/sidebar']">
-                                        <img src="assets/images/collection-banner.jpg" class="img-fluid " alt="">
-                                    </a>
-                                    <div class="top-banner-content small-section">
-                                        <h4>fashion</h4>
-                                        <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </h5>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-                                            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                                            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                        </p>
+                                <section class="search-block">
+                                    <div class="container">
+                                      <div class="row">
+                                        <div class="col-lg-10 offset-lg-1">
+                                          <form class="form-header">
+                                            <div class="form-group">
+                                              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search a Product">
+                                            </div>
+                                            <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+                                          </form>
+                                        </div>
+                                      </div>
                                     </div>
-                                </div>
+                                  </section>
+                                    <!-- <div class="col-sm-12 text-center mb-5">
+                                      <img src="assets/images/empty-search.jpg" class="img-fluid mb-4">
+                                        <h3>Sorry! Couldn't find the product you were looking For!!!    </h3>
+                                        <p>Please check if you have misspelt something or try searching with other words.</p>
+                                        <a [routerLink]="['/shop/collection/left/sidebar']" class="btn btn-solid">continue shopping</a>
+                                    </div> -->
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="filter-main-btn" (click)="toggleMobileSidebar()">

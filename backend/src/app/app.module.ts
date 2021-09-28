@@ -9,14 +9,12 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
 import { SharedModule } from './shared/shared.module';
 import { ProductsModule } from './components/products/products.module';
 import { SalesModule } from './components/sales/sales.module';
-import { CouponsModule } from './components/coupons/coupons.module';
-import { PagesModule } from './components/pages/pages.module';
+import { FinanceModule } from './components/finance/finance.module';
+import { EventModule } from './components/events/event.module';
 import { MediaModule } from './components/media/media.module';
-import { MenusModule } from './components/menus/menus.module';
 import { VendorsModule } from './components/vendors/vendors.module';
 import { UsersModule } from './components/users/users.module';
 import { LocalizationModule } from './components/localization/localization.module';
-import { InvoiceModule } from './components/invoice/invoice.module';
 import { SettingModule } from './components/setting/setting.module';;
 import { ReportsModule } from './components/reports/reports.module';
 import { AuthModule } from './components/auth/auth.module';
@@ -30,7 +28,6 @@ import { AuthModule } from './components/auth/auth.module';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     DashboardModule,
-    InvoiceModule,
     SettingModule,
     ReportsModule,
     AuthModule,
@@ -38,11 +35,10 @@ import { AuthModule } from './components/auth/auth.module';
     LocalizationModule,
     ProductsModule,
     SalesModule,
+    FinanceModule,
+    EventModule,
     VendorsModule,
-    CouponsModule,
-    PagesModule,
     MediaModule,
-    MenusModule,
     UsersModule
   ],
   providers: [],

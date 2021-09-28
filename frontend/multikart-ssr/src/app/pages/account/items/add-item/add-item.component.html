@@ -1,0 +1,93 @@
+<form class="needs-validation" [formGroup]="productForm" novalidate>
+    <div class="add-product-form row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="validationCustom01" class="col-form-label pt-0"><span>*</span> Title</label>
+                <input class="form-control" id="validationCustom01"
+                    type="text" [formControl]="productForm.controls['name']" required>
+                <div *ngIf="productForm.controls.name.touched && productForm.controls.name.errors?.required"
+                    class="text text-danger">
+                    Title Name is required.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="validationCustom02" class="col-form-label pt-0"><span>*</span> Price </label>
+                <input class="form-control" id="validationCustom02"
+                    type="number" [formControl]="productForm.controls['price']" required="">
+                <div *ngIf="productForm.controls.price.touched && productForm.controls.price.errors?.required"
+                    class="text text-danger">
+                    Product Price is required.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="validationCustom03" class="col-form-label pt-0"><span>*</span> Product Code</label>
+                <input class="form-control" id="validationCustom03"
+                    type="number" [formControl]="productForm.controls['code']" required="">
+                <div *ngIf="productForm.controls.code.touched && productForm.controls.code.errors?.required"
+                    class="text text-danger">
+                    Product <Code></Code> is required.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1" class="col-form-label pt-0">Select Size</label>
+                <select class="form-control"
+                    id="exampleFormControlSelect1">
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                    <option>Extra Large</option>
+                </select>
+            </div>
+        </div>
+        
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-form-label pt-0">Total Products</label>
+                <div class="qty-box1">
+                    <div class="input-group">
+                        <i class="fa fa-minus btnGtr1" (click)=decrement()></i>
+                        <input class="touchspin1 text-center" name="counter" [value]="counter"
+                            type="text">
+                        <i class="fa fa-plus btnLess1" (click)=increment()></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="validationCustom05" class="col-form-label pt-0"> Meta Title</label>
+                <input class="form-control" id="validationCustom05" type="text" required="">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-form-label">Meta Description</label>
+                <textarea class="form-control" rows="4" cols="12"></textarea>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-form-label">Sort Summary</label>
+                <textarea class="form-control" rows="4" cols="12"></textarea>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group mb-0">
+                <div class="product-buttons col-sm-8 offset-xl-3 offset-sm-4">
+                    <button type="button" class="btn btn-primary mr-1">Add</button>
+                    <button type="button" class="btn btn-light">Discard</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</form>

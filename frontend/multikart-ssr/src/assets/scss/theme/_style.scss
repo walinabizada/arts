@@ -100,6 +100,40 @@ body {
     font-size: 14px;
     overflow-x: hidden;
 }
+.nav-material-dash{
+    ul{
+        &.nav-tabs{
+            display: none;
+        }
+    }
+    .app-profile{
+        ul{
+            &.nav-tabs{
+                display: flex;
+            }
+        }  
+    }
+}
+.tab2-card .nav-tabs .nav-link {
+    color: #333;
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link{
+    color: var(--theme-deafult);
+    border-color: transparent;
+    border-bottom-color: transparent;
+    border-bottom: 2px solid var(--theme-deafult);
+}
+
+.tab2-card .nav-tabs .nav-link:hover{
+    color: var(--theme-deafult);
+    border-bottom-color: transparent;
+    border-bottom: 2px solid var(--theme-deafult);
+}
+.pointer{
+    &:hover{
+        cursor: pointer;
+    }
+}
 .m-a{
     margin: auto;
 }
@@ -109,6 +143,29 @@ body {
 .home-slider.blog-slider:hover .owl-prev, .category-m.home-slider:hover .owl-prev{
     display: none !important;
 } 
+.pz-zoom-button.pz-zoom-control-position-bottom.ng-star-inserted {
+    display: none;
+}
+.quick-view-img pinch-zoom{
+    width: 345px !important;
+    cursor: all-scroll;
+}
+.search-modal{
+    .modal-xl{
+        max-width: 100%;
+        margin: 0;
+    }
+    .modal-content{
+        border: none;
+        border-radius: 0;
+        height: 100%;
+    }
+    .modal-body{
+        min-height: 100vh;
+    }
+    
+}
+
 @media (min-width: 578px){
     .icon-nav li.onhover-div.mobile-setting{
         display: none;
@@ -1238,8 +1295,13 @@ header {
     }
     .brand-logo {
         display: inline-block;
-        padding-top: 35px;
-        padding-bottom: 35px;
+        // padding-top: 35px;
+        // padding-bottom: 35px;
+        a{
+            img{
+                max-width: 250px;
+            }
+        }
     }
     .menu-left {
         display: flex;
@@ -2257,8 +2319,8 @@ header {
             color: $grey-dark;
             font-weight: 700;
             margin-bottom: 0;
-            padding-bottom: 25px;
-            padding-top: 25px;
+            padding-bottom: 10px;
+            padding-top: 10px;
         }
         .btn {
             margin-top: 20px;
@@ -4621,6 +4683,9 @@ footer {
     }
     .footer-logo {
         margin-bottom: 18px;
+        img{
+            max-width: 250px;
+        }
     }
     p {
         line-height: 32px;
@@ -5035,7 +5100,7 @@ footer {
     padding: 7px;
     cursor: pointer;
     &.top-cls {
-        bottom: 130px;
+        bottom: 50px;
     }
 }
 
@@ -8120,11 +8185,11 @@ footer {
             }
             &:hover {
                 a {
-                    color: #ff0000;
+                    color: var(--theme-deafult);
                     transition: all 0.5s ease;
                 }
                 padding-left: 10px;
-                color: #ff0000;
+                color: var(--theme-deafult);
                 transition: all 0.5s ease;
             }
         }

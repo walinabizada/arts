@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CategoryComponent } from './physical/category/category.component';
+import { CategoryComponent } from './category/category.component';
+import { InsightComponent } from './insight/insight.component';
+import { CommunityComponent } from './community/community.component';
 import { SubCategoryComponent } from './physical/sub-category/sub-category.component';
 import { ProductListComponent } from './physical/product-list/product-list.component';
 import { AddProductComponent } from './physical/add-product/add-product.component';
@@ -15,7 +17,23 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: 'physical/category',
+        path: 'community',
+        component: CommunityComponent,
+        data: {
+          title: "Community",
+          breadcrumb: "Community"
+        }
+      },
+      {
+        path: 'insights',
+        component: InsightComponent,
+        data: {
+          title: "Insights",
+          breadcrumb: "Insights"
+        }
+      },
+      {
+        path: 'category',
         component: CategoryComponent,
         data: {
           title: "Category",

@@ -10,6 +10,7 @@ export class SliderComponent implements OnInit {
   
   @Input() sliders: any[];
   @Input() class: string;
+  @Input() sliderBack: string;
   @Input() textClass: string;
   @Input() category: string;
   @Input() buttonText: string;

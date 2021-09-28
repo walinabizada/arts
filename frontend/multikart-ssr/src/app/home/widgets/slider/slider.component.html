@@ -1,19 +1,29 @@
 <owl-carousel-o [options]="HomeSliderConfig" class="home-slider" [ngClass]="class">
 	<ng-container *ngFor="let slider of sliders">
 	  <ng-template carouselSlide>
-	    <div class="home" [ngClass]="textClass" [ngStyle]="{'background-image': 'url('+slider.image+')', 'background-repeat': 'repeat', 'background-size': 'initial'}">
+	    <div class="home" [ngClass]="textClass" [ngStyle]="{'background-image': 'url('+sliderBack+')', 'background-repeat': 'repeat', 'background-size': 'initial'}">
 	      <div class="container">
 	        <div class="row">
 	          <div class="col">
 	            <div class="slider-contain">
 					<div class="slider-main-img collection-banner col col-md-6">
+						<!-- <lib-ngx-image-zoom 
+							[thumbImage]=slider.image1
+							[fullImage]=slider.image1
+							[magnification]="1"
+							[enableScrollZoom]="true"
+							[enableLens]="true"
+							[lensWidth]="200"
+							[]
+						></lib-ngx-image-zoom> -->
 						<img [src]="slider.image1" alt="product-image" class="img-fluid lazyload">
 					</div>
 					<div class="col col-md-6">
 						<h4>{{slider.title}}</h4>
 						<h1>{{slider.subTitle}}</h1>
-						<a [routerLink]="['/shop/collection/left/sidebar']" 
-						[queryParams]="{ category: category}" 
+						<!-- [routerLink]="['/shop/collection/left/sidebar']" 
+						[queryParams]="{ category: category}"  -->
+						<a href="#"						
 						class="btn btn-solid" [ngClass]="buttonClass">
 						{{buttonText}}
 						</a>

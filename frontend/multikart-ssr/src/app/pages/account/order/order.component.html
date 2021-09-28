@@ -1,0 +1,89 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Manage Order</h5>
+            </div>
+            <div class="card-body">
+                <div class="custom-datatable">
+                    <input type='text' class="filter-ngx form-control" placeholder='Search...'
+                        (keyup)='updateFilter($event)' />
+                    <ngx-datatable class="bootstrap" [rows]="order" [columnMode]="'force'" [headerHeight]="50"
+                        [footerHeight]="50" [rowHeight]="'auto'" [limit]="5">
+                        <ngx-datatable-column prop="order id"></ngx-datatable-column>
+                        <ngx-datatable-column name="Product"></ngx-datatable-column>
+                        <ngx-datatable-column prop="payment status"></ngx-datatable-column>
+                        <ngx-datatable-column prop="paymeny method"></ngx-datatable-column>
+                        <ngx-datatable-column prop="order status"></ngx-datatable-column>
+                        <ngx-datatable-column name="Date"></ngx-datatable-column>
+                        <ngx-datatable-column name="Total"></ngx-datatable-column>
+                    </ngx-datatable>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-12 xl-100">
+        <div class="card height-equal">
+            <div class="card-header">
+                <h5>My Orders</h5>
+            </div>
+            <div class="card-body">
+                <div class="user-status table-responsive products-table">
+                    <table class="table table-bordernone mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Details</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Simply dummy text of the printing</td>
+                                <td class="digits">1</td>
+                                <td class="font-primary">Pending</td>
+                                <td class="digits">$6523</td>
+                            </tr>
+                            <tr>
+                                <td>Long established</td>
+                                <td class="digits">5</td>
+                                <td class="font-secondary">Cancle</td>
+                                <td class="digits">$6523</td>
+                            </tr>
+                            <tr>
+                                <td>sometimes by accident</td>
+                                <td class="digits">10</td>
+                                <td class="font-secondary">Cancle</td>
+                                <td class="digits">$6523</td>
+                            </tr>
+                            <tr>
+                                <td>Classical Latin literature</td>
+                                <td class="digits">9</td>
+                                <td class="font-primary">Return</td>
+                                <td class="digits">$6523</td>
+                            </tr>
+                            <tr>
+                                <td>keep the site on the Internet</td>
+                                <td class="digits">8</td>
+                                <td class="font-primary">Pending</td>
+                                <td class="digits">$6523</td>
+                            </tr>
+                            <tr>
+                                <td>Molestiae consequatur</td>
+                                <td class="digits">3</td>
+                                <td class="font-secondary">Cancle</td>
+                                <td class="digits">$6523</td>
+                            </tr>
+                            <tr>
+                                <td>Pain can procure</td>
+                                <td class="digits">8</td>
+                                <td class="font-primary">Return</td>
+                                <td class="digits">$6523</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

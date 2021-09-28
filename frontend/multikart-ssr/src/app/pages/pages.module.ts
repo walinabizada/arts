@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 import { GalleryModule } from '@ks89/angular-modal-gallery';
 import { SharedModule } from '../shared/shared.module';
 import { PagesRoutingModule } from './pages-routing.module';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
+import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // Pages Components
 import { WishlistComponent } from './account/wishlist/wishlist.component';
 import { CartComponent } from './account/cart/cart.component';
@@ -39,6 +42,23 @@ import { MasonryGridTwoComponent } from './portfolio/masonry-grid-two/masonry-gr
 import { MasonryGridThreeComponent } from './portfolio/masonry-grid-three/masonry-grid-three.component';
 import { MasonryGridFourComponent } from './portfolio/masonry-grid-four/masonry-grid-four.component';
 import { MasonryFullWidthComponent } from './portfolio/masonry-full-width/masonry-full-width.component';
+import { ItemNoSidebarComponent } from './account/items/item-no-sidebar/item-no-sidebar.component';
+import { ItemListComponent } from './account/profile/item-list/item-list.component';
+import { TransactionComponent } from './account/transaction/transaction.component';
+import { OrderComponent } from './account/order/order.component';
+import { GridComponent } from './account/items/widgets/grid/grid.component';
+import { PaginationComponent } from './account/items/widgets/pagination/pagination.component';
+
+
+import { DropzoneModule } from 'ngx-dropzone-wrapper';
+import { DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
+import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
+import { AddItemComponent } from './account/items/add-item/add-item.component';
+
+const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
+  maxFilesize: 50,
+  url: 'https://httpbin.org/post',
+};
 
 @NgModule({
   declarations: [
@@ -73,13 +93,32 @@ import { MasonryFullWidthComponent } from './portfolio/masonry-full-width/masonr
     MasonryGridTwoComponent,
     MasonryGridThreeComponent,
     MasonryGridFourComponent,
-    MasonryFullWidthComponent
+    MasonryFullWidthComponent,
+    ItemNoSidebarComponent,
+    ItemListComponent,
+    TransactionComponent,
+    OrderComponent,
+    GridComponent,
+    PaginationComponent,
+    AddItemComponent
   ],
   imports: [
     CommonModule,
+    Ng2SmartTableModule,
+    NgxDatatableModule,
+    NgbModule,
+    DropzoneModule,
     GalleryModule.forRoot(),
     SharedModule,
     PagesRoutingModule
+  ], 
+
+  providers: [
+    {
+      provide: DROPZONE_CONFIG,
+      useValue: DEFAULT_DROPZONE_CONFIG
+    },
+    NgbActiveModal
   ]
 })
 export class PagesModule { }

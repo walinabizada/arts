@@ -1,0 +1,20 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <h5 style="display: inline;">Account Details</h5>
+            <div class="btn-popup pull-right m-0">
+                <a class="btn btn-secondary" [routerLink]="'/moderator/create-account'">Create Account</a>
+            </div>
+        </div>
+        <div class="card-body">
+            
+            <div id="batchDelete" class="category-table custom-datatable transcation-datatable user-image">
+                <div class="table-responsive">
+                    <ng2-smart-table [settings]="settings" [source]="user_list"></ng2-smart-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends-->

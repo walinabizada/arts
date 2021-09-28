@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  selectedItem: number = 0;
   public openDashboard: boolean = false;
 
   constructor() { }
@@ -18,4 +18,7 @@ export class DashboardComponent implements OnInit {
     this.openDashboard = !this.openDashboard;
   }
 
+  select(index: number) {
+      this.selectedItem = index;
+  }
 }

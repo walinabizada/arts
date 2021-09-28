@@ -1,66 +1,9 @@
 <div class="icon-nav">
   <ul>
     <li class="onhover-div mobile-search search-widgets" id="search-widgets">
-      <div (click)="searchToggle()">
+      <div (click)="SearchView.openModal()">
         <img src="assets/images/icon/search.png" class="img-fluid" alt="">
         <i class="ti-search"></i>
-      </div>
-      <div id="search-overlay" class="search-overlay" [ngStyle]="{'display': search ? 'block' : 'none' }">
-        <div>
-          <span class="closebtn" title="Close Overlay" (click)="searchToggle()">×</span>
-          <div class="overlay-content">
-            <div class="container">
-              <div class="row">
-                <div class="col-xl-12">
-                  <form>
-                    <div class="form-group">
-                      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search a Product">
-                    </div>
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                  </form>
-                </div>
-                <div class="col-xl-12 category-search-sect">
-                  <!-- collection category -->
-                  <section class="p-0">
-                    <div class="full-banner parallax-banner1 parallax text-center p-left">
-                      <div class="container-fluid">
-                        <div class="row partition3">
-                          <div class="col-lg-3 col-md-6 col-sm-12 m-b-3" *ngFor="let collection of collectionsCategory">
-                            <a [routerLink]="['/shop/collection/left/sidebar']"
-                              [queryParams]="{ category: 'furniture'}">
-                              <div class="collection-banner p-right text-right">
-                                <img [src]="collection.image" alt="collection" class="img-fluid lazyload" id='category-img'>
-                                <div class="contain-banner banner-3">
-                                  <div>
-                                    <h4>{{collection.save}}</h4>
-                                    <h2>{{collection.title}}</h2>
-                                  </div>
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                        <section class="section-m-t-space">
-                          <div class="row partition1">
-                                <div class="col" *ngFor="let category of categoriesName">
-                                  <a [routerLink]="['/shop/collection/left/sidebar']"
-                                    [queryParams]="{ category: 'bags'}" class="btn btn-outline btn-block">
-                                    {{category}}
-                                  </a>
-                                </div>
-                          </div>
-                        </section>
-                      </div>
-
-                    </div>
-                  </section>
-                  <!-- collection Category end -->
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
       </div>
     </li>
     <li class="onhover-div mobile-setting">
@@ -130,7 +73,7 @@
         </li>
       </ul>
     </li>
-    <li class="onhover-div mobile-account login-btn">
+    <li class="onhover-div mobile-account login-btn" [routerLink]="['/pages/login']">
       <div class="btn btn-outline"><i class="fa fa-user" aria-hidden="true"></i> Login</div>
       <!-- <div class="show-div setting">
         <h6>My Account</h6>
@@ -153,3 +96,4 @@
     </li>
   </ul>
 </div>
+<app-search-view #searchView></app-search-view>

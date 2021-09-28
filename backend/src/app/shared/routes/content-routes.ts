@@ -20,29 +20,15 @@ export const content: Routes = [
     }
   },
   {
-    path: 'coupons',
-    loadChildren: () => import('../../components/coupons/coupons.module').then(m => m.CouponsModule),
+    path: 'finance',
+    loadChildren: () => import('../../components/finance/finance.module').then(m => m.FinanceModule),
     data: {
-      breadcrumb: "Coupons"
-    }
-  },
-  {
-    path: 'pages',
-    loadChildren: () => import('../../components/pages/pages.module').then(m => m.PagesModule),
-    data: {
-      breadcrumb: "Pages"
+      breadcrumb: "Finance"
     }
   },
   {
     path: 'media',
     loadChildren: () => import('../../components/media/media.module').then(m => m.MediaModule),
-  },
-  {
-    path: 'menus',
-    loadChildren: () => import('../../components/menus/menus.module').then(m => m.MenusModule),
-    data: {
-      breadcrumb: "Menus"
-    }
   },
   {
     path: 'users',
@@ -52,10 +38,31 @@ export const content: Routes = [
     }
   },
   {
+    path: 'moderator',
+    loadChildren: () => import('../../components/moderator/moderator.module').then(m => m.ModeratorModule),
+    data: {
+      breadcrumb: "Moderator"
+    }
+  },
+  {
     path: 'vendors',
     loadChildren: () => import('../../components/vendors/vendors.module').then(m => m.VendorsModule),
     data: {
       breadcrumb: "Vendors"
+    }
+  },
+  {
+    path: 'events',
+    loadChildren: () => import('../../components/events/event.module').then(m => m.EventModule),
+    data: {
+      breadcrumb: "Events"
+    }
+  },
+  {
+    path: 'faqs',
+    loadChildren: () => import('../../components/faqs/faqs.module').then(m => m.FAQSModule),
+    data: {
+      breadcrumb: "FAQs"
     }
   },
   {
@@ -74,13 +81,6 @@ export const content: Routes = [
     loadChildren: () => import('../../components/setting/setting.module').then(m => m.SettingModule),
     data: {
       breadcrumb: "Settings"
-    }
-  },
-  {
-    path: 'invoice',
-    loadChildren: () => import('../../components/invoice/invoice.module').then(m => m.InvoiceModule),
-    data: {
-      breadcrumb: "Invoice"
     }
   }
 ];

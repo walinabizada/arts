@@ -5,6 +5,7 @@
             <div class="container-fluid">
                 <div class="row footer-theme2 section-light footer-border">
                     <div class="col">
+                        <li class="faq"><a href="javascript:void(0)" (click)="FaqView.openModal()"><i aria-hidden="true" class="fa fa-question-circle-o"></i></a></li>
                         <div class="footer-block">
                             <div class="footer-container">
                                 <div class="footer-title footer-mobile-title">
@@ -91,7 +92,7 @@
                                     <li><a href="javascript:void(0)">service</a></li>
                                     <li><a href="javascript:void(0)">cart</a></li>
                                     <li><a href="javascript:void(0)">my order</a></li>
-                                    <li><a href="javascript:void(0)">FAQ</a></li>
+                                    <li><a [routerLink]="['/pages/faq']">FAQ</a></li>
                                     <li><a href="javascript:void(0)">new product</a></li>
                                     <li><a href="javascript:void(0)">featured product</a></li>
                                 </ul>
@@ -108,7 +109,7 @@
                 <div class="col-xl-6 col-md-6 col-sm-12">
                     <div class="footer-end">
                         <p>
-                            <i class="fa fa-copyright" aria-hidden="true"></i> {{ today | date:'y'}} themeforest powered by pixelstrap
+                            <i class="fa fa-copyright" aria-hidden="true"></i> {{ today | date:'y'}} Artistan Technology by: <a target="_blank" href="https://www.itolo.net"><img class="img-20 footer-it-logo" src="assets/images/logo-it/logo-it-2.png"></a>
                         </p>
                     </div>
                 </div>
@@ -137,4 +138,5 @@
         </div>
     </div>
 </footer>
+<app-faq #faqView ></app-faq>
 <!-- footer end -->

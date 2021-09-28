@@ -161,8 +161,45 @@
               </ng-container>
               <!-- Mega Menu End-->
             </ul>
-          </li>
+        </li>
+        <!-- <li>
+          <a (click)="customizeLayoutDark()">Dark Mode</a>
+        </li> -->
+        <li>
+          <a class="dark-mode-div" >
+            <!-- Default switch -->
+            <ng-toggle 
+            (change)="customizeLayoutDark()"
+              [value]="darkValue"
+              [disabled]="false"
+              [width]="60"
+              [height]="25"
+              [margin]="3"
+              [fontSize]="10"
+              [labels]="{
+              'unchecked': 'off',
+              'checked': 'on'
+            }"
+            [color]="{
+              'unchecked': '#BFCBD9',
+              'checked': '#BFCBD9'
+            }"
+              [switchColor]="{
+              'checked': '#425ee8',
+              'unchecked': '#616161'
+            }"
+              [fontColor]="{
+              'checked': '#425ee8',
+              'unchecked': '#616161'
+            }">
+            </ng-toggle> <span class="label-dark-mode" (click)="customizeLayoutDark()">Dark Mode</span> 
+          </a>
+          
+
+        </li>
       </ul>
+      <!-- <div class="product-buttons" (click)="customizeLayoutDark()"><button class="btn btn-solid">Dark Mode</button></div> -->
+      
     </nav>
   </div>
 </div>

@@ -31,7 +31,8 @@
               </table>
 
               <p class="title">
-                <a [routerLink]="'/pages/blog/details'">{{blog.title}}
+                <!-- [routerLink]="'/pages/blog/details'" -->
+                <a href="#">{{blog.title}}
                 </a>
               </p>
               <hr class="style1">
@@ -40,13 +41,13 @@
               </div>
               <div class="border-product">
                 <div class="row">
-                  <div class="col-lg-8">
+                  <div class="col-lg-7">
                     <h6>{{'Organized by: '+blog.by}}</h6>
                     <h6 style="color: var(--theme-deafult);"><i class="fa fa-info-circle"></i> {{blog.category}}</h6>
                   </div>
-                  <div class="col-lg-4 blog-btn">
+                  <div class="col-lg-5 blog-btn">
                     <div class="product-buttons">
-                      <a href="javascrip:void(0)" class="btn btn-solid">Sign Up</a>
+                      <a href="javascrip:void(0)" class="btn btn-solid">Read more</a> <a href="javascrip:void(0)" class="ml-3 f18"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
                     </div>
                   </div>
                 </div>

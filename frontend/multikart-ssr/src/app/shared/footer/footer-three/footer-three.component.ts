@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { FaqComponent } from '../../components/modal/faq/faq.component'; 
 @Component({
   selector: 'app-footer-three',
   templateUrl: './footer-three.component.html',
@@ -13,7 +13,7 @@ export class FooterThreeComponent implements OnInit {
   @Input() themeLogo: string = 'assets/images/icon/logo.png'; // Default Logo
 
   public today: number = Date.now();
-  
+  @ViewChild("faqView") FaqView: FaqComponent;
   constructor() { }
 
   ngOnInit(): void {

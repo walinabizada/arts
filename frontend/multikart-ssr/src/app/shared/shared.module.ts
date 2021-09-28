@@ -25,6 +25,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { ProductBoxLatestComponent } from './components/product/product-box-latest/product-box-latest.component';
 import { ProductBoxOneComponent } from './components/product/product-box-one/product-box-one.component';
 import { ProductBoxTwoComponent } from './components/product/product-box-two/product-box-two.component';
 import { ProductBoxThreeComponent } from './components/product/product-box-three/product-box-three.component';
@@ -36,6 +37,7 @@ import { ProductBoxVerticalSliderComponent } from './components/product/product-
 // Modals Components
 import { NewsletterComponent } from './components/modal/newsletter/newsletter.component';
 import { QuickViewComponent } from './components/modal/quick-view/quick-view.component';
+import { SearchViewComponent } from './components/modal/search-modal/search-view.component';
 import { CartModalComponent } from './components/modal/cart-modal/cart-modal.component';
 import { CartVariationComponent } from './components/modal/cart-variation/cart-variation.component';
 import { VideoModalComponent } from './components/modal/video-modal/video-modal.component';
@@ -54,6 +56,12 @@ import { TapToTopComponent } from './components/tap-to-top/tap-to-top.component'
 // Pipes
 import { DiscountPipe } from './pipes/discount.pipe';
 
+// Import the library
+import {PinchZoomModule} from 'ngx-pinch-zoom';
+import { NgToggleModule } from 'ng-toggle-button';
+import { FeatherIconsComponent } from './components/feather-icons/feather-icons.component';
+import { FaqComponent } from './components/modal/faq/faq.component';
+
 @NgModule({
   declarations: [
     HeaderOneComponent,
@@ -70,6 +78,7 @@ import { DiscountPipe } from './pipes/discount.pipe';
     BreadcrumbComponent,
     CategoriesComponent,
     ProductBoxOneComponent,
+    ProductBoxLatestComponent,
     ProductBoxTwoComponent,
     ProductBoxThreeComponent,
     ProductBoxFourComponent,
@@ -78,6 +87,7 @@ import { DiscountPipe } from './pipes/discount.pipe';
     ProductBoxVerticalSliderComponent,
     NewsletterComponent,
     QuickViewComponent,
+    SearchViewComponent,
     CartModalComponent,
     CartVariationComponent,
     VideoModalComponent,
@@ -86,7 +96,9 @@ import { DiscountPipe } from './pipes/discount.pipe';
     SkeletonProductBoxComponent,
     LayoutBoxComponent,
     TapToTopComponent,
-    DiscountPipe
+    DiscountPipe,
+    FeatherIconsComponent,
+    FaqComponent
   ],
   imports: [
     CommonModule,
@@ -100,7 +112,9 @@ import { DiscountPipe } from './pipes/discount.pipe';
       // preset: scrollPreset // <-- tell LazyLoadImage that you want to use scrollPreset
     }),
     NgxSkeletonLoaderModule,
-    TranslateModule
+    TranslateModule,
+    PinchZoomModule,
+    NgToggleModule
   ],
   exports: [
     CommonModule,
@@ -123,6 +137,7 @@ import { DiscountPipe } from './pipes/discount.pipe';
     BreadcrumbComponent,
     CategoriesComponent,
     ProductBoxOneComponent,
+    ProductBoxLatestComponent,
     ProductBoxTwoComponent,
     ProductBoxThreeComponent,
     ProductBoxFourComponent,
@@ -131,6 +146,7 @@ import { DiscountPipe } from './pipes/discount.pipe';
     ProductBoxVerticalSliderComponent,
     NewsletterComponent,
     QuickViewComponent,
+    SearchViewComponent,
     CartModalComponent,
     CartVariationComponent,
     VideoModalComponent,
@@ -139,7 +155,8 @@ import { DiscountPipe } from './pipes/discount.pipe';
     SkeletonProductBoxComponent,
     LayoutBoxComponent,
     TapToTopComponent,
-    DiscountPipe
+    DiscountPipe,
+    FeatherIconsComponent
   ]
 })
 export class SharedModule { }

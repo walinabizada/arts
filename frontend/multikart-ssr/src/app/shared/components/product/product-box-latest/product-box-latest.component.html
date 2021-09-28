@@ -1,0 +1,49 @@
+<div *ngIf="!loader">
+  <div>
+    <div class="category-wrapper category-wrapper-1">
+      <div>
+          <div class="product-box">
+            <img 
+                  [defaultImage]="ImageSrc ? ImageSrc : 'assets/images/product/placeholder.jpg'" 
+                  [lazyLoad]="ImageSrc ? ImageSrc : product.images[0].src" 
+                  class="img-fluid category-img-h lazy-loading" 
+                  alt="{{ product.images[0].alt }}" />
+          </div>
+           
+          
+          <h5>{{ product?.brand }}</h5>
+          <h4>{{ product?.title | titlecase}}</h4>
+          <ul class="category-link">
+            <li><a href="#">d1 milano</a></li><li><a href="#">damaskeening</a></li><li><a href="#">diving watch</a></li>
+          </ul>
+          <!-- <a [routerLink]="['/shop/product/left/sidebar/', product?.title.replace(' ', '-')]"
+              class="btn btn-outline">
+              view more
+          </a> -->
+          <div class="cart-info cart-wrap">
+            <a href="javascript:void(0)" title="Add to cart" (click)="CartModal.openModal(product)"
+              *ngIf="cartModal">
+              <i class="ti-shopping-cart"></i>
+            </a>
+            <a href="javascript:void(0)" title="Add to cart" (click)="addToCart(product)"
+              *ngIf="!cartModal">
+              <i class="ti-shopping-cart"></i>
+            </a>
+            <a href="javascript:void(0)" title="Add to Wishlist" (click)="addToWishlist(product)">
+              <i class="ti-heart" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0)" title="Quick View" (click)="QuickView.openModal()">
+              <i class="ti-search" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0)" title="Compare" (click)="addToCompare(product)">
+              <i class="ti-reload" aria-hidden="true"></i>
+            </a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-skeleton-product-box *ngIf="loader"></app-skeleton-product-box>
+<app-quick-view #quickView [product]="product" [currency]="currency"></app-quick-view>
+<app-cart-modal #cartModal [product]="product" [currency]="currency" *ngIf="cartModal"></app-cart-modal>
+
