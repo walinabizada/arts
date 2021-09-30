@@ -16,10 +16,21 @@ module.exports = (sequelize, DataTypes) => {
   User.init({
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
-    email: DataTypes.STRING
+    userName: DataTypes.STRING,
+    email: DataTypes.STRING,
+    phone: DataTypes.STRING,
+    dob: DataTypes.DATE,
+    gender: DataTypes.ENUM,
+    bio: DataTypes.TEXT,
+    image: DataTypes.STRING,
+    accountType: DataTypes.ENUM,
   }, {
     sequelize,
     modelName: 'User',
+  });
+  User.hasMany(models.Address, {
+    as: 'address',
+    foreignKey: 'userId'
   });
   return User;
 };

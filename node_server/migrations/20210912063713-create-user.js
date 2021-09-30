@@ -14,8 +14,33 @@ module.exports = {
       lastName: {
         type: Sequelize.STRING
       },
+      userName: {
+        type: Sequelize.STRING,
+        unique: true
+      },
       email: {
+        type: Sequelize.STRING,
+        unique: true
+      },
+      phone: {
         type: Sequelize.STRING
+      },
+      dob: {
+        type: Sequelize.DATE
+      },
+      gender: {
+        type: Sequelize.ENUM,
+        values: ['male', 'female']
+      },
+      bio: {
+        type: Sequelize.TEXT
+      },
+      image: {
+        type: Sequelize.STRING
+      },
+      accountType: {
+        type: Sequelize.ENUM,
+        values: ['Normal', 'Artist', 'Seller', 'Admin']
       },
       createdAt: {
         allowNull: false,
