@@ -48,17 +48,14 @@ import { TransactionComponent } from './account/transaction/transaction.componen
 import { OrderComponent } from './account/order/order.component';
 import { GridComponent } from './account/items/widgets/grid/grid.component';
 import { PaginationComponent } from './account/items/widgets/pagination/pagination.component';
+// add item plugin
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+// end Item Plugin
 
-
-import { DropzoneModule } from 'ngx-dropzone-wrapper';
-import { DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
-import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 import { AddItemComponent } from './account/items/add-item/add-item.component';
 
-const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
-  maxFilesize: 50,
-  url: 'https://httpbin.org/post',
-};
+ 
 
 @NgModule({
   declarations: [
@@ -107,17 +104,14 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     Ng2SmartTableModule,
     NgxDatatableModule,
     NgbModule,
-    DropzoneModule,
+    NgxDropzoneModule,
+    NgMultiSelectDropDownModule.forRoot(),
     GalleryModule.forRoot(),
     SharedModule,
     PagesRoutingModule
   ], 
 
   providers: [
-    {
-      provide: DROPZONE_CONFIG,
-      useValue: DEFAULT_DROPZONE_CONFIG
-    },
     NgbActiveModal
   ]
 })

@@ -100,6 +100,42 @@ body {
     font-size: 14px;
     overflow-x: hidden;
 }
+.dimension-box{
+    input{
+        width: 155px;
+        border-left: 1px solid #dddddd;
+    }
+    .btnLess1 {
+        &.btnx {
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-right: none;
+        }
+    }
+    
+}
+.dropdownlist{
+    .multiselect-dropdown{
+        div{
+            .dropdown-btn{
+                border: none !important;
+                padding: 0 !important;
+
+                span{
+                    &:last-child{
+                        
+                        span{
+                            &:first-child{
+                                padding-right: 35px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
 .nav-material-dash{
     ul{
         &.nav-tabs{
