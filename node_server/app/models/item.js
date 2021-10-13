@@ -23,6 +23,9 @@ module.exports = (sequelize, DataTypes) => {
     new: DataTypes.BOOLEAN,
     metaTitle: DataTypes.STRING,
     metaDescription: DataTypes.STRING,
+    dx: DataTypes.STRING,
+    dy: DataTypes.STRING,
+    size: DataTypes.STRING,
     userId: DataTypes.INTEGER
   }, {
     sequelize,
@@ -47,10 +50,6 @@ module.exports = (sequelize, DataTypes) => {
   Item.hasMany(models.Tag, {
     as: 'tag',
     foreignKey: 'itemId'
-  });
-  Item.hasMany(models.Varient, {
-    as: 'varient',
-    foreignKey: 'varientId'
   });
   Item.hasMany(models.Image, {
     as: 'itemImage',

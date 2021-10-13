@@ -35,6 +35,15 @@ module.exports = {
       metaDescription: {
         type: Sequelize.STRING
       },
+      dx: {
+        type: Sequelize.STRING
+      },
+      dy: {
+        type: Sequelize.STRING
+      },
+      size: {
+        type: Sequelize.STRING
+      },
       userId: {
         type: Sequelize.INTEGER,
         references:{

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
-
+import { ItemService } from 'src/app/shared/services/item.service';
 @Component({
   selector: 'app-add-item',
   templateUrl: './add-item.component.html',
@@ -13,15 +13,15 @@ export class AddItemComponent implements OnInit {
   tags = [];
   materialList = [];
   selectedItems = [];
-  image:any;
   dropdownSettings:IDropdownSettings = {};
 
   files: File[] = [];
+  imagesArr = [];
 
   public itemFrom: FormGroup;
   public counter: number = 1;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private itemService: ItemService) { 
     this.itemFrom = this.fb.group({
       title: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
       description: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
@@ -36,9 +36,9 @@ export class AddItemComponent implements OnInit {
       selectedCol: ['', Validators.required],
       selectedCat: ['', Validators.required],
       selectedTag: ['', Validators.required],
-      totalItem: [this.counter],
+      totalItem: '',
       imageAlt: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
-      image: this.files[0],
+      images: [],
 
     })
   }
@@ -46,29 +46,53 @@ export class AddItemComponent implements OnInit {
     // Process checkout data here
     // this.items = this.cartService.clearCart();
     console.warn('Your order has been submitted', this.itemFrom.value);
+    this.itemService.create(this.itemFrom)
+    .subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      }
+    )
+    this.counter=1;
+    this.files=[];
     this.itemFrom.reset();
   }
   increment() {
     this.counter += 1;
+    this.itemFrom.controls['totalItem'].setValue(this.counter);
   }
 
   decrement() {
     this.counter -= 1;
+    this.itemFrom.controls['totalItem'].setValue(this.counter);
   }
-  replaceFile(){
-    this.files.splice(0,1); // index =0 , remove_count = 1
-  }
+  // replaceFile(){
+  //   this.files.splice(0,1); // index =0 , remove_count = 1
+  // }
   onSelect(event) {
     // console.log(event);
     this.files.push(...event.addedFiles);
-    if(this.files.length > 1){ // checking if files array has more than one content
-      this.replaceFile(); // replace file
-    }
-    this.readFile(this.files[0]).then(fileContents => {
-      // Put this string in a request body to upload it to an API.
-      this.image = fileContents;
-      // console.log(fileContents);
+    // if(this.files.length > 1){ // checking if files array has more than one content
+    //   this.replaceFile(); // replace file
+    // }
+    this.imagesArr=[];
+    this.files.forEach((file,index) => {
+      this.readFile(file).then(fileContents => {
+        // Put this string in a request body to upload it to an API.
+        this.imagesArr.push(fileContents);
+        // console.log(fileContents);
+      });
     });
+    this.itemFrom.controls['images'].setValue(this.imagesArr);
+
+    
+    // this.readFile(this.files[0]).then(fileContents => {
+    //   // Put this string in a request body to upload it to an API.
+    //   this.itemFrom.controls['image'].setValue(fileContents);
+    //   // console.log(fileContents);
+    // });
   }
   private async readFile(file: File): Promise<string | ArrayBuffer> {
     return new Promise<string | ArrayBuffer>((resolve, reject) => {

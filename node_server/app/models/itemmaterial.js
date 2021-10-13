@@ -28,9 +28,5 @@ module.exports = (sequelize, DataTypes) => {
     as: 'material',
     foreignKey: 'materialId'
   });
-  ItemMaterial.belongsTo(models.Varient, {
-    as: 'varientMaterial',
-    foreignKey: 'varientId'
-  });
   return ItemMaterial;
 };

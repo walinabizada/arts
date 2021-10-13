@@ -15,13 +15,6 @@ module.exports = {
           key: 'id'
         }
       },
-      varientId: {
-        type: Sequelize.INTEGER,
-        references:{
-          model: 'varients',
-          key: 'id'
-        }
-      },
       materialId: {
         type: Sequelize.INTEGER,
         references:{

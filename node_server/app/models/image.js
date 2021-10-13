@@ -26,9 +26,6 @@ module.exports = (sequelize, DataTypes) => {
     as: 'itemImage',
     foreignKey: 'itemId'
   });
-  Image.belongsTo(models.Varient, {
-    as: 'varientImage',
-    foreignKey: 'varientId'
-  });
+  
   return Image;
 };

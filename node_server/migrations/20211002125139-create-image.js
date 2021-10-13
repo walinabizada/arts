@@ -15,13 +15,7 @@ module.exports = {
           key: 'id'
         }
       },
-      varientId: {
-        type: Sequelize.INTEGER,
-        references:{
-          model: 'varients',
-          key: 'id'
-        }
-      },
+    
       alt: {
         type: Sequelize.STRING
       },
