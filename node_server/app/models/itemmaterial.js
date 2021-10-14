@@ -11,6 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      ItemMaterial.belongsTo(models.Item, {
+        as: 'item',
+        foreignKey: 'itemId'
+      });
+      ItemMaterial.belongsTo(models.Material, {
+        as: 'material',
+        foreignKey: 'materialId'
+      });
     }
   };
   ItemMaterial.init({
@@ -20,13 +28,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'ItemMaterial',
   });
-  ItemMaterial.belongsTo(models.Item, {
-    as: 'item',
-    foreignKey: 'itemId'
-  });
-  ItemMaterial.belongsTo(models.Material, {
-    as: 'material',
-    foreignKey: 'materialId'
-  });
+  
   return ItemMaterial;
 };

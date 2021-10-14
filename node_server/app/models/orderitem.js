@@ -11,6 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      OrderItem.belongsTo(models.Item, {
+        as: 'item',
+        foreignKey: 'itemId'
+      });
+      OrderItem.belongsTo(models.Order, {
+        as: 'order',
+        foreignKey: 'orderId'
+      });
     }
   };
   OrderItem.init({
@@ -20,13 +28,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'OrderItem',
   });
-  OrderItem.belongsTo(models.Item, {
-    as: 'item',
-    foreignKey: 'itemId'
-  });
-  OrderItem.belongsTo(models.Order, {
-    as: 'order',
-    foreignKey: 'orderId'
-  });
+  
   return OrderItem;
 };

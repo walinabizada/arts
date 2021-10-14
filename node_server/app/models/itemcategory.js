@@ -11,6 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      ItemCategory.belongsTo(models.Item, {
+        as: 'item',
+        foreignKey: 'itemId'
+      });
+      ItemCategory.belongsTo(models.Category, {
+        as: 'category',
+        foreignKey: 'categoryId'
+      });
     }
   };
   ItemCategory.init({
@@ -20,13 +28,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'ItemCategory',
   });
-  ItemCategory.belongsTo(models.Item, {
-    as: 'item',
-    foreignKey: 'itemId'
-  });
-  ItemCategory.belongsTo(models.Category, {
-    as: 'category',
-    foreignKey: 'categoryId'
-  });
+  
   return ItemCategory;
 };

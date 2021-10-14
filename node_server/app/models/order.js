@@ -11,6 +11,22 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Order.belongsTo(models.User, {
+        as: 'user',
+        foreignKey: 'userId'
+      });
+      Order.belongsTo(models.Address, {
+        as: 'address',
+        foreignKey: 'addressId'
+      });
+      Order.hasMany(models.OrderItem, {
+        as: 'orderItem',
+        foreignKey: 'orderId'
+      });
+      Order.hasMany(models.Transaction, {
+        as: 'transaction',
+        foreignKey: 'orderId'
+      });
     }
   };
   Order.init({
@@ -24,21 +40,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Order',
   });
-  Order.belongsTo(models.User, {
-    as: 'user',
-    foreignKey: 'userId'
-  });
-  Order.belongsTo(models.Address, {
-    as: 'address',
-    foreignKey: 'addressId'
-  });
-  Order.hasMany(models.OrderItem, {
-    as: 'orderItem',
-    foreignKey: 'orderId'
-  });
-  Order.hasMany(models.Transaction, {
-    as: 'transaction',
-    foreignKey: 'orderId'
-  });
+  
   return Order;
 };

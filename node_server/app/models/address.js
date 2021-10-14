@@ -11,6 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Address.belongsTo(models.User, {
+        as: 'user',
+        foreignKey: 'userId'
+      });
+      Address.hasMany(models.Order, {
+        as: 'order',
+        foreignKey: 'addressId'
+      });
     }
   };
   Address.init({
@@ -24,13 +32,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Address',
   });
-  Address.belongsTo(models.User, {
-    as: 'user',
-    foreignKey: 'userId'
-  });
-  Address.hasMany(models.Order, {
-    as: 'order',
-    foreignKey: 'addressId'
-  });
+  
   return Address;
 };

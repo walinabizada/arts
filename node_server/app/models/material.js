@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Material.hasMany(models.ItemMaterial, {
+        as: 'materialitem',
+        foreignKey: 'materialId'
+      });
     }
   };
   Material.init({
@@ -19,9 +23,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Material',
   });
-  Material.hasMany(models.ItemMaterial, {
-    as: 'materialitem',
-    foreignKey: 'materialId'
-  });
+ 
   return Material;
 };

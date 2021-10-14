@@ -36,8 +36,9 @@ export class AddItemComponent implements OnInit {
       selectedCol: ['', Validators.required],
       selectedCat: ['', Validators.required],
       selectedTag: ['', Validators.required],
+      userId: '',
       totalItem: '',
-      imageAlt: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
+      // imageAlt: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
       images: [],
 
     })
@@ -46,7 +47,7 @@ export class AddItemComponent implements OnInit {
     // Process checkout data here
     // this.items = this.cartService.clearCart();
     console.warn('Your order has been submitted', this.itemFrom.value);
-    this.itemService.create(this.itemFrom)
+    this.itemService.create(this.itemFrom.value)
     .subscribe(
       response => {
         console.log(response);
@@ -55,9 +56,9 @@ export class AddItemComponent implements OnInit {
         console.log(error);
       }
     )
-    this.counter=1;
-    this.files=[];
-    this.itemFrom.reset();
+    // this.counter=1;
+    // this.files=[];
+    // this.itemFrom.reset();
   }
   increment() {
     this.counter += 1;

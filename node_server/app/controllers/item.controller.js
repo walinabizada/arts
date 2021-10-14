@@ -21,7 +21,15 @@ exports.create = (req, res) => {
     metaTitle: req.body.metaTitle,
     metaDesc: req.body.metaDesc,
     description: req.body.description,
-    published: req.body.published ? req.body.published : false
+    new: true,
+    sale: false,
+    stock: req.body.totalItem,
+    dx: req.body.dx,
+    dy: req.body.dy,
+    userId: req.body.userId,
+  };
+  const images = {
+    images: req.body.images
   };
 
   // Save Item in the database

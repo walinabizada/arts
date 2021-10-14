@@ -115,6 +115,9 @@
                         >
                         </ng-multiselect-dropdown>
                     </div>
+                   
+                </div>
+                <div class="col-md-6">
                     <div class="form-group">
                         <label class="col-form-label pt-0">Dimension</label>
                         <div class="qty-box1 dimension-box">
@@ -127,8 +130,13 @@
                         </div>
                     </div>
                 </div>
-                 
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="validationCustomAlt" class="col-form-label pt-0"> Image Alt</label>
+                        <input class="form-control" id="validationCustomAlt" [formControl]="itemFrom.controls['imageAlt']" required type="text">
+                    </div>
+                </div> -->
+                <div class="col-md-12">
                     <div class="form-group">
                         <div class="custom-dropzone" ngx-dropzone [multiple]='false' [accept]="'image/*'" (change)="onSelect($event)">
                             <ngx-dropzone-label>
@@ -143,12 +151,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="validationCustomAlt" class="col-form-label pt-0"> Image Alt</label>
-                        <input class="form-control" id="validationCustomAlt" [formControl]="itemFrom.controls['imageAlt']" required type="text">
-                    </div>
-                </div>
+                
 
             </div>
             
@@ -156,8 +159,8 @@
 
         <div class="col-md-6">
             <div class="form-group mb-0">
-                <div class="product-buttons col-sm-8 offset-xl-3 offset-sm-4">
-                    <button type="submit" class="btn btn-primary mr-1">Add</button>
+                <div class="product-buttons col-sm-8">
+                    <button type="submit" class="btn btn-primary mr-1">Save</button>
                     <button type="button" class="btn btn-light">Discard</button>
                 </div>
             </div>

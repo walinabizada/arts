@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Collection.hasMany(models.ItemCollection, {
+        as: 'itemCollection',
+        foreignKey: 'collectionId'
+      });
     }
   };
   Collection.init({
@@ -19,9 +23,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Collection',
   });
-  Collection.hasMany(models.ItemCollection, {
-    as: 'itemCollection',
-    foreignKey: 'collectionId'
-  });
+  
   return Collection;
 };

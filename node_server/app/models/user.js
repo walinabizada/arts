@@ -11,6 +11,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasMany(models.Address, {
+        onUpdate: 'CASCADE',
+        as: 'address',
+        foreignKey: 'userId'
+      });
+      User.hasMany(models.Order, {
+        onUpdate: 'CASCADE',
+        as: 'order',
+        foreignKey: 'userId'
+      });
+      User.hasMany(models.Item, {
+        onUpdate: 'CASCADE',
+        as: 'item',
+        foreignKey: 'userId'
+      });
     }
   };
   User.init({
@@ -20,25 +35,20 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     phone: DataTypes.STRING,
     dob: DataTypes.DATE,
-    gender: DataTypes.ENUM,
+    gender: { 
+      type:DataTypes.ENUM('male', 'female'),
+      defaultValue: 'male'
+    },
     bio: DataTypes.TEXT,
     image: DataTypes.STRING,
-    accountType: DataTypes.ENUM,
+    accountType: { 
+      type:DataTypes.ENUM('Normal', 'Artist', 'Seller', 'Admin'),
+      defaultValue: 'Normal'
+    },
   }, {
     sequelize,
     modelName: 'User',
   });
-  User.hasMany(models.Address, {
-    as: 'address',
-    foreignKey: 'userId'
-  });
-  User.hasMany(models.Order, {
-    as: 'order',
-    foreignKey: 'userId'
-  });
-  User.hasMany(models.Item, {
-    as: 'item',
-    foreignKey: 'userId'
-  });
+
   return User;
 };

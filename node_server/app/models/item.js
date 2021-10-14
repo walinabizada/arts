@@ -11,6 +11,38 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Item.belongsTo(models.User, {
+        as: 'user',
+        foreignKey: 'userId'
+      });
+      Item.hasMany(models.ItemCollection, {
+        as: 'itemCollection',
+        foreignKey: 'itemId'
+      });
+      Item.hasMany(models.ItemCategory, {
+        as: 'itemCategory',
+        foreignKey: 'itemId'
+      });
+      Item.hasMany(models.OrderItem, {
+        as: 'orderItem',
+        foreignKey: 'itemId'
+      });
+      Item.hasMany(models.Tag, {
+        as: 'tag',
+        foreignKey: 'itemId'
+      });
+      Item.hasMany(models.Image, {
+        as: 'itemImage',
+        foreignKey: 'itemId'
+      });
+      Item.hasMany(models.ItemMaterial, {
+        as: 'itemMaterial',
+        foreignKey: 'itemId'
+      });
+      Item.hasMany(models.Tag, {
+        as: 'tag',
+        foreignKey: 'itemId'
+      });
     }
   };
   Item.init({
@@ -31,37 +63,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Item',
   });
-  Item.belongsTo(models.User, {
-    as: 'user',
-    foreignKey: 'userId'
-  });
-  Item.hasMany(models.ItemCollection, {
-    as: 'itemCollection',
-    foreignKey: 'itemId'
-  });
-  Item.hasMany(models.ItemCategory, {
-    as: 'itemCategory',
-    foreignKey: 'itemId'
-  });
-  Item.hasMany(models.OrderItem, {
-    as: 'orderItem',
-    foreignKey: 'itemId'
-  });
-  Item.hasMany(models.Tag, {
-    as: 'tag',
-    foreignKey: 'itemId'
-  });
-  Item.hasMany(models.Image, {
-    as: 'itemImage',
-    foreignKey: 'itemId'
-  });
-  Item.hasMany(models.ItemMaterial, {
-    as: 'itemMaterial',
-    foreignKey: 'itemId'
-  });
-  Item.hasMany(models.Tag, {
-    as: 'tag',
-    foreignKey: 'itemId'
-  });
+  
   return Item;
 };
