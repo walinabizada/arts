@@ -22,6 +22,32 @@
                                 <label for="email">email</label>
                                 <input type="text" class="form-control" id="email" placeholder="Email" required="">
                             </div>
+                            
+                            <div class="col-md-6">
+                                <label for="review">Phone</label>
+                                <input type="text" class="form-control" id="phone" placeholder="Phone" required="">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="email">Date of Birth</label>
+                                <input type="datetime-local" class="form-control" id="dob" placeholder="Date of Birth" required="">
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="file-upload-product"> 
+                                    <div class="box-input-file">
+                                        <input class="upload" type="file" (change)="readUrl($event)">
+                                        <img class="imgUpload" alt="" [src]="url.img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="email">User Name</label>
+                                <input type="text" class="form-control" id="uname" placeholder="User Name" required="">
+                            </div>
                             <div class="col-md-6">
                                 <label for="review">Password</label>
                                 <input type="password" class="form-control" id="review" placeholder="Enter your password" required="">

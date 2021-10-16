@@ -27,8 +27,8 @@ module.exports = (sequelize, DataTypes) => {
         as: 'orderItem',
         foreignKey: 'itemId'
       });
-      Item.hasMany(models.Tag, {
-        as: 'tag',
+      Item.hasMany(models.ItemTag, {
+        as: 'itemtag',
         foreignKey: 'itemId'
       });
       Item.hasMany(models.Image, {

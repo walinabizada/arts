@@ -25,6 +25,7 @@ db.users = require("./user.js")(sequelize, Sequelize);
 db.items = require("./item.js")(sequelize, Sequelize);
 db.images = require("./image.js")(sequelize, Sequelize);
 db.tags = require("./tag.js")(sequelize, Sequelize);
+db.itemtags = require("./itemtag.js")(sequelize, Sequelize);
 db.orders = require("./order.js")(sequelize, Sequelize);
 db.orderitems = require("./orderitem.js")(sequelize, Sequelize);
 db.transactions = require("./transaction.js")(sequelize, Sequelize);

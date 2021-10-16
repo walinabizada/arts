@@ -1,5 +1,11 @@
 const db = require("../models");
 const Item = db.items;
+const Image = db.images;
+const ItemMaterial = db.itemmaterials;
+const ItemCategory = db.itemcategories;
+const ItemTag = db.itemtags;
+const ItemCollection = db.itemcollections;
+const fs = require('fs');
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Item
@@ -19,24 +25,68 @@ exports.create = (req, res) => {
     discount: req.body.discount,
     totalItem: req.body.totalItem,
     metaTitle: req.body.metaTitle,
-    metaDesc: req.body.metaDesc,
+    metaDescription: req.body.metaDesc,
     description: req.body.description,
     new: true,
     sale: false,
     stock: req.body.totalItem,
     dx: req.body.dx,
     dy: req.body.dy,
-    userId: req.body.userId,
+    // userId: req.body.userId,
   };
-  const images = {
-    images: req.body.images
-  };
+   
 
   // Save Item in the database
   Item.create(item)
     .then(data => {
-      res.send(data);
-      console.log('Item response data', data);
+      // to create some random id or name for your image name
+      req.body.images.forEach(elem => {
+        const imagename = saveImage(elem);
+        const image ={
+          itemId: data.id,
+          alt: req.body.title,
+          src: imagename
+        };
+        await saveImageToDb(image);
+      });
+      req.body.material.forEach(i =>{
+        const itemmaterial = {
+          itemId: data.id,
+          materialId: i.item_id
+        };
+        saveItemMaterial(itemmaterial);
+      });
+      ItemCategory.create({itemId: data.id, categoryId: req.body.selectedCat})
+        .then(data => {
+          res.send(data);
+        })
+        .catch(err => {
+          res.status(500).send({
+            message:
+              err.message || "Some error occurred while creating the Item."
+          });
+        });
+      ItemCollection.create({itemId: data.id, collectionId: req.body.selectedCol})
+        .then(data => {
+          res.send(data);
+        })
+        .catch(err => {
+          res.status(500).send({
+            message:
+              err.message || "Some error occurred while creating the Item."
+          });
+        });
+      ItemTag.create({itemId: data.id, tagId: req.body.selectedTag})
+        .then(data => {
+          res.send(data);
+        })
+        .catch(err => {
+          res.status(500).send({
+            message:
+              err.message || "Some error occurred while creating the Item."
+          });
+        });
+      res.send("");
     })
     .catch(err => {
       res.status(500).send({
@@ -44,6 +94,64 @@ exports.create = (req, res) => {
           err.message || "Some error occurred while creating the Item."
       });
     });
+
+  
+};
+ // Save Images in the database
+ function saveItemMaterial(itemmaterial){
+  // Save Images in the database
+  ItemMaterial.create(itemmaterial)
+  .then(data => {
+    res.send(data);
+  })
+  .catch(err => {
+    res.status(500).send({
+      message:
+        err.message || "Some error occurred while creating the Item."
+    });
+  });
+ };
+
+ // Save Images in the database
+ function saveImageToDb(image){
+  // Save Images in the database
+  Image.create(image)
+  .then(data => {
+    res.send(data);
+  })
+  .catch(err => {
+    res.status(500).send({
+      message:
+        err.message || "Some error occurred while creating the Item."
+    });
+  });
+ };
+
+/*Download the base64 image in the server and returns the filename and path of image.*/
+function saveImage(baseImage) {
+  /*path of the folder where your project is saved. (In my case i got it from config file, root path of project).*/
+  const uploadPath = "assests";
+  const imgname = new Date().getTime().toString();
+  //path of folder where you want to save the image.
+  const localPath = `${uploadPath}/items/`;
+  //Find extension of file
+  const ext = baseImage.substring(baseImage.indexOf("/")+1, baseImage.indexOf(";base64"));
+  const fileType = baseImage.substring("data:".length,baseImage.indexOf("/"));
+  //Forming regex to extract base64 data of file.
+  const regex = new RegExp(`^data:${fileType}\/${ext};base64,`, 'gi');
+  //Extract base64 data.
+  const base64Data = baseImage.replace(regex, "");
+  const filename = `item-${imgname}.${ext}`;
+
+  //Check that if directory is present or not.
+  if(!fs.existsSync(`${uploadPath}/items/`)) {
+      fs.mkdirSync(`${uploadPath}/items/`);
+  }
+  if (!fs.existsSync(localPath)) {
+      fs.mkdirSync(localPath);
+  }
+  fs.writeFileSync(localPath+filename, base64Data, 'base64');
+  return filename;
 };
 
 // Retrieve all items from the database.
