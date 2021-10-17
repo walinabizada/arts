@@ -100,6 +100,41 @@ body {
     font-size: 14px;
     overflow-x: hidden;
 }
+.dollar-icon{
+    top: 46px;
+    position: absolute;
+    right: 50px;
+}
+.box-input-file {
+    width: 70px;
+    // height: 50px;
+    background-color: #f1f4fb;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    .upload {
+        position: absolute;
+        width: 70px;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        padding: 0 !important;
+        margin: 0;
+    }
+    .imgUpload{
+        min-width: 50px;
+        max-width: inherit;
+    }
+}
+.needs-validation {
+    .radio-animated {
+        label {
+            margin-right: 20px;
+        }
+    }
+}
 .dimension-box{
     input{
         width: 155px;
@@ -6614,7 +6649,7 @@ footer {
                 border-color: $round-border;
                 font-size: 12px;
                 padding: 17px 25px;
-                margin-bottom: 30px;
+                margin-bottom: 10px;
                 height: inherit;
             }
         }

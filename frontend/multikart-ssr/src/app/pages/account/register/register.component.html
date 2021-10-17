@@ -6,53 +6,106 @@
             <div class="col-lg-12">
                 <h3>create account</h3>
                 <div class="theme-card">
-                    <form class="theme-form">
+                    <form class="theme-form needs-validation" [formGroup]="userForm" (ngSubmit)="onSubmit()">
                         <div class="form-row">
-                            <div class="col-md-6">
-                                <label for="email">First Name</label>
-                                <input type="text" class="form-control" id="fname" placeholder="First Name" required="">
+                            <div class="col-md-6 mb-3">
+                                <label for="fname">First Name</label>
+                                <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" [formControl]="userForm.controls['fname']" required>
+                                <div *ngIf="userForm.controls.fname.touched && userForm.controls.fname.errors?.required"
+                                    class="text text-danger">
+                                    First Name is required.
+                                </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 mb-3">
                                 <label for="review">Last Name</label>
-                                <input type="password" class="form-control" id="lname" placeholder="Last Name" required="">
+                                <input type="password" class="form-control" id="lname" name="lname" placeholder="Last Name"
+                                [formControl]="userForm.controls['lname']" required>
+                                <div *ngIf="userForm.controls.lname.touched && userForm.controls.lname.errors?.required"
+                                    class="text text-danger">
+                                    Last Name is required.
+                                </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 mb-3">
                                 <label for="email">email</label>
-                                <input type="text" class="form-control" id="email" placeholder="Email" required="">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Email"  [formControl]="userForm.controls['email']" required>
+                                <div *ngIf="userForm.controls.email.touched && userForm.controls.email.errors?.required"
+                                    class="text text-danger">
+                                    Email is required.
+                                </div>
                             </div>
-                            
-                            <div class="col-md-6">
+
+                            <div class="col-md-6 mb-3">
                                 <label for="review">Phone</label>
-                                <input type="text" class="form-control" id="phone" placeholder="Phone" required="">
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" [formControl]="userForm.controls['phone']" required>
+                                <div *ngIf="userForm.controls.phone.touched && userForm.controls.phone.errors?.required"
+                                    class="text text-danger">
+                                    Phone is required.
+                                </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 mb-3">
                                 <label for="email">Date of Birth</label>
-                                <input type="datetime-local" class="form-control" id="dob" placeholder="Date of Birth" required="">
+                                <input type="datetime-local" class="form-control" id="dob" name="dob" placeholder="Date of Birth"
+                                [formControl]="userForm.controls['dob']" required>
+                                <div *ngIf="userForm.controls.dob.touched && userForm.controls.dob.errors?.required"
+                                    class="text text-danger">
+                                    Date of birth is required.
+                                </div>
                             </div>
-                            
-                            <div class="col-md-6">
-                                <div class="file-upload-product"> 
-                                    <div class="box-input-file">
-                                        <input class="upload" type="file" (change)="readUrl($event)">
-                                        <img class="imgUpload" alt="" [src]="url.img">
+
+                            <div class="col-md-6 mb-3">
+                                <div class="row m-0">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label"><span>*</span> Gendar</label>
+                                            <div class="m-checkbox-inline mb-0 custom-radio-ml d-flex radio-animated">
+                                                <label class="d-block" for="edo-ani">
+                                                    <input class="radio_animated" id="edo-ani" type="radio" value="male"
+                                                         [formControl]="userForm.controls['gender']">
+                                                    Male
+                                                </label>
+                                                <label class="d-block" for="edo-ani1">
+                                                    <input class="radio_animated" id="edo-ani1" type="radio" value="female"
+                                                        [formControl]="userForm.controls['gender']">
+                                                    Female
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="file-upload-product">
+                                            <label for="email">Upload Your Image</label>
+                                            <div class="box-input-file">
+                                                <input class="upload" type="file" (change)="readUrl($event)">
+                                                <img class="imgUpload" alt="" [src]="url.img">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 mb-3">
                                 <label for="email">User Name</label>
-                                <input type="text" class="form-control" id="uname" placeholder="User Name" required="">
+                                <input type="text" class="form-control" id="uname" placeholder="User Name" [formControl]="userForm.controls['uname']" required>
+                                <div *ngIf="userForm.controls.uname.touched && userForm.controls.uname.errors?.required"
+                                    class="text text-danger">
+                                    User Name is required.
+                                </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 mb-3">
                                 <label for="review">Password</label>
-                                <input type="password" class="form-control" id="review" placeholder="Enter your password" required="">
+                                <input type="password" class="form-control" id="review"
+                                    placeholder="Enter your password" [formControl]="userForm.controls['password']" required>
+                                    <div *ngIf="userForm.controls.password.touched && userForm.controls.password.errors?.required"
+                                        class="text text-danger">
+                                        Password is required.
+                                    </div>
                             </div>
-                            <button class="btn btn-solid">create Account</button>
+                            <button type="submit" class="btn btn-solid">create Account</button>
                         </div>
                     </form>
                 </div>

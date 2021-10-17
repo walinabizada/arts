@@ -4,7 +4,6 @@ const Image = db.images;
 const ItemMaterial = db.itemmaterials;
 const ItemCategory = db.itemcategories;
 const ItemTag = db.itemtags;
-const ItemCollection = db.itemcollections;
 const fs = require('fs');
 const Op = db.Sequelize.Op;
 
@@ -47,7 +46,7 @@ exports.create = (req, res) => {
           alt: req.body.title,
           src: imagename
         };
-        await saveImageToDb(image);
+        saveImageToDb(image);
       });
       req.body.material.forEach(i =>{
         const itemmaterial = {
@@ -56,7 +55,8 @@ exports.create = (req, res) => {
         };
         saveItemMaterial(itemmaterial);
       });
-      ItemCategory.create({itemId: data.id, categoryId: req.body.selectedCat})
+      req.body.selectedCat.forEach(i =>{
+        ItemCategory.create({itemId: data.id, categoryId: i.cat_id})
         .then(data => {
           res.send(data);
         })
@@ -66,16 +66,7 @@ exports.create = (req, res) => {
               err.message || "Some error occurred while creating the Item."
           });
         });
-      ItemCollection.create({itemId: data.id, collectionId: req.body.selectedCol})
-        .then(data => {
-          res.send(data);
-        })
-        .catch(err => {
-          res.status(500).send({
-            message:
-              err.message || "Some error occurred while creating the Item."
-          });
-        });
+      });
       ItemTag.create({itemId: data.id, tagId: req.body.selectedTag})
         .then(data => {
           res.send(data);

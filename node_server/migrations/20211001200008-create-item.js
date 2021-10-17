@@ -20,6 +20,10 @@ module.exports = {
       discount: {
         type: Sequelize.STRING
       },
+      priority: {
+        type: Sequelize.ENUM,
+        values: ['0', '1', '2']
+      },
       sale: {
         type: Sequelize.BOOLEAN
       },

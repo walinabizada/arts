@@ -34,8 +34,6 @@ db.materials = require("./material.js")(sequelize, Sequelize);
 db.itemmaterials = require("./itemmaterial.js")(sequelize, Sequelize);
 db.categories = require("./category.js")(sequelize, Sequelize);
 db.itemcategories = require("./itemcategory.js")(sequelize, Sequelize);
-db.collections = require("./collection.js")(sequelize, Sequelize);
-db.itemcollections = require("./itemcollection.js")(sequelize, Sequelize);
 db.faqs = require("./faq.js")(sequelize, Sequelize);
 db.addresses = require("./address.js")(sequelize, Sequelize);
 

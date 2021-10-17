@@ -13,7 +13,9 @@ export class AddItemComponent implements OnInit {
   tags = [];
   materialList = [];
   selectedItems = [];
+  selectedCats = [];
   dropdownSettings:IDropdownSettings = {};
+  categorySettings:IDropdownSettings = {};
 
   files: File[] = [];
   imagesArr = [];
@@ -33,8 +35,8 @@ export class AddItemComponent implements OnInit {
       dy: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
       size: ['', Validators.required],
       material: [this.selectedItems],
-      selectedCol: ['', Validators.required],
-      selectedCat: ['', Validators.required],
+      // selectedCol: ['', Validators.required],
+      selectedCat: [this.selectedCats],
       selectedTag: ['', Validators.required],
       userId: '',
       totalItem: '',
@@ -125,22 +127,35 @@ export class AddItemComponent implements OnInit {
       { tag_id: 1, tag_value: 'new' },
       { tag_id: 2, tag_value: 's' },
       { tag_id: 3, tag_value: 'm' },
-      { tag_id: 3, tag_value: 'l' },
-      { tag_id: 4, tag_value: 'art' }
+      { tag_id: 4, tag_value: 'l' },
+      { tag_id: 5, tag_value: 'art' }
     ];
     this.categories = [
-      { cat_id: 1, cat_value: 'POP Art' },
-      { cat_id: 2, cat_value: 'Custom' },
-      { cat_id: 3, cat_value: 'Painting' },
-      { cat_id: 3, cat_value: 'Surrealism' },
-      { cat_id: 4, cat_value: 'Fantasy' }
+      { cat_id: 1, cat_text: 'POP Art' },
+      { cat_id: 2, cat_text: 'Custom' },
+      { cat_id: 3, cat_text: 'Painting' },
+      { cat_id: 4, cat_text: 'Surrealism' },
+      { cat_id: 5, cat_text: 'Fantasy' }
     ];
-    this.collections = [
-      { col_id: 1, col_text: 'Best Sellers' },
-      { col_id: 2, col_text: 'New Products' },
-      { col_id: 3, col_text: 'Featured Products' },
-      { col_id: 4, col_text: 'On Sale' }
+    this.selectedCats = [
+      // { cat_id: 1, cat_value: 'POP Art' }
     ];
+    this.categorySettings = {
+      singleSelection: false,
+      limitSelection:2,
+      idField: 'cat_id',
+      textField: 'cat_text',
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All',
+      itemsShowLimit: 3,
+      allowSearchFilter: true
+    };
+    // this.collections = [
+    //   { col_id: 1, col_text: 'Best Sellers' },
+    //   { col_id: 2, col_text: 'New Products' },
+    //   { col_id: 3, col_text: 'Featured Products' },
+    //   { col_id: 4, col_text: 'On Sale' }
+    // ];
     this.materialList = [
       { item_id: 1, item_text: 'Pen and Ink' },
       { item_id: 2, item_text: 'Pastel' },
@@ -150,6 +165,7 @@ export class AddItemComponent implements OnInit {
       { item_id: 6, item_text: 'Marker' },
       { item_id: 7, item_text: 'Charcoal' }
     ];
+   
     this.selectedItems = [
       // { item_id: 3, item_text: 'Pastel' }
     ];
@@ -162,13 +178,20 @@ export class AddItemComponent implements OnInit {
       itemsShowLimit: 3,
       allowSearchFilter: true
     };
+    
    
   }
+  onCatSelect(item: any) {
+    // console.log(item);
+  }
+  onSelectAllCat(items: any) {
+    // console.log(items);
+  }
   onItemSelect(item: any) {
-    console.log(item);
+    // console.log(item);
   }
   onSelectAll(items: any) {
-    console.log(items);
+    // console.log(items);
   }
 
 }

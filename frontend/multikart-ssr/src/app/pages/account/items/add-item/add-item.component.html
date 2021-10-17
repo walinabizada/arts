@@ -14,6 +14,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="validationCustomPrice" class="col-form-label pt-0"><span>*</span> Price </label>
+                <i class='dollar-icon'>$</i>
                 <input class="form-control" id="validationCustomPrice"
                     type="number" [formControl]="itemFrom.controls['price']" required="">
                 <div *ngIf="itemFrom.controls.price.touched && itemFrom.controls.price.errors?.required"
@@ -25,6 +26,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="validationCustomDiscount" class="col-form-label pt-0"><span>*</span> Product discount</label>
+                <i class='dollar-icon'>$</i>
                 <input class="form-control" id="validationCustomDiscount"
                     type="number" [formControl]="itemFrom.controls['discount']" required="">
                 <div *ngIf="itemFrom.controls.discount.touched && itemFrom.controls.discount.errors?.required"
@@ -33,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
             <div class="form-group">
                 <label for="exampleFormControlSelectCollection" class="col-form-label pt-0">Select Collection</label>
                 <select class="form-control" id="exampleFormControlSelectCollection" [formControl]="itemFrom.controls['selectedCol']" required="">
@@ -41,19 +43,60 @@
                     <option *ngFor="let col of collections" [value]='col.col_id'>{{col.col_text}}</option>
                 </select>
             </div>
-        </div>
+        </div> -->
         <div class="col-md-6">
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="exampleFormControlCategory" class="col-form-label pt-0">Select Category</label>
                 <select class="form-control"
                     id="exampleFormControlCategory" name='category' [formControl]="itemFrom.controls['selectedCat']" required="">
                     <option></option>
                     <option *ngFor="let cat of categories" [value]='cat.cat_id'>{{cat.cat_value}}</option>
-                   
+                </select>
+            </div> -->
+            <div class="form-group">
+                <label for="exampleFormControlSelectCategory" class="col-form-label pt-0">Select Category</label>
+                <ng-multiselect-dropdown
+                name = "category"
+                formControlName="category"
+                class= "form-control dropdownlist"
+                [placeholder]="'Select Category'"
+                [settings]="categorySettings"
+                [data]="categories"
+                [(ngModel)]="selectedCats"
+                (onSelect)="onCatSelect($event)"
+                (onSelectAll)="onSelectAllCat($event)"
+                >
+                </ng-multiselect-dropdown>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1" class="col-form-label pt-0">Select Materials</label>
+                <ng-multiselect-dropdown
+                name = "material"
+                formControlName="material"
+                class= "form-control dropdownlist"
+                [placeholder]="'Select Materials'"
+                [settings]="dropdownSettings"
+                [data]="materialList"
+                [(ngModel)]="selectedItems"
+                (onSelect)="onItemSelect($event)"
+                (onSelectAll)="onSelectAll($event)"
+                >
+                </ng-multiselect-dropdown>
+            </div>
+           
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="exampleFormControlSelectTag" class="col-form-label pt-0">Select Tags</label>
+                <select class="form-control" placeholder='Select a tag'
+                    id="exampleFormControlSelectTag" name="tag" [formControl]="itemFrom.controls['selectedTag']" required>
+                    <option></option>
+                    <option *ngFor="let tag of tags" [value]='tag.tag_id'>{{tag.tag_value}}</option>
                 </select>
             </div>
         </div>
-
         <div class="col-md-6">
             <div class="form-group">
                 <label class="col-form-label pt-0">Total Item</label>
@@ -67,16 +110,7 @@
             </div>
         </div>
         
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="exampleFormControlSelectTag" class="col-form-label pt-0">Select Tags</label>
-                <select class="form-control"
-                    id="exampleFormControlSelectTag" name="tag" [formControl]="itemFrom.controls['selectedTag']" required>
-                    <option></option>
-                    <option *ngFor="let tag of tags" [value]='tag.tag_id'>{{tag.tag_value}}</option>
-                </select>
-            </div>
-        </div>
+        
 
         <div class="col-md-6">
             <div class="form-group">
@@ -99,33 +133,16 @@
 
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1" class="col-form-label pt-0">Select Materials</label>
-                        <ng-multiselect-dropdown
-                        name = "material"
-                        formControlName="material"
-                        class= "form-control dropdownlist"
-                        [placeholder]="'custom placeholder'"
-                        [settings]="dropdownSettings"
-                        [data]="materialList"
-                        [(ngModel)]="selectedItems"
-                        (onSelect)="onItemSelect($event)"
-                        (onSelectAll)="onSelectAll($event)"
-                        >
-                        </ng-multiselect-dropdown>
-                    </div>
-                   
-                </div>
+                
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="col-form-label pt-0">Dimension</label>
                         <div class="qty-box1 dimension-box">
                             <div class="input-group">
                                 <input class="touchspin1 text-center" [formControl]="itemFrom.controls['dx']" required name="dx" type="number">
-                                <i class="fa fa-times btnLess1 btnx"></i>
+                                <i class="fa btnLess1 btnx">x</i>
                                 <input class="touchspin1 text-center" [formControl]="itemFrom.controls['dy']" required name="dy" type="number">
-                                <i class="fa btnLess1">cm</i>
+                                <i class="fa btnLess1">Inch</i>
                             </div>
                         </div>
                     </div>
@@ -138,10 +155,11 @@
                 </div> -->
                 <div class="col-md-12">
                     <div class="form-group">
-                        <div class="custom-dropzone" ngx-dropzone [multiple]='false' [accept]="'image/*'" (change)="onSelect($event)">
+                        <div class="custom-dropzone dropzone-custom" ngx-dropzone [multiple]='false' [accept]="'image/*'" (change)="onSelect($event)">
                             <ngx-dropzone-label>
-                                <div>
-                                    <h5>Upload Art</h5>
+                                <div class="dz-message needsclick">
+                                    <i class="fa fa-cloud-upload"></i>
+                                    <h4 class="mb-0 f-w-600">Drop files here or click to upload.</h4>
                                 </div>
                             </ngx-dropzone-label>
                             <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">

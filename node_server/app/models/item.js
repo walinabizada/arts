@@ -15,10 +15,6 @@ module.exports = (sequelize, DataTypes) => {
         as: 'user',
         foreignKey: 'userId'
       });
-      Item.hasMany(models.ItemCollection, {
-        as: 'itemCollection',
-        foreignKey: 'itemId'
-      });
       Item.hasMany(models.ItemCategory, {
         as: 'itemCategory',
         foreignKey: 'itemId'
@@ -50,6 +46,10 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT,
     price: DataTypes.STRING,
     discount: DataTypes.STRING,
+    priority: { 
+      type:DataTypes.ENUM('0', '1', '2'),
+      defaultValue: '0'
+    },
     sale: DataTypes.BOOLEAN,
     stock: DataTypes.INTEGER,
     new: DataTypes.BOOLEAN,
