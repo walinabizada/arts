@@ -18,7 +18,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="review">Last Name</label>
-                                <input type="password" class="form-control" id="lname" name="lname" placeholder="Last Name"
+                                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name"
                                 [formControl]="userForm.controls['lname']" required>
                                 <div *ngIf="userForm.controls.lname.touched && userForm.controls.lname.errors?.required"
                                     class="text text-danger">
@@ -48,7 +48,7 @@
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
                                 <label for="email">Date of Birth</label>
-                                <input type="datetime-local" class="form-control" id="dob" name="dob" placeholder="Date of Birth"
+                                <input type="date" class="form-control" id="dob" name="dob" placeholder="Date of Birth"
                                 [formControl]="userForm.controls['dob']" required>
                                 <div *ngIf="userForm.controls.dob.touched && userForm.controls.dob.errors?.required"
                                     class="text text-danger">
@@ -105,7 +105,7 @@
                                         Password is required.
                                     </div>
                             </div>
-                            <button type="submit" class="btn btn-solid">create Account</button>
+                            <button type="submit" [disabled]="!userForm.controls.valid" class="btn btn-solid">create Account</button>
                         </div>
                     </form>
                 </div>

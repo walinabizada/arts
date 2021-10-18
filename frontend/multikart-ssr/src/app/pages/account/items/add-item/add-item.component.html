@@ -178,7 +178,7 @@
         <div class="col-md-6">
             <div class="form-group mb-0">
                 <div class="product-buttons col-sm-8">
-                    <button type="submit" class="btn btn-primary mr-1">Save</button>
+                    <button type="submit" [disabled]="!itemFrom.controls.valid" class="btn btn-primary mr-1">Save</button>
                     <button type="button" class="btn btn-light">Discard</button>
                 </div>
             </div>

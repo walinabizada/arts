@@ -4,49 +4,49 @@ const fs = require('fs');
 const bcrypt = require("bcrypt");
 const Op = db.Sequelize.Op;
 
-// Create and Save a new User
-exports.create = (req, res) => {
-  // Validate request
-  const body = req.body;
-  if (!(body.email && body.password && body.fname && body.lname && body.uname)) {
-    res.status(400).send({
-      message: "You Carefully fill the Rigistration Form!"
-    });
-    return;
-  }
-
-  const salt = bcrypt.genSalt(10);
-  const password =  bcrypt.hash(body.password.toString(), salt);
-  // Create a User
-  const user = {
-    firstName: body.fname,
-    lastName: body.lname,
-    userName: body.uname,
-    password: password,
-    email: body.email,
-    phone: body.phone,
-    dob: body.dob,
-    gender: body.gender,
-    accountType: 'Normal',
-    image: saveImage(body.image),
-  };
-   
-
-  // Save User in the database
-  User.create(user)
-    .then(data => {
-      res.send(data);
-    })
-    .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while creating the User."
+  // Create and Save a new User
+  exports.create = (req, res) => {
+    // Validate request
+    const body = req.body;
+    if (!(body.email && body.password && body.fname && body.lname && body.uname)) {
+      res.status(400).send({
+        message: "You Carefully fill the Rigistration Form!"
+      });
+      return;
+    }
+    // Create a User
+    const saltRounds = 10;
+    bcrypt.genSalt(saltRounds, (err, salt) => {
+      bcrypt.hash(body.password, salt, (err, hash) => {
+          // Now we can store the password hash in db.
+          const user = {
+            firstName: body.fname,
+            lastName: body.lname,
+            userName: body.uname,
+            password: hash,
+            email: body.email,
+            phone: body.phone,
+            dob: body.dob,
+            gender: body.gender,
+            accountType: 'Normal',
+            image: saveImage(body.image),
+          };
+          
+      
+          // Save User in the database
+          User.create(user)
+            .then(data => {
+              res.send(data);
+            })
+            .catch(err => {
+              res.status(500).send({
+                message:
+                  err.message || "Some error occurred while creating the User."
+              });
+            });
       });
     });
-
-  
-};
-  
+  };
 
 /*Download the base64 image in the server and returns the filename and path of image.*/
 function saveImage(baseImage) {
