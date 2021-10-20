@@ -3487,6 +3487,7 @@ $warning-color;
     &:disabled{
       background-color: $btn-color !important;
       border-color: $btn-color !important;
+      cursor: not-allowed;
     }
     &:hover,&:focus,&:active,&.active{
       background-color: darken( $btn-color, 10% ) !important;

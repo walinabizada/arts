@@ -77,7 +77,8 @@ exports.create = (req, res) => {
               err.message || "Some error occurred while creating the Item."
           });
         });
-      res.send("");
+        // "Your item successfully Inserted!"
+      res.send(data);
     })
     .catch(err => {
       res.status(500).send({

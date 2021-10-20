@@ -38,7 +38,7 @@
 
                             <div class="col-md-6 mb-3">
                                 <label for="review">Phone</label>
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" [formControl]="userForm.controls['phone']" required>
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" minlength=10 maxlength=10 (keypress)="keyPress($event)" [formControl]="userForm.controls['phone']" required>
                                 <div *ngIf="userForm.controls.phone.touched && userForm.controls.phone.errors?.required"
                                     class="text text-danger">
                                     Phone is required.

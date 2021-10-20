@@ -12,8 +12,6 @@ export class AddItemComponent implements OnInit {
   categories = [];
   tags = [];
   materialList = [];
-  selectedItems = [];
-  selectedCats = [];
   dropdownSettings:IDropdownSettings = {};
   categorySettings:IDropdownSettings = {};
 
@@ -25,18 +23,18 @@ export class AddItemComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private itemService: ItemService) { 
     this.itemFrom = this.fb.group({
-      title: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
-      description: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
-      metaTitle: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
-      metaDesc: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
-      price: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
-      discount: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
-      dx: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
-      dy: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
-      size: ['', Validators.required],
-      material: [this.selectedItems],
+      title: ['', Validators.required],
+      description: ['', Validators.required],
+      metaTitle: [''],
+      metaDesc: [''],
+      price: ['', Validators.required],
+      discount: ['', Validators.required], 
+      dx: ['', Validators.required],
+      dy: ['', Validators.required],
+      // size: ['', Validators.required],
+      material: ['', Validators.required],
       // selectedCol: ['', Validators.required],
-      selectedCat: [this.selectedCats],
+      selectedCat: ['', Validators.required],
       selectedTag: ['', Validators.required],
       userId: '',
       totalItem: '',
@@ -65,6 +63,7 @@ export class AddItemComponent implements OnInit {
   increment() {
     this.counter += 1;
     this.itemFrom.controls['totalItem'].setValue(this.counter);
+    console.log('this.itemFrom.valid',this.itemFrom.valid);
   }
 
   decrement() {
@@ -89,7 +88,7 @@ export class AddItemComponent implements OnInit {
       });
     });
     this.itemFrom.controls['images'].setValue(this.imagesArr);
-
+    
     
     // this.readFile(this.files[0]).then(fileContents => {
     //   // Put this string in a request body to upload it to an API.
@@ -137,9 +136,7 @@ export class AddItemComponent implements OnInit {
       { cat_id: 4, cat_text: 'Surrealism' },
       { cat_id: 5, cat_text: 'Fantasy' }
     ];
-    this.selectedCats = [
-      // { cat_id: 1, cat_value: 'POP Art' }
-    ];
+   
     this.categorySettings = {
       singleSelection: false,
       limitSelection:2,
@@ -166,9 +163,6 @@ export class AddItemComponent implements OnInit {
       { item_id: 7, item_text: 'Charcoal' }
     ];
    
-    this.selectedItems = [
-      // { item_id: 3, item_text: 'Pastel' }
-    ];
     this.dropdownSettings = {
       singleSelection: false,
       idField: 'item_id',

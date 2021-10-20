@@ -1,11 +1,12 @@
 <form class="needs-validation" [formGroup]="itemFrom" (ngSubmit)="onSubmit()">
     <div class="add-product-form row">
         <div class="col-md-6">
-            <div class="form-group">
+            <div class="form-group" >
+                <!-- [ngClass]="{'has-error': (itemFrom.get('title').touched || itemFrom.get('title').dirty) && !itemFrom.get('title').valid}" -->
                 <label for="validationCustomTitle" class="col-form-label pt-0"><span>*</span> Title</label>
-                <input class="form-control" id="validationCustomTitle"
+                <input class="form-control" id="validationCustomTitle" 
                     type="text" [formControl]="itemFrom.controls['title']" required>
-                <div *ngIf="itemFrom.controls.title.touched && itemFrom.controls.title.errors?.required"
+                <div *ngIf="(itemFrom.get('title').touched || itemFrom.get('title').dirty) && itemFrom.get('title').errors"
                     class="text text-danger">
                     Title Name is required.
                 </div>
@@ -35,55 +36,44 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="col-md-6">
-            <div class="form-group">
-                <label for="exampleFormControlSelectCollection" class="col-form-label pt-0">Select Collection</label>
-                <select class="form-control" id="exampleFormControlSelectCollection" [formControl]="itemFrom.controls['selectedCol']" required="">
-                    <option></option>
-                    <option *ngFor="let col of collections" [value]='col.col_id'>{{col.col_text}}</option>
-                </select>
-            </div>
-        </div> -->
         <div class="col-md-6">
-            <!-- <div class="form-group">
-                <label for="exampleFormControlCategory" class="col-form-label pt-0">Select Category</label>
-                <select class="form-control"
-                    id="exampleFormControlCategory" name='category' [formControl]="itemFrom.controls['selectedCat']" required="">
-                    <option></option>
-                    <option *ngFor="let cat of categories" [value]='cat.cat_id'>{{cat.cat_value}}</option>
-                </select>
-            </div> -->
             <div class="form-group">
+                <!-- [(ngModel)]="selectedCats" [ngModelOptions]="{standalone: true}" -->
                 <label for="exampleFormControlSelectCategory" class="col-form-label pt-0">Select Category</label>
                 <ng-multiselect-dropdown
-                name = "category"
-                formControlName="category"
                 class= "form-control dropdownlist"
                 [placeholder]="'Select Category'"
                 [settings]="categorySettings"
                 [data]="categories"
-                [(ngModel)]="selectedCats"
+                [formControl]="itemFrom.controls['selectedCat']" required=''
                 (onSelect)="onCatSelect($event)"
                 (onSelectAll)="onSelectAllCat($event)"
                 >
                 </ng-multiselect-dropdown>
+                <div *ngIf="itemFrom.controls.selectedCat.touched && itemFrom.controls.selectedCat.errors?.required"
+                    class="text text-danger">
+                    Category is required.
+                </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
+                <!-- [(ngModel)]="selectedItems" -->
                 <label for="exampleFormControlSelect1" class="col-form-label pt-0">Select Materials</label>
                 <ng-multiselect-dropdown
-                name = "material"
-                formControlName="material"
                 class= "form-control dropdownlist"
                 [placeholder]="'Select Materials'"
                 [settings]="dropdownSettings"
                 [data]="materialList"
-                [(ngModel)]="selectedItems"
+                [formControl]="itemFrom.controls['material']" required=''
                 (onSelect)="onItemSelect($event)"
                 (onSelectAll)="onSelectAll($event)"
                 >
                 </ng-multiselect-dropdown>
+                <div *ngIf="itemFrom.controls.material.touched && itemFrom.controls.material.errors?.required"
+                    class="text text-danger">
+                    Material is required.
+                </div>
             </div>
            
         </div>
@@ -95,6 +85,10 @@
                     <option></option>
                     <option *ngFor="let tag of tags" [value]='tag.tag_id'>{{tag.tag_value}}</option>
                 </select>
+                <div *ngIf="itemFrom.controls.selectedTag.touched && itemFrom.controls.selectedTag.errors?.required"
+                    class="text text-danger">
+                    Tag is required.
+                </div>
             </div>
         </div>
         <div class="col-md-6">
@@ -115,19 +109,23 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="validationCustomMetaTitle" class="col-form-label pt-0"> Meta Title</label>
-                <input class="form-control" id="validationCustomMetaTitle" type="text" [formControl]="itemFrom.controls['metaTitle']" required>
+                <input class="form-control" id="validationCustomMetaTitle" type="text" [formControl]="itemFrom.controls['metaTitle']">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label class="col-form-label">Meta Description</label>
-                <textarea class="form-control" rows="4" cols="12" [formControl]="itemFrom.controls['metaDesc']" required></textarea>
+                <textarea class="form-control" rows="4" cols="12" [formControl]="itemFrom.controls['metaDesc']" ></textarea>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label class="col-form-label">Description</label>
                 <textarea class="form-control" rows="4" cols="12" [formControl]="itemFrom.controls['description']" required></textarea>
+                <div *ngIf="itemFrom.controls.description.touched && itemFrom.controls.description.errors?.required"
+                    class="text text-danger">
+                    Description is required.
+                </div>
             </div>
         </div>
 
@@ -144,6 +142,10 @@
                                 <input class="touchspin1 text-center" [formControl]="itemFrom.controls['dy']" required name="dy" type="number">
                                 <i class="fa btnLess1">Inch</i>
                             </div>
+                            <div *ngIf="(itemFrom.controls.dx.touched && itemFrom.controls.dx.errors?.required) || (itemFrom.controls.dy.touched && itemFrom.controls.dy.errors?.required)"
+                                class="text text-danger">
+                                Dimension is required.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -155,7 +157,7 @@
                 </div> -->
                 <div class="col-md-12">
                     <div class="form-group">
-                        <div class="custom-dropzone dropzone-custom" ngx-dropzone [multiple]='false' [accept]="'image/*'" (change)="onSelect($event)">
+                        <div class="custom-dropzone dropzone-custom" ngx-dropzone [multiple]='true' [accept]="'image/*'" (change)="onSelect($event)">
                             <ngx-dropzone-label>
                                 <div class="dz-message needsclick">
                                     <i class="fa fa-cloud-upload"></i>
@@ -178,7 +180,7 @@
         <div class="col-md-6">
             <div class="form-group mb-0">
                 <div class="product-buttons col-sm-8">
-                    <button type="submit" [disabled]="!itemFrom.controls.valid" class="btn btn-primary mr-1">Save</button>
+                    <button type="submit" [disabled]="!itemFrom.valid" class="btn btn-primary mr-1">Save</button>
                     <button type="button" class="btn btn-light">Discard</button>
                 </div>
             </div>

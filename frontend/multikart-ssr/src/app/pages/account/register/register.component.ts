@@ -16,16 +16,23 @@ export class RegisterComponent implements OnInit {
     this.userForm = this.fb.group({
       fname: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
       lname: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
-      uname: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
-      password: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
-      email: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
-      phone: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
+      uname: ['', Validators.required],
+      password: ['', Validators.required],
+      email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')]],
+      phone: ['', [Validators.required, Validators.pattern('[0-9]{0-10}')]],
       dob: ['', Validators.required],
       gender: ['', Validators.required],
       image: ['', Validators.required],
     })
   }
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
 
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
+  }
   ngOnInit(): void {
   }
   onSubmit(): void {
