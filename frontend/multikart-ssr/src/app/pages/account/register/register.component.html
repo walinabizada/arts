@@ -6,53 +6,74 @@
             <div class="col-lg-12">
                 <h3>create account</h3>
                 <div class="theme-card">
-                    <form class="theme-form needs-validation" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                    <form class="theme-form needs-validation" *ngIf="!isSuccessful" [formGroup]="userForm" (ngSubmit)="onSubmit()">
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
-                                <label for="fname">First Name</label>
-                                <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" [formControl]="userForm.controls['fname']" required>
-                                <div *ngIf="userForm.controls.fname.touched && userForm.controls.fname.errors?.required"
-                                    class="text text-danger">
-                                    First Name is required.
+                                <div class="form-group">
+                                    <label for="fname" class="col-form-label"><span>*</span> First Name</label>
+                                    <input type="text" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.fname.errors }" id="fname"
+                                        name="fname" placeholder="First Name" [formControl]="userForm.controls['fname']"
+                                        required>
+                                    <div *ngIf="submitted && f.fname.errors" class="text text-danger invalid-feedback">
+                                        <div *ngIf="f.fname.errors.required">First Name is required.</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="review">Last Name</label>
-                                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name"
-                                [formControl]="userForm.controls['lname']" required>
-                                <div *ngIf="userForm.controls.lname.touched && userForm.controls.lname.errors?.required"
-                                    class="text text-danger">
-                                    Last Name is required.
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>*</span> Last Name</label>
+                                    <input type="text" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" id="lname"
+                                        name="lname" placeholder="Last Name" [formControl]="userForm.controls['lname']"
+                                        required>
+                                    <div *ngIf="submitted && f.lname.errors" class="text text-danger invalid-feedback">
+                                        <div *ngIf="f.lname.errors.required">Last Name is required.</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
-                                <label for="email">email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Email"  [formControl]="userForm.controls['email']" required>
-                                <div *ngIf="userForm.controls.email.touched && userForm.controls.email.errors?.required"
-                                    class="text text-danger">
-                                    Email is required.
+                                <div class="form-group">
+                                    <label for="email" class="col-form-label"><span>*</span> email</label>
+                                    <input type="text" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }" id="email"
+                                        name="email" placeholder="Email" [formControl]="userForm.controls['email']"
+                                        required>
+                                    <div *ngIf="submitted && f.email.errors" class="text text-danger invalid-feedback">
+                                        <div *ngIf="f.email.errors.required">Email is required.</div>
+                                        <div *ngIf="f.email.errors.email">Email is invalid</div>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="col-md-6 mb-3">
-                                <label for="review">Phone</label>
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" minlength=10 maxlength=10 (keypress)="keyPress($event)" [formControl]="userForm.controls['phone']" required>
-                                <div *ngIf="userForm.controls.phone.touched && userForm.controls.phone.errors?.required"
-                                    class="text text-danger">
-                                    Phone is required.
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>*</span> Phone</label>
+                                    <input type="text" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" id="phone"
+                                        name="phone" placeholder="Phone" (keypress)="keyPress($event)"
+                                        [formControl]="userForm.controls['phone']" required>
+                                    <div *ngIf="submitted && f.phone.errors" class="text text-danger invalid-feedback">
+                                        <div *ngIf="f.phone.errors.required">Phone is required.</div>
+                                        <div *ngIf="f.phone.errors.minlength || f.phone.errors.maxlength">
+                                            Phone Number must be 10 digits.
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
-                                <label for="email">Date of Birth</label>
-                                <input type="date" class="form-control" id="dob" name="dob" placeholder="Date of Birth"
-                                [formControl]="userForm.controls['dob']" required>
-                                <div *ngIf="userForm.controls.dob.touched && userForm.controls.dob.errors?.required"
-                                    class="text text-danger">
-                                    Date of birth is required.
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>*</span> Date of Birth</label>
+                                    <input type="date" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" id="dob" name="dob"
+                                        placeholder="Date of Birth" [formControl]="userForm.controls['dob']" required>
+                                    <div *ngIf="submitted && f.dob.errors" class="text text-danger invalid-feedback">
+                                        <div *ngIf="f.dob.errors.required">Date of birth is required.</div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -61,26 +82,39 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="col-form-label"><span>*</span> Gendar</label>
-                                            <div class="m-checkbox-inline mb-0 custom-radio-ml d-flex radio-animated">
+                                            <div class="m-checkbox-inline mb-0 custom-radio-ml d-flex radio-animated"
+                                                [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
                                                 <label class="d-block" for="edo-ani">
                                                     <input class="radio_animated" id="edo-ani" type="radio" value="male"
-                                                         [formControl]="userForm.controls['gender']">
+                                                        [formControl]="userForm.controls['gender']">
                                                     Male
                                                 </label>
                                                 <label class="d-block" for="edo-ani1">
-                                                    <input class="radio_animated" id="edo-ani1" type="radio" value="female"
-                                                        [formControl]="userForm.controls['gender']">
+                                                    <input class="radio_animated" id="edo-ani1" type="radio"
+                                                        value="female" [formControl]="userForm.controls['gender']">
                                                     Female
                                                 </label>
+                                            </div>
+                                            <div *ngIf="submitted && f.gender.errors"
+                                                class="text text-danger invalid-feedback">
+                                                <div *ngIf="f.gender.errors.required">Gender is required.</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="file-upload-product">
-                                            <label for="email">Upload Your Image</label>
-                                            <div class="box-input-file">
-                                                <input class="upload" type="file" (change)="readUrl($event)">
-                                                <img class="imgUpload" alt="" [src]="url.img">
+                                        <div class="form-group">
+                                            <div class="file-upload-product">
+                                                <label for="image" class="col-form-label"><span>*</span> Upload Your
+                                                    Image</label>
+                                                <div class="box-input-file"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.image.errors }">
+                                                    <input class="upload" type="file" (change)="readUrl($event)">
+                                                    <img class="imgUpload" alt="" [src]="url.img">
+                                                </div>
+                                                <div *ngIf="submitted && f.image.errors"
+                                                    class="text text-danger invalid-feedback">
+                                                    <div *ngIf="f.image.errors.required">Image is required.</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -89,25 +123,49 @@
                         </div>
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
-                                <label for="email">User Name</label>
-                                <input type="text" class="form-control" id="uname" placeholder="User Name" [formControl]="userForm.controls['uname']" required>
-                                <div *ngIf="userForm.controls.uname.touched && userForm.controls.uname.errors?.required"
-                                    class="text text-danger">
-                                    User Name is required.
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>*</span> User Name</label>
+                                    <input type="text" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.uname.errors }" id="uname"
+                                        placeholder="User Name" [formControl]="userForm.controls['uname']" required>
+                                    <div *ngIf="submitted && f.uname.errors" class="text text-danger invalid-feedback">
+                                        <div *ngIf="f.uname.errors.required">User Name is required.</div>
+                                        <div *ngIf="f.uname.errors.minlength"> Username must be at least 6 characters.
+                                        </div>
+                                        <div *ngIf="f.uname.errors.maxlength">Username must not exceed 20 characters.
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="review">Password</label>
-                                <input type="password" class="form-control" id="review"
-                                    placeholder="Enter your password" [formControl]="userForm.controls['password']" required>
-                                    <div *ngIf="userForm.controls.password.touched && userForm.controls.password.errors?.required"
-                                        class="text text-danger">
-                                        Password is required.
+                                <div class="form-group">
+                                    <label for="password" class="col-form-label"><span>*</span> Password</label>
+                                    <input type="password" class="form-control" id="password"
+                                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                                        placeholder="Enter your password" [formControl]="userForm.controls['password']"
+                                        required>
+                                    <div *ngIf="submitted && f.password.errors"
+                                        class="text text-danger invalid-feedback">
+                                        <div *ngIf="f.password.errors.required">Password is required</div>
+                                        <div *ngIf="f.password.errors.minlength">
+                                            Password must be at least 6 characters
+                                        </div>
+                                        <div *ngIf="f.password.errors.maxlength">
+                                            Username must not exceed 40 characters
+                                        </div>
                                     </div>
+                                </div>
                             </div>
-                            <button type="submit" [disabled]="!userForm.controls.valid" class="btn btn-solid">create Account</button>
+                            <button type="submit" class="btn btn-solid mr-1">create Account</button>
+                            <button type="button" (click)="onReset()" class="btn btn-warning float-right">Reset</button>
+                        </div>
+                        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                            Signup failed!<br />{{ errorMessage }}
                         </div>
                     </form>
+                    <div class="alert alert-success" *ngIf="isSuccessful">
+                        Your registration is successful!
+                    </div>
                 </div>
             </div>
         </div>

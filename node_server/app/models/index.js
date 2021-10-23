@@ -37,4 +37,5 @@ db.itemcategories = require("./itemcategory.js")(sequelize, Sequelize);
 db.faqs = require("./faq.js")(sequelize, Sequelize);
 db.addresses = require("./address.js")(sequelize, Sequelize);
 
+db.ROLES = ['Normal', 'Artist', 'Seller'];
 module.exports = db;

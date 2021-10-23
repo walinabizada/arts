@@ -6,6 +6,9 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // Pages Components
 import { WishlistComponent } from './account/wishlist/wishlist.component';
@@ -55,7 +58,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 import { AddItemComponent } from './account/items/add-item/add-item.component';
 
- 
+import { authInterceptorProviders } from '../_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -100,6 +103,8 @@ import { AddItemComponent } from './account/items/add-item/add-item.component';
     AddItemComponent
   ],
   imports: [
+    FormsModule,
+    HttpClientModule,
     CommonModule,
     Ng2SmartTableModule,
     NgxDatatableModule,
@@ -112,7 +117,8 @@ import { AddItemComponent } from './account/items/add-item/add-item.component';
   ], 
 
   providers: [
-    NgbActiveModal
+    NgbActiveModal,
+    authInterceptorProviders
   ]
 })
 export class PagesModule { }

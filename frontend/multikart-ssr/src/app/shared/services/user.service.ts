@@ -26,4 +26,20 @@ export class UserService {
   delete(id: Number): Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`);
   }
+
+  getPublicContent(): Observable<any> {
+    return this.http.get(baseUrl + 'all', { responseType: 'text' });
+  }
+
+  getUserBoard(): Observable<any> {
+    return this.http.get(baseUrl + 'user', { responseType: 'text' });
+  }
+
+  getModeratorBoard(): Observable<any> {
+    return this.http.get(baseUrl + 'mod', { responseType: 'text' });
+  }
+
+  getAdminBoard(): Observable<any> {
+    return this.http.get(baseUrl + 'admin', { responseType: 'text' });
+  }
 }
