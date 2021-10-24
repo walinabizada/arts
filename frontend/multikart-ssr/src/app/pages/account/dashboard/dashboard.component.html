@@ -22,7 +22,7 @@
                             <!-- <li class="pointer" [ngClass]="{'active': selectedItem == 3}" (click)="t.select('tab-selectbyid4'); select(3)"><a href="javascript:void(0)" >My Items</a></li> -->
                             <li class="pointer" [ngClass]="{'active': selectedItem == 2}" (click)="t.select('tab-selectbyid3'); select(2)"><a href="javascript:void(0)" >Orders</a></li>
                             <li class="pointer" [ngClass]="{'active': selectedItem == 6}" (click)="t.select('tab-selectbyid7'); select(6)"><a href="javascript:void(0)">Transactions</a></li>
-                            <li class="last pointer" [ngClass]="{'active': selectedItem == 7}" (click)="select(7)"><a href="javascript:void(0)">Log Out</a></li>
+                            <li class="last pointer" [ngClass]="{'active': selectedItem == 7}" (click)="select(7)"><a href="javascript:void(0)" (click)="logout()">Log Out</a></li>
                         </ul>
                     </div>
                 </div>

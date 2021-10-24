@@ -43,8 +43,8 @@ module.exports = (sequelize, DataTypes) => {
     bio: DataTypes.TEXT,
     image: DataTypes.STRING,
     accountType: { 
-      type:DataTypes.ENUM('Normal', 'Artist', 'Seller', 'Admin'),
-      defaultValue: 'Normal'
+      type:DataTypes.ENUM('User', 'Artist', 'Seller', 'Admin'),
+      defaultValue: 'User'
     },
   }, {
     sequelize,

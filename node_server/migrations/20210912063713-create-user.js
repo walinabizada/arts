@@ -43,7 +43,7 @@ module.exports = {
       },
       accountType: {
         type: Sequelize.ENUM,
-        values: ['Normal', 'Artist', 'Seller', 'Admin']
+        values: ['User', 'Artist', 'Seller', 'Admin']
       },
       createdAt: {
         allowNull: false,

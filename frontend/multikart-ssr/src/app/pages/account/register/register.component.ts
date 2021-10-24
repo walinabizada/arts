@@ -19,19 +19,20 @@ export class RegisterComponent implements OnInit {
   };
   
   constructor(private fb: FormBuilder, private authService: AuthService) {
-    // Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')
+    // Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+') Validators.pattern('[0-9]{0-10}'), 
     this.userForm = this.fb.group({
       fname: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
       lname: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
       uname: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.pattern('[0-9]{0-10}'), Validators.minLength(10), Validators.maxLength(10)]],
+      phone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
       dob: ['', Validators.required],
       gender: ['', Validators.required],
       image: ['', Validators.required],
     })
   }
+  // phone number pattern
   keyPress(event: any) {
     const pattern = /[0-9\+\-\ ]/;
 
@@ -49,25 +50,38 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     // Process checkout data here
     // this.items = this.cartService.clearCart();
-    console.log('this.userForm.invalid', this.userForm.invalid);
+    /*
+    console.warn('Your order has been submitted', this.userForm.value);
+    console.log('this.f.fname.errors', this.f.fname.errors);
+    console.log('this.f.lname.errors', this.f.lname.errors);
+    console.log('this.f.uname.errors', this.f.uname.errors);
+    console.log('this.f.email.errors', this.f.email.errors);
+    console.log('this.f.phone.errors', this.f.phone.errors);
+    console.log('this.f.dob.errors', this.f.dob.errors);
+    console.log('this.f.gender.errors', this.f.gender.errors);
+    console.log('this.f.image.errors', this.f.image.errors);
+    */
+    // console.log('this.userForm.invalid', this.userForm.invalid);
+
+
     this.submitted = true;
     if (this.userForm.invalid) {
       return;
     }
 
     console.warn('Your order has been submitted', this.userForm.value);
-    // this.authService.register(this.userForm.value).subscribe(
-    //   response => {
-    //     console.log(response);
-    //     this.isSuccessful = true;
-    //     this.isSignUpFailed = false;
-    //   },
-    //   error => {
-    //     console.log(error);
-    //     this.errorMessage = error.error.message;
-    //     this.isSignUpFailed = true;
-    //   }
-    // );
+    this.authService.register(this.userForm.value).subscribe(
+      response => {
+        console.log(response);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      error => {
+        console.log(error);
+        this.errorMessage = error.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
     // this.userForm.reset();
   }
   onReset(): void {

@@ -13,45 +13,45 @@ exports.signup = (req, res) => {
     const body = req.body;
     const saltRounds = 10;
     bcrypt.genSalt(saltRounds, (err, salt) => {
-      bcrypt.hash(body.password, salt, (err, hash) => {
-          // Now we can store the password hash in db.
-          const user = {
-            firstName: body.fname,
-            lastName: body.lname,
-            userName: body.uname,
-            password: hash,
-            email: body.email,
-            phone: body.phone,
-            dob: body.dob,
-            gender: body.gender,
-            accountType: 'Normal',
-            image: saveImage(body.image),
-          };
-          
-      
-          // Save User in the database
-          User.create(user)
-            .then(data => {
-              res.send({ message: "User was registered successfully!" });
-            })
-            .catch(err => {
-              res.status(500).send({
-                message:
-                  err.message || "Some error occurred while creating the User."
-              });
-            });
-      });
+        bcrypt.hash(body.password, salt, (err, hash) => {
+            // Now we can store the password hash in db.
+            const user = {
+                firstName: body.fname,
+                lastName: body.lname,
+                userName: body.uname,
+                password: hash,
+                email: body.email,
+                phone: body.phone,
+                dob: body.dob,
+                gender: body.gender,
+                accountType: 'User',
+                image: saveImage(body.image),
+            };
+
+
+            // Save User in the database
+            User.create(user)
+                .then(data => {
+                    res.send({ message: "User was registered successfully!" });
+                })
+                .catch(err => {
+                    res.status(500).send({
+                        message:
+                            err.message || "Some error occurred while creating the User."
+                    });
+                });
+        });
     });
 };
 
-exports.signin =  (req, res) => {
+exports.signin = (req, res) => {
     User.findOne({
         where: {
             userName: req.body.uname
         }
     }).then(user => {
-        if(!user){
-            return res.status(404).send({message: "User Not found."});
+        if (!user) {
+            return res.status(404).send({ message: "User Not found." });
         }
 
         var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
@@ -80,7 +80,7 @@ exports.signin =  (req, res) => {
             accessToken: token
         });
     }).catch(err => {
-        res.status(500).send({message: err.message});
+        res.status(500).send({ message: err.message });
     })
 
 };
@@ -94,21 +94,21 @@ function saveImage(baseImage) {
     //path of folder where you want to save the image.
     const localPath = `${uploadPath}/users/`;
     //Find extension of file
-    const ext = baseImage.substring(baseImage.indexOf("/")+1, baseImage.indexOf(";base64"));
-    const fileType = baseImage.substring("data:".length,baseImage.indexOf("/"));
+    const ext = baseImage.substring(baseImage.indexOf("/") + 1, baseImage.indexOf(";base64"));
+    const fileType = baseImage.substring("data:".length, baseImage.indexOf("/"));
     //Forming regex to extract base64 data of file.
     const regex = new RegExp(`^data:${fileType}\/${ext};base64,`, 'gi');
     //Extract base64 data.
     const base64Data = baseImage.replace(regex, "");
     const filename = `user-${imgname}.${ext}`;
-  
+
     //Check that if directory is present or not.
-    if(!fs.existsSync(`${uploadPath}/users/`)) {
+    if (!fs.existsSync(`${uploadPath}/users/`)) {
         fs.mkdirSync(`${uploadPath}/users/`);
     }
     if (!fs.existsSync(localPath)) {
         fs.mkdirSync(localPath);
     }
-    fs.writeFileSync(localPath+filename, base64Data, 'base64');
+    fs.writeFileSync(localPath + filename, base64Data, 'base64');
     return filename;
-  };
+};

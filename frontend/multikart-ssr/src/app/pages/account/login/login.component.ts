@@ -29,8 +29,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
-      this.roles = this.tokenStorage.getUser().roles;
+      this.roles = this.tokenStorage.getUser().accountType;
     }
+    // console.log('this.tokenStorage.getUser()', this.tokenStorage.getUser().accountType);
   }
 
   onSubmit(): void {
@@ -47,7 +48,7 @@ export class LoginComponent implements OnInit {
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
+        this.roles = this.tokenStorage.getUser().accountType;
         this.reloadPage();
       },
       err => {
