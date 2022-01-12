@@ -13,6 +13,7 @@ module.exports = function(app) {
 
   app.get('/api/users/all', users.findAll);
 
+  // app.get('/api/users/:id', users.findOne);
   app.get('/api/users/:id', [authJwt.verifyToken], users.findOne);
   app.put('/api/users/:id', [authJwt.verifyToken], users.update);
   

@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 const baseUrl = 'http://localhost:1111/api/users';
-
+ 
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +12,9 @@ export class UserService {
   constructor(private http: HttpClient) { }
   
   get(id: Number): Observable<any> {
+    // const httpOptions = {
+    //   headers: new HttpHeaders().set('x-access-token',  this.token.getToken())
+    // };
     return this.http.get(`${baseUrl}/${id}`);
   }
 

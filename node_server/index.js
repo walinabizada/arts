@@ -8,6 +8,8 @@ var corsOptions = {
   // origin: "http://localhost:1112"
   origin: "http://localhost:4200"
 };
+// app.use(express.static('assests'));
+// app.use('/assests', express.static('public'))
 
 app.use( bodyParser.json({limit: '50mb'}) );
 app.use(bodyParser.urlencoded({
@@ -31,6 +33,8 @@ db.sequelize.sync();
 /*db.sequelize.sync({force: true}).then(()=>{
     console.log("Drop and re-sync db.");
 });*/
+
+app.use(express.static(__dirname + '/assests/users'));
 
 // simple route
 app.get("/", (req, res) => {

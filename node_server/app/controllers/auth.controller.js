@@ -68,9 +68,10 @@ exports.signin = (req, res) => {
         });
 
         res.status(200).send({
-            fname: user.fname,
-            lname: user.lname,
-            uname: user.uname,
+            userId: user.id,
+            fname: user.firstName,
+            lname: user.lastName,
+            uname: user.userName,
             email: user.email,
             phone: user.phone,
             dob: user.dob,

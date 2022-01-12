@@ -3,9 +3,9 @@
         <div class="card">
             <div class="card-body">
                 <div class="profile-details text-center">
-                    <img src="assets/images/man.png" alt="" class="img-fluid img-90 rounded-circle blur-up lazyloaded">
-                    <h5 class="f-w-600 mb-0">John deo</h5>
-                    <span>johndeo@gmail.com</span>
+                    <img src="http://{{url}}/{{user.image}}" alt="" class="img-fluid img-90 rounded-circle blur-up lazyloaded">
+                    <h5 class="f-w-600 mb-0">{{ user.firstName }} {{user.lastName}}</h5>
+                    <span>{{user.email}}</span>
                     <div class="social">
                         <div class="form-group btn-showcase">
                             <button class="btn social-btn btn-fb d-inline-block">
@@ -68,23 +68,23 @@
                                         <tbody>
                                             <tr>
                                                 <td>First Name:</td>
-                                                <td>Johan</td>
+                                                <td>{{user.firstName}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Last Name:</td>
-                                                <td>Deo</td>
+                                                <td>{{user.lastName}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Email:</td>
-                                                <td>johndeo@gmail.com</td>
+                                                <td>{{user.email}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Gender:</td>
-                                                <td>Male</td>
+                                                <td>{{user.gender}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Mobile Number:</td>
-                                                <td>2124821463</td>
+                                                <td>{{user.phone}}</td>
                                             </tr>
                                             <tr>
                                                 <td>DOB:</td>

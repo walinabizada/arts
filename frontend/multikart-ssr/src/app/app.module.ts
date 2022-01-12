@@ -17,7 +17,7 @@ import { ShopComponent } from './shop/shop.component';
 import { PagesComponent } from './pages/pages.component';
 import { ElementsComponent } from './elements/elements.component';
 
-// import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
    return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -34,7 +34,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     // FormsModule,
-    HttpClientModule,
+    // HttpClientModule,
     NgbModule,
     LoadingBarHttpClientModule,
     LoadingBarRouterModule,
@@ -54,7 +54,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule
   ],
   providers: [
-    // authInterceptorProviders
+    authInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

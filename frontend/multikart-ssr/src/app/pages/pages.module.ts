@@ -58,8 +58,6 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 import { AddItemComponent } from './account/items/add-item/add-item.component';
 
-import { authInterceptorProviders } from '../_helpers/auth.interceptor';
-
 @NgModule({
   declarations: [
     WishlistComponent,
@@ -118,7 +116,6 @@ import { authInterceptorProviders } from '../_helpers/auth.interceptor';
 
   providers: [
     NgbActiveModal,
-    authInterceptorProviders
   ]
 })
 export class PagesModule { }
